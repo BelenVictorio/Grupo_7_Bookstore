@@ -21,9 +21,11 @@ Presentamos los links de las páginas en las que nos inspiramos:
 # Integrantes: 
    * **Belén Victorio:** 
    
-       Hola, me llamo Belén y tengo 29 años. Soy estudiante de Diseño Gráfico y también estoy cursando actualmente el curso de programación web Fullstack de DigitalHouse. Me apasiona aprender y crear cosas nuevas, me encanta el arte y el diseño, también me gustan mucho los idiomas y estudié unos años inglés, alemán y coreano. Trabajo desde que terminé la secundaria y nunca tuve tiempo para estudiar algo serio, ctualmente estoy desempleada y quise aprovechar este momento para mí y aprender cosas nuevas que me gusten. Me encantaría, en un futuro cercano, vivir del Diseño y la Programación.  
+       Hola, me llamo Belén y tengo 29 años. Soy estudiante de Diseño Gráfico y también estoy cursando actualmente el curso de programación web Fullstack de DigitalHouse. Me apasiona aprender y crear cosas nuevas, me encanta el arte y el diseño, también me gustan mucho los idiomas y estudié unos años inglés, alemán y coreano. Trabajo desde que terminé la secundaria y nunca tuve tiempo para estudiar algo serio, actualmente estoy desempleada y quise aprovechar este momento para mí y aprender cosas nuevas que me gusten. Me encantaría, en un futuro cercano, vivir del Diseño y la Programación.  
 
-   * **Nombre:**
+   * **Tania Rivas:**
+
+        Hola me llamo Tania, me dicen taty. Tengo 24 años, soy estudiante de Historia y estoy cursando Programacion Web. He trabajado de muchas cosas pero actualmente trabajo de limpieza y en la pagina de tejido de instagram de una amiga como community manager y tejedora. Me gustan muchas cosas como las artesanias, los idiomas (aunque no se ninguno), la musica, el baile, el arte, el cine, etc. Me gusta aprender, leer, escribir, tambien se bordar y encuadernar. Me encantaria poder vivir viajando mientras trabajo.  
 
    * **Nombre:**
 
