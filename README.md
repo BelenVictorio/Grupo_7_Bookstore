@@ -27,6 +27,7 @@ Presentamos los links de las páginas en las que nos inspiramos:
 
         Hola me llamo Tania, me dicen taty. Tengo 24 años, soy estudiante de Historia y estoy cursando Programacion Web. He trabajado de muchas cosas pero actualmente trabajo de limpieza y en la pagina de tejido de instagram de una amiga como community manager y tejedora. Me gustan muchas cosas como las artesanias, los idiomas (aunque no se ninguno), la musica, el baile, el arte, el cine, etc. Me gusta aprender, leer, escribir, tambien se bordar y encuadernar. Me encantaria poder vivir viajando mientras trabajo.  
 
-   * **Nombre:**
+   * **Damian Fernandenz:**
+      Hola, mi nombre es Damian, tengo 31 años soy de San Luis, Soy estudiante del curso de programación web full stack me apasiona todo lo relacionado a la programación, la tecnología y los video juegos, mi sueño es poder tener mi primer empleo IT. 
 
    * **Nombre:**
