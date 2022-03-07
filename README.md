@@ -30,6 +30,9 @@ Presentamos los links de las páginas en las que nos inspiramos:
    * **Damian Fernandenz:**
       Hola, mi nombre es Damian, tengo 31 años soy de San Luis, Soy estudiante del curso de programación web full stack me apasiona todo lo relacionado a la programación, la tecnología y los video juegos, mi sueño es poder tener mi primer empleo IT. 
 
-   •	*  **Erika Olivera: **
-Hola, soy Erika. Me formé como comunicadora social y a raíz del confinamiento arribé a una rama del mundo IT como CM. Mi interés en esta formación es debido a una necesidad personal de expandir mis conocimientos y en consecuencia el área laboral. 
+   
+Erika Olivera: 
+               Hola, soy Erika. Me formé como comunicadora social y a raíz del confinamiento arribé a una rama del mundo IT como CM. Mi interés en esta formación es debido a una necesidad personal de expandir mis conocimientos y en consecuencia el área laboral. 
 Previo a desempeñarme laboralmente en este rubro, me forme académicamente en distintas ramas del arte; las cuales hoy son mi área de distención.
+
+
