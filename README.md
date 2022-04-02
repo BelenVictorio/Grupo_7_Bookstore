@@ -34,6 +34,6 @@ Presentamos los links de las páginas en las que nos inspiramos:
    * **Erika Olivera:** 
    
       Hola, soy Erika. Me formé como comunicadora social y a raíz del confinamiento arribé a una rama del mundo IT como CM. Mi interés en esta formación es debido a una necesidad personal de expandir mis conocimientos y en consecuencia el área laboral. 
-Previo a desempeñarme laboralmente en este rubro, me forme académicamente en distintas ramas del arte; las cuales hoy son mi área de distención.
+      Previo a desempeñarme laboralmente en este rubro, me forme académicamente en distintas ramas del arte; las cuales hoy son mi área de distención.
 
 
