@@ -1,0 +1,42 @@
+.register{
+    background-image: url(/images/img-registercel.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.register-box{
+    width: 80%;
+    margin: auto;
+    background-color: rgba(128, 128, 128, 0.7);
+    text-align: center;
+    padding: 20px;
+}
+.register-box h2{
+    font-size: 30px;
+    font-weight: 600;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.register-box p{
+    font-size: 14px;
+    margin: 5px;
+    padding: 5px;
+    text-align: justify;
+}
+
+.register-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    margin: 0px 20px;
+
+}
+
+.register-info{
+    margin:10px;
+    text-align: justify;
+    font-size: 14px;
+}
