@@ -1,0 +1,35 @@
+.login{
+    background-image: url(/images/img-registercel.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.login-box{
+    width: 80%;
+    margin: auto;
+    background-color: rgba(128, 128, 128, 0.7);
+    text-align: center;
+    padding: 20px;
+}
+.login-box h2{
+    font-size: 30px;
+    font-weight: 600;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    margin: 0px 20px;
+
+}
+
+.login-info{
+    margin:10px;
+    text-align: justify;
+    font-size: 14px;
+}
