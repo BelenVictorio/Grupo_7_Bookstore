@@ -1,13 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Páginas Bellas | Detalle del producto</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/37c7e740fb.js" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
-    
+    <header class="header">
+
+        <a href="#" class="logo"><img src="/images/logo-negro.png" alt=""></a>
+
+        <nav class="navbar">
+            <ul class="nav_links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-search">
+            <input type="text" class="nav-search-input" placeholder="Buscar...">
+            <svg class="lupa" width="512" height="512" viewBox="0 0 512 512" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M505 442.7L405.3 343C400.8 338.5 394.7 336 388.3 336H372C399.6 300.7 416 256.3 416 208C416 93.1 322.9 0 208 0C93.1 0 0 93.1 0 208C0 322.9 93.1 416 208 416C256.3 416 300.7 399.6 336 372V388.3C336 394.7 338.5 400.8 343 405.3L442.7 505C452.1 514.4 467.3 514.4 476.6 505L504.9 476.7C514.3 467.3 514.3 452.1 505 442.7ZM208 336C137.3 336 80 278.8 80 208C80 137.3 137.2 80 208 80C278.7 80 336 137.2 336 208C336 278.7 278.8 336 208 336Z"
+                    fill="#A9A4A4" />
+            </svg>
+        </div>
+
+        <div class="menu-button"><i class="fa-solid fa-bars"></i></div>
+
+        <div class="icons">
+            <a class="cart" href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a class="user" href="#"><i class="fas fa-user-circle"></i></a>
+        </div>
+
+    </header>
+    <main>
+        <div class="detalle-producto">
+            <div class="imagenes">
+                <section class="imagen-principal">
+                    <img src="images/vol2.png" alt="">
+                </section>
+            </div>
+            <div class="contenido-text">
+                <section class="detalles">
+                    <div>
+                        <h2>La Espada Del Inmortal Vol 6</h2>
+                    </div>
+                    <div class="price">
+                        <p>$1450</p>
+                    </div>
+                    <form>
+                        <p class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5">
+                            <!--
+                          --><label for="radio1">★</label>
+                            <!--
+                          --><input id="radio2" type="radio" name="estrellas" value="4">
+                            <!--
+                          --><label for="radio2">★</label>
+                            <!--
+                          --><input id="radio3" type="radio" name="estrellas" value="3">
+                            <!--
+                          --><label for="radio3">★</label>
+                            <!--
+                          --><input id="radio4" type="radio" name="estrellas" value="2">
+                            <!--
+                          --><label for="radio4">★</label>
+                            <!--
+                          --><input id="radio5" type="radio" name="estrellas" value="1">
+                            <!--
+                          --><label for="radio5">★</label>
+                        </p>
+                    </form>
+                    <div class="precio-pago">
+                        <p> <b>24</b> Cuotas de <b>$138</b> </p>
+                        <a><i class="fas fa-credit-card"></i></a>
+                        <a class="medio-pago" href="/">Ver Medio De Pago</a>
+                    </div>
+
+                    <div class="añadir-carrito">
+                        <button>Agregar al carrito</button>
+                    </div>
+                    <div class="medio-pago">
+                        <a class="icon"><i class="fas fa-truck"></i></a>
+                        <p>Modos De Envios</p>
+                    </div>
+                    <div class="añadir-carrito">
+                        <input type="text" id="codigopostal" placeholder="código postal" maxlength="5"
+                            required="required">
+                        <button>Calcular</button>
+                    </div>
+                    <div class="descripcion">
+                        <h3 class="autor">Autor: Hiroaki Samura</h3>
+                        <p class="descripcion-texto">Aunque comenzaron su viaje juntos, los caminos de Rin y Manji se
+                            separaron abruptamente. Rin avanza sin suerte en
+                            su persecución de venganza. Manji se reencuentra con Magatsu Taito y un viejo enemigo
+                            despiadado. Mientras
+                            tanto, el objetivo de Anotsu choca con la cruel realidad. La acción se acelera hasta llegar
+                            a un punto crítico.
+                        </p>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+        <div class="titulo-rel">
+            <h3>Productos Relacionados</h3>
+        </div>
+        <section class="segunda-section">
+
+            <article class="producto-rel">
+                <div class="imagen-producto-rec">
+                    <img src="/images/vol2.png" alt="Espada inmortal">
+                </div>
+                <div class="detalles-producto">
+                    <div class="producto-favorito">
+                        <h4 class="name-product">Espada Del inmortal</h4>
+                    </div>
+                    <div class="text-detalle">
+                        <p>$4.500</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="producto-rel">
+                <div class="imagen-producto-rec">
+                    <img src="/images/vol2.png" alt="Espada inmorta">
+                </div>
+                <div class="detalles-producto">
+                    <div class="producto-favorito">
+                        <h4 class="name-product">Espada Del inmortal</h4>
+
+                    </div>
+                    <div class="text-detalle">
+                        <p>$1.550</p>
+
+                    </div>
+
+                </div>
+            </article>
+
+            <article class="producto-rel">
+                <div class="imagen-producto-rec">
+                    <img src="/images/vol2.png" alt="Espada inmorta">
+                </div>
+                <div class="detalles-producto">
+                    <div class="producto-favorito">
+                        <h4 class="name-product">Espada Del inmortal</h4>
+
+                    </div>
+                    <div class="text-detalle">
+                        <p>$1.550</p>
+
+                    </div>
+
+                </div>
+            </article>
+            <article class="producto-rel">
+                <div class="imagen-producto-rec">
+                    <img src="/images/vol2.png" alt="Espada inmorta">
+                </div>
+                <div class="detalles-producto">
+                    <div class="producto-favorito">
+                        <h4 class="name-product">Espada Del inmortal</h4>
+
+                    </div>
+                    <div class="text-detalle">
+                        <p>$1.550</p>
+
+                    </div>
+
+                </div>
+            </article>
+        </section>
+
+    </main>
 </body>
+
 </html>

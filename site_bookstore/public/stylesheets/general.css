@@ -10,5 +10,6 @@
 
 body {
     font-size: 62.5%;
-    background-color: var(--grisOscuro);
+ background-image: url(/images/fondoHome.jpg);
+ width: min-content;
 }
