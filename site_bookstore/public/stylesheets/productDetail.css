@@ -30,19 +30,20 @@ main div.detalle-producto div.contenido-text {
   margin: 1rem 0.1rem;
   width: 100%;
   padding: 0.4rem 1rem;
-  box-shadow: 2px 2px 2px 2px rgba(22, 22, 22, 0.5);
+  box-shadow: 2px 2px 2px 2px rgba(255, 214, 202, 0.5);
 }
 
 main div.detalle-producto div.contenido-text section.detalles h2 {
   text-align: center;
   font-size: var(--title);
+  color:var(--rosa)
   
 }
 
 main div.detalle-producto div.contenido-text section.detalles p {
   text-align: center;
   font-size: 18px;
-  color:black;
+  color:var(--rosa);
 }
 main div.detalle-producto div.contenido-text section.detalles div.price{
   text-align: center;
@@ -69,19 +70,20 @@ main div.detalle-producto div.contenido-text section.detalles div.añadir-carrit
 }
 
 main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito button {
-  background-color: black;
-  color: #fff !important;
+  background-color: rgb(238, 174, 174);
+  border-radius: 80px;
+  color: var(--grisOscuro);
   font-size: 20px;
   font-weight: 500;
   padding: 0.5em 1.2em;
-  position: relative;
+  /* position: relative; */
   outline: 1px solid;
   outline-color: rgba(30, 50, 58, 0.4);
   transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-  box-shadow: inset 0 0 20px rgba(190, 200, 204, 0.5), 0 0 20px rgba(7, 15, 19, 0.4);
-  outline-color: rgba(49, 138, 172, 0);
-  outline-offset: 80px;
-  text-shadow: 1px 1px 6px rgb(190, 34, 34);
+  box-shadow: inset 0 0 20px rgba(83, 77, 77, 0.705), 0 0 20px rgba(7, 15, 19, 0.4);
+  outline-color: rgba(197, 213, 219, 0.815);
+  text-shadow: 1px 1px 6px var(--grisOscuro);
+  cursor: pointer;
 }
 main div.detalle-producto div.contenido-text section.detalles div.medio-pago{
   display:flex;
@@ -90,7 +92,17 @@ main div.detalle-producto div.contenido-text section.detalles div.medio-pago{
 
 }
 main div.detalle-producto div.contenido-text section.detalles div.medio-pago a.icon{
-  color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: fit-content;
+    padding: 5px;
+    transform: rotateY(-169deg);
+    top: -15px;
+    right: 20px;
+    font-size: 1.8rem;
+  
 
   
 }
@@ -100,8 +112,8 @@ main section.segunda-section{
   flex-wrap: wrap;
   align-content: flex-start;
   padding: 5px;
-  overflow: scroll; 
-  justify-content: space-between; 
+  /* overflow: scroll;  */
+  justify-content: space-around; 
 
 }
 main div.titulo-rel{
@@ -186,5 +198,21 @@ main div.titulo-rel{
       width: 60%;
       padding: 0 0.5rem;
       
+  }
+  main section.segunda-section{
+    display: flex;
+    height: 600px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 5px;
+    justify-content: space-between;
+    box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 )
+  
+  }
+  main div.titulo-rel{
+    
+    font-size: 20px;
+    text-align: center;
+    
   }
 }

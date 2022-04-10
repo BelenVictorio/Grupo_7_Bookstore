@@ -10,6 +10,9 @@
 
 body {
     font-size: 62.5%;
- background-image: url(/images/fondoHome.jpg);
- width: min-content;
+     background-color: var(--grisOscuro);
+
+}
+a{
+    color:var(--rosa)
 }
