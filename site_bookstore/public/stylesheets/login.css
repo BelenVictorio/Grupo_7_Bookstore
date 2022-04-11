@@ -90,10 +90,6 @@
     font-size: 12px;
 }
 
-.login-info-direcciones a{
-
-}
-
 .login-direccion-rojo button{
     background-color: red;
     color: white;
@@ -118,7 +114,6 @@
     .login{
         background-image: url(/images/img-register-tablet.jpg);
     }
-   
 }
 
 @media (min-width: 1024px){
