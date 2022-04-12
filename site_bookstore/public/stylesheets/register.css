@@ -39,7 +39,7 @@
 }
 
 .register-info{
-    margin:20px;
+    margin:10px;
     text-align: center;
     font-size: 14px;
     display: flex;
@@ -152,6 +152,11 @@ ul input{
     .register{
         background-image: url(/images/img-register-tablet.jpg);
     }
+
+    .register-box h2{
+        text-align: center;
+    }
+    
 
     .register-info input{
         padding: 5px;
