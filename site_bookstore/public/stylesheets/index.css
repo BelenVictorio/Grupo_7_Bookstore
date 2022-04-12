@@ -10,6 +10,8 @@
 
 /* categorías-box */
 
+/* Titulo: categorías */
+
 .home__categorias__titulo {
     display: flex;
     justify-content: center;
@@ -19,8 +21,6 @@
     color: var(--white);
     border-top: 2px solid var(--rosa);
 }
-
-/* Titulo: categorías */
 
 .home__categorias {
     /* width: 90%; */
@@ -61,6 +61,8 @@
     box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
 
 }
+
+/* libros de las categorias */
 
 .home__categorias__niños__circle img,
 .home__categorias__jovenes__circle img,
@@ -143,6 +145,7 @@
 
 }
 
+/* estrellitas */
 
 .home__best-sellers__producto1__estrellas,
 .home__best-sellers__producto2__estrellas,
@@ -153,6 +156,8 @@
     justify-content: center;
     align-items: center;
 }
+
+/* libros de best-sellers section */
 
 .home__best-sellers__producto1__circulo img,
 .home__best-sellers__producto2__circulo img,
@@ -168,6 +173,8 @@
 a {
     color: black;
 }
+
+/* titulos de cada best-seller */
 
 .home__best-sellers__producto1 .titulo h5 a,
 .home__best-sellers__producto2 .titulo h5 a,
@@ -205,3 +212,111 @@ a {
     margin: 5px 0;
 } 
 
+
+/* tablet */
+
+@media (min-width: 768px) {
+
+    .home__categorias {
+        padding: 80px 0;
+    }
+
+    .home__categorias__titulo {
+        font-size: 20px;
+        
+    }
+
+    .home__best-sellers__titulo {
+        font-size: 20px;
+    }
+
+    .home__categorias__niños__circle,
+ .home__categorias__jovenes__circle,
+ .home__categorias__adultos__circle {
+        width: 200px;
+        height: 200px;
+
+    }
+
+    .home__categorias__niños__circle img,
+    .home__categorias__jovenes__circle img,
+    .home__categorias__adultos__circle img {
+        position: relative;  
+        width: 170px;
+        left: 15px;
+        top: -25px;
+    }
+
+    .home__best-sellers {
+        margin-bottom: 100px;
+    }
+
+
+}
+
+/* desktop */
+
+@media (min-width: 1024px) {
+
+    body {
+        
+        background-color: var(--rosa);
+    }
+
+    .home__banner img {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        margin: 0px auto;
+    }
+
+    .home__categorias {
+        padding: 80px 0;
+        width: 80%;
+        background-color: var(--grisOscuro);
+    }
+
+    .home__categorias__titulo {
+
+        background-color: var(--grisOscuro);
+        width: 80%;
+        margin: 0px auto;
+     
+    }    
+
+    .home__best-sellers__titulo {
+        font-size: 20px;
+        background-color: var(--grisOscuro);
+        width: 80%;
+        margin: 0px auto;
+    }
+
+    .home__categorias__niños__circle,
+ .home__categorias__jovenes__circle,
+ .home__categorias__adultos__circle {
+        width: 200px;
+        height: 200px;
+
+    }
+
+    .home__categorias__niños__circle img,
+    .home__categorias__jovenes__circle img,
+    .home__categorias__adultos__circle img {
+        position: relative;  
+        width: 170px;
+        left: 15px;
+        top: -25px;
+    }
+
+    .home__best-sellers {
+        margin: 0 auto;
+        width: 80%;
+        background-color: var(--grisOscuro);
+        padding-bottom: 80px;
+    }
+
+
+
+
+
+}
