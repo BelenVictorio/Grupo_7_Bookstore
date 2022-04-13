@@ -12,7 +12,6 @@ main div.detalle-producto {
 main div.detalle-producto div.imagenes section.imagen-principal {
   width: 100%;
   position: relative;
-  display: flex;
   align-items: center;
   justify-content: center;
  
@@ -78,12 +77,12 @@ border-radius:10px;
 font-size: 0.9rem;
 }
 main div.detalle-producto div.contenido-text{
-  border: 1px solid var(--white);
+  border: 2px solid var(--rosa);
 }
 
 main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito button {
   border-radius: 14px;
-  color: rgba(122, 120, 120, 0.9) !important;
+  color: rgba(7, 4, 4, 0.993) !important;
   font-size: 20px;
   font-weight: 500;
   padding: 0.5em 1.2em;
@@ -94,8 +93,8 @@ main div.detalle-producto div.contenido-text section.detalles div.añadir-carrit
   cursor:pointer
 }
 main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito button:hover{
-  color: rgb(83, 66, 66) !important;
-  box-shadow: 0 4px 16px rgb(43, 30, 25);
+  color: rgb(240, 180, 180) !important;
+  box-shadow: 0 4px 16px rgb(231, 195, 181);
   transition: all 0.2s ease;
 }
 main div.detalle-producto div.contenido-text section.detalles div.medio-pago{
@@ -121,11 +120,13 @@ main div.detalle-producto div.contenido-text section.detalles div.medio-pago a.i
 main div.detalle-producto div.contenido-text section.detalles div.descripcion h3.autor{
   font-size: var(--title);
   text-align: center;
-  color: var(--white);
+  color: var(--black);
   cursor: pointer;
+  font-style: italic;
 }
 main div.detalle-producto div.contenido-text section.detalles div.descripcion p.descripcion-texto{
   font-size: var(--paragraphs);
+  font-style:inherit;
 
 
 }
@@ -151,15 +152,17 @@ main section.segunda-section article.producto-rel div.box-img{
   background-color: var(--grisOscuro);
   display: flex;
   flex-direction: row;
+  position: relative;
   padding: 10px;
   margin: 10px;
   border-bottom: 3px solid var(--rosa);
 }
 main section.segunda-section article.producto-rel div.box-img img{
-  width: 150px
+  width: 100%
 }
 main section.segunda-section article.producto-rel{
-  
+  width: 40%;
+  height: 60%;
   border:1px solid var(--rosa);
  box-shadow : 0px 0px 10px rgb(214, 155, 155);
  margin-bottom: 10px;
@@ -173,10 +176,6 @@ main section.segunda-section article.producto-rel:hover{
   width: 250px;
   margin: 0 auto;
   height: 50px;
-  }
-  
-  #form p {
-  text-align: center;
   }
   
   #form label {
@@ -213,9 +212,57 @@ main section.segunda-section article.producto-rel:hover{
       flex-direction: row-reverse;
       
   }
+  main div.detalle-producto div.contenido-text section.detalles h1{
+    text-align: inherit;
+    font-size: var(--title);
+    color:var(--black);
+    font-weight:bolder;
+    
+  }
+  main div.detalle-producto div.contenido-text section.detalles p {
+    flex-direction: row;
+    text-align: inherit;
+    font-size: var(--discounts-descriptions);
+    color:var(--black);
+    font-style: oblique;
+  }
+  main div.detalle-producto div.contenido-text section.detalles div.price{
+    text-align: inherit; 
+   }
+   main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito{
+     justify-content: flex-start;
+   }
+   main div.detalle-producto div.contenido-text section.detalles div.medio-pago{
+     display: flex;
+     justify-content:flex-start;
+   }
   
+  main section.segunda-section{
+    
+      display: flex;
+      width: 100%;
+      height: 60%;
+      max-width: 100%;
+      flex-wrap: nowrap;
+      flex-direction: row;
+  }
+  main section.segunda-section article.producto-rel{
+    display: flex;
+    flex-direction:column;
+     height: 60%;
+     border:1px solid var(--rosa);
+    box-shadow : 0px 0px 10px rgb(214, 155, 155);
+    margin-bottom: 10px;
+    width: 50%;
+    margin: 6px;
+   }
+   
+   
+    }
+    
+    
   
-}
+
 
 
 @media screen and (min-width:1024px){
@@ -235,6 +282,8 @@ main section.segunda-section article.producto-rel:hover{
       width: 40%;
       height: 60%;
       max-width: 50%;
+      border: 3px solid var(--rosa);
+     
       
   }
   main div.detalle-producto div.imagenes section.imagen-principal img{
@@ -267,18 +316,36 @@ main section.segunda-section article.producto-rel:hover{
   }
   main section.segunda-section{
     display: flex;
-    height: 600px;
-    flex-wrap: wrap;
+    height: 800px;
     align-content: flex-start;
     padding: 5px;
     justify-content: space-between;
     box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 )
   
   }
+  main section.segunda-section article.producto-rel{
+   width: 300px;
+   border-radius: 16px;
+   }
   main div.titulo-rel{
     
     font-size: 20px;
     text-align: center;
     
   }
+  main section.segunda-section article.producto-rel div.box-img img{
+    width: 100%;
+  }
+main section.segunda-section article.producto-rel div.text-detalle p{
+text-align: center;
+  font-size: 18px;
+font-weight: 200;
+color: var(--white);
+}
+main section.segunda-section article.producto-rel div.producto-favorito h5{
+  color: var(--white);
+  font-size: var(--title);
+  text-align: center;
+  text-shadow: rgba(7, 4, 4, 0.993);
+}
 }
