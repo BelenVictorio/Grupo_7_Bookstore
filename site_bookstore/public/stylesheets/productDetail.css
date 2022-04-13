@@ -171,7 +171,7 @@ main section.segunda-section article.producto-rel:hover{
  box-shadow: 0 4px 16px var(--rosa);
  transition: all 0.2s ease
 }
-
+/* Valoracion del libro */
 #form {
   width: 250px;
   margin: 0 auto;
@@ -265,7 +265,7 @@ main section.segunda-section article.producto-rel:hover{
   
 
 
-
+/* desktop */
 @media screen and (min-width:1024px){
 
   main div.detalle-producto {
@@ -283,7 +283,7 @@ main section.segunda-section article.producto-rel:hover{
       width: 40%;
       height: 60%;
       max-width: 50%;
-      border: 3px solid var(--rosa);
+      
      
       
   }
