@@ -1,5 +1,5 @@
 .login{
-    background-image: url(/images/img-registercel.jpg);
+    background-image: url(/images/img-fondologin.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -7,21 +7,25 @@
     flex-direction: column;
 }
 
+/* caja contenedora*/
 .login-box{
     width: 70%;
     margin: auto;
-    background-color: rgba(128, 128, 128, 0.7);
+    background-color: rgba(55, 55, 55, 0.7);
     text-align: center;
     padding: 10px;
 }
+
+ /* Titulo*/
 .login-box h2{
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 600;
     padding: 10px;
     text-align:justify;
     text-transform: uppercase;
 }
 
+/* Caja contenedora del form */
 .login-form{
     display: flex;
     flex-direction: column;
@@ -29,8 +33,10 @@
     align-items:center;
     padding: 10px;
     margin: 0px 20px;
+    color: var(--white);
 }
 
+/* informacion de inicio de sesion*/
 .login-info{
     margin:10px;
     text-align: justify;
@@ -41,9 +47,17 @@
     border-radius: 5%;
     border: none;
     padding: 15px;
-    background-color: var(--grisOscuro);
-    color: white;
+    background-color: var(--rosa);
+    color: var(--white);
     width: 100%;
+}
+
+.login-info label{
+    font-size: 12px;
+}
+
+.login-info p{
+    font-size: 12px;
 }
 
 #recordarme{
@@ -52,22 +66,19 @@
     text-align: justify;
 }
 
+/* olvido de contraseña*/
+.login-pregunta{
+    text-align: justify;
+    font-size: 12px;
+}
+
+/* boton de inicio*/
 .login-info a{
     padding: 5px;
     font-size: 12px;
-    color: black;
+    color: var(--white);
     text-align: center;
     display: block;
-}
-
-.login-pregunta{
-    text-align: justify;
-    font-size: 10px;
-}
-
-.login-info label{
-    font-size: 12px;
-
 }
 
 .login-info button{
@@ -75,14 +86,11 @@
     font-size: 14px;
     border-radius: 10%;
     display: inline;
-    color: white;
-    background-color: var(--grisOscuro);
+    color: var(--black);
+    background-color: var(--rosa);
 }
 
-.login-info p{
-    font-size: 12px;
-}
-
+/*direcciones para poder entrar en con google o facebook*/
 .login-info-direcciones{
     text-align: justify;
     padding: 5px;
@@ -110,14 +118,8 @@
     font-size: 14px;
 }
 
-@media (min-width: 480px){
+@media (min-width: 768px){
     .login{
-        background-image: url(/images/img-register-tablet.jpg);
-    }
-}
-
-@media (min-width: 1024px){
-    .login{
-        background-image: url(/images/img-register-compu.jpg);
+        background-image: url(/images/fondoHome.jpg);
     }
 }
