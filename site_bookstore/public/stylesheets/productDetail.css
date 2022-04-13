@@ -93,8 +93,8 @@ main div.detalle-producto div.contenido-text section.detalles div.añadir-carrit
   cursor:pointer
 }
 main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito button:hover{
-  color: rgb(240, 180, 180) !important;
-  box-shadow: 0 4px 16px rgb(231, 195, 181);
+  color: rgb(238, 121, 3) !important;
+  box-shadow: 0 4px 16px rgb(228, 231, 181);
   transition: all 0.2s ease;
 }
 main div.detalle-producto div.contenido-text section.detalles div.medio-pago{
@@ -223,11 +223,12 @@ main section.segunda-section article.producto-rel:hover{
     flex-direction: row;
     text-align: inherit;
     font-size: var(--discounts-descriptions);
-    color:var(--black);
+    color: white; text-shadow: black 0.1em 0.1em 0.2em;
     font-style: oblique;
   }
   main div.detalle-producto div.contenido-text section.detalles div.price{
-    text-align: inherit; 
+    text-align: inherit;
+    color: rgb(221, 148, 148); text-shadow: black 0.1em 0.1em 0.2em 
    }
    main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito{
      justify-content: flex-start;
@@ -313,6 +314,7 @@ main section.segunda-section article.producto-rel:hover{
   }
   main div.detalle-producto div.contenido-text section.detalles p{
     text-align: left;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em
   }
   main section.segunda-section{
     display: flex;
@@ -340,12 +342,12 @@ main section.segunda-section article.producto-rel div.text-detalle p{
 text-align: center;
   font-size: 18px;
 font-weight: 200;
-color: var(--white);
+color: rgb(207, 140, 140); text-shadow: black 0.1em 0.1em 0.2em
 }
 main section.segunda-section article.producto-rel div.producto-favorito h5{
-  color: var(--white);
+  color:  white; text-shadow: black 0.1em 0.1em 0.2em;
   font-size: var(--title);
   text-align: center;
-  text-shadow: rgba(7, 4, 4, 0.993);
+  
 }
 }
