@@ -2,7 +2,7 @@
 .productCart{
     display: flex;
     flex-direction: column;
-     background-color: var(--white);
+     background-color: var(--grisOscuro);
      width: 100%;
  }
  
@@ -13,16 +13,17 @@
  
  /* Titulo Mi Carrito*/
  .productCart h2{
-     background-color: var(--amarilloEstrellas);
+     background-color: var(--grisOscuro);
      width: 100%;
      margin: auto;
      padding: 10px;
      display: flex;
      justify-content: center;
      align-items: center;
-     color: var(--black);
-     font-size: 30px;
+     color: var(--white);
+     font-size: 20px;
      font-weight: normal;
+     border-bottom: 2px solid var(--rosa);
  }
  /* subtitulos en columna*/
  .productCart-Titulos{
@@ -31,16 +32,21 @@
  
  /* Articulos en general */
  .productCart-Article{
-     background-color: gainsboro;
+     background-color: var(--grisOscuro);
      display: flex;
      flex-direction: row;
      padding: 10px;
      margin: 10px;
-     box-shadow: 0.5px 0.5px var(--grisOscuro);
+     border-bottom: 3px solid var(--rosa);
  }
  
+ .article-img{
+    background-color: var(--rosa);
+    border-radius: 50%;
+ }
  .article-img img{
      width: 120px;
+     
  }
  
  /* Informacion como nombre, y libro, precio*/
@@ -52,11 +58,12 @@
      margin-left: 10px;
      font-size: 12px;
      width: 80%;
+     
  }
  
  .info-article a{
-     font-size: 14px;
-     color: var(--black);
+     font-size: 16px;
+     color: var(--white);
      font-weight: 600;
      margin-bottom: 10px;
  }
@@ -65,7 +72,7 @@
      display: none;
  }
  .info-article p{
-     color: var(--grisOscuro);
+     color: var(--white);
      margin-top: 5px;
  }
  
@@ -83,8 +90,8 @@
      margin-top: 5px;
      border-radius: 5px;
      border-style: none;
-     color: var(--grisOscuro);
-     background-color: gainsboro;
+     color: var(--white);
+     background-color: var(--grisOscuro);
      width: 10vw;
  }
  
@@ -105,12 +112,14 @@
  }
   /* para las cajas de metodo de pago, envio, cupon, total*/
  .productCart-infoEspecifica{
-     background-color: var(--amarilloEstrellas);
+     background-color: var(--rosa);
+     color: var(--black);
      width: 100%;
      padding: 10px;
      margin: 5px 0px;
      font-size: 20px;
      text-align: center;
+     border-radius: 5%;
  }
  .productCart-infoEspecifica input{
      width: 40%;
@@ -119,7 +128,6 @@
  
  .productCart-infoEspecifica a{
      font-size: 12px;
-     
  }
  
  .productCart-infoEspecifica a button{
@@ -132,7 +140,7 @@
      flex-direction: row;
      justify-content: space-around;
      align-items: center;
-     color: var(--grisOscuro);
+     color: var(--black);
      font-weight: 700;
  }
  .productCart-button{
@@ -171,6 +179,7 @@
          justify-content: space-evenly;
          align-items: center;
          width: 100%;
+         color: var(--white);
      }
      
      .productCart-Titulos h4{
@@ -197,6 +206,7 @@
      
      .info-article span{
          display: flex;
+         color: var(--white);
      }
      .info-article a{
          font-size: 14px;
