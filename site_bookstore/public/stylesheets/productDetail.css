@@ -35,23 +35,26 @@ main div.detalle-producto div.contenido-text {
   box-shadow: 2px 2px 2px 2px var(--black);
 }
 
-main div.detalle-producto div.contenido-text section.detalles h2 {
+main div.detalle-producto div.contenido-text section.detalles h1{
   text-align: center;
   font-size: var(--title);
-  color:var(--rosa)
-  
+  color:var(--black);
+  font-weight:bolder;
 }
 
 main div.detalle-producto div.contenido-text section.detalles p {
   text-align: center;
-  font-size: 18px;
-  color:var(--rosa);
+  font-size: var(--discounts-descriptions);
+  color:var(--black);
+}
+main div.detalle-producto div.contenido-text section.detalles p.descripcion-libro{
+  text-align: initial;
+  font-size: larger;
 }
 main div.detalle-producto div.contenido-text section.detalles div.price{
   text-align: center;
   font-size: 24px;
-  
-
+  font-weight: bolder;
 }
 
 main div.detalle-producto div.contenido-text section.detalles p input {
@@ -75,7 +78,7 @@ border-radius:10px;
 font-size: 0.9rem;
 }
 main div.detalle-producto div.contenido-text{
-  border: 1px solid var(--rosa);
+  border: 1px solid var(--white);
 }
 
 main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito button {
@@ -112,35 +115,54 @@ main div.detalle-producto div.contenido-text section.detalles div.medio-pago a.i
     transform: rotateY(-169deg);
     top: -15px;
     right: 20px;
-    font-size: 1.8rem;
+    font-size: var(--title);
 
 }
 main div.detalle-producto div.contenido-text section.detalles div.descripcion h3.autor{
-  font-size: 22px;
+  font-size: var(--title);
   text-align: center;
-  color: var(--rosa);
+  color: var(--white);
   cursor: pointer;
+}
+main div.detalle-producto div.contenido-text section.detalles div.descripcion p.descripcion-texto{
+  font-size: var(--paragraphs);
+
+
 }
 main section.segunda-section{
   display: flex;
+  width: 480px;
   height: 600px;
   flex-wrap: wrap;
   align-content: flex-start;
   padding: 5px;
-  /* overflow: scroll;  */
   justify-content: space-around; 
+  margin: 2px;
 
 }
 
-main div.titulo-rel{
+main div.titulo-rel h3{
   
-  font-size: 20px;
+  font-size:var(--title);
   text-align: center;
   
 }
+main section.segunda-section article.producto-rel div.box-img{
+  background-color: var(--grisOscuro);
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin: 10px;
+  border-bottom: 3px solid var(--rosa);
+}
+main section.segunda-section article.producto-rel div.box-img img{
+  width: 150px
+}
 main section.segunda-section article.producto-rel{
+  
   border:1px solid var(--rosa);
- box-shadow : 0px 0px 10px rgb(14, 12, 12);
+ box-shadow : 0px 0px 10px rgb(214, 155, 155);
+ margin-bottom: 10px;
 }
 main section.segunda-section article.producto-rel:hover{
  box-shadow: 0 4px 16px var(--rosa);
