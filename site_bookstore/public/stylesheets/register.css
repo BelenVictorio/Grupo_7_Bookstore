@@ -79,7 +79,7 @@
     flex: wrap;
 }
 
-ul li{
+.register-eleccion ul li{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -88,7 +88,7 @@ ul li{
     font-size: 16px;
 
 }
-ul input{
+.register-eleccion ul input{
     margin: 5px;
     align-items: center;
 }
@@ -203,7 +203,7 @@ ul input{
         text-align: start;
     }
 
-    ul{
+    .register-eleccion ul{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -211,7 +211,7 @@ ul input{
         width: 80%;
     }
 
-    ul li{
+    .register-eleccion ul li{
         width: 40%;
     }
 
