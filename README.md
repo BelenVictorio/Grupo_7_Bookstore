@@ -2,6 +2,8 @@
 * Somos una **Librería Online** llamada **"Páginas Bellas"**. Nos dedicamos a la venta exclusiva de libros de todo tipo y para todas las edades, aún así nuestro mercardo apunta a un público jóven para poder concientizar la lectura en la juventúd de hoy en día. Por esta razón brindaremos ofertas exclusivas para este público en particular. 
 * Los productos que ofrecemos al público son, libros en su mayoría físicos, libros digitales (PDF y EPUB) y también audio-libros.
 
+![Logo](/Design/Recurso%207%402x.png)
+
 # Páginas de Inspiración:
 Presentamos los links de las páginas en las que nos inspiramos:
 
@@ -36,4 +38,9 @@ Presentamos los links de las páginas en las que nos inspiramos:
       Hola, soy Erika. Me formé como comunicadora social y a raíz del confinamiento arribé a una rama del mundo IT como CM. Mi interés en esta formación es debido a una necesidad personal de expandir mis conocimientos y en consecuencia el área laboral. 
       Previo a desempeñarme laboralmente en este rubro, me forme académicamente en distintas ramas del arte; las cuales hoy son mi área de distención.
 
+# Links:
+  
+   * **Link a Tablero Trello:** [Bookstore](https://trello.com/b/NblXq20g)
+
+   * **Link a Jamboard:** [Retrospectiva](https://jamboard.google.com/d/1_VS7YXiJNHSmaVciz7_Wv5bafue0IzbtEc-EmuHDX9Y/edit?usp=sharing)
 

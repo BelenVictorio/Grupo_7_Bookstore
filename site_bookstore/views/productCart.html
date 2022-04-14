@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product-Cart</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/4481539b02.js" crossorigin="anonymous"></script>
+</head>
+<body>
+        <header class="header">
+    
+            <a href="#" class="logo"><img src="/images/logo-negro.png" alt=""></a>
+        
+            <nav class="navbar">
+              <ul class="nav_links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+              </ul>
+            </nav>
+        
+            <div class="nav-search">
+              <input type="text" class="nav-search-input" placeholder="Buscar...">
+              <svg class="lupa" width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M505 442.7L405.3 343C400.8 338.5 394.7 336 388.3 336H372C399.6 300.7 416 256.3 416 208C416 93.1 322.9 0 208 0C93.1 0 0 93.1 0 208C0 322.9 93.1 416 208 416C256.3 416 300.7 399.6 336 372V388.3C336 394.7 338.5 400.8 343 405.3L442.7 505C452.1 514.4 467.3 514.4 476.6 505L504.9 476.7C514.3 467.3 514.3 452.1 505 442.7ZM208 336C137.3 336 80 278.8 80 208C80 137.3 137.2 80 208 80C278.7 80 336 137.2 336 208C336 278.7 278.8 336 208 336Z" fill="#A9A4A4"/>
+            </svg>
+            </div>
+        
+            <div class="menu-button"><i class="fa-solid fa-bars"></i></div>
+        
+            <div class="icons">
+              <a class="cart" href="#"><i class="fas fa-shopping-cart"></i></a>
+              <a class="user" href="#"><i class="fas fa-user-circle"></i></a>
+            </div>
+        
+    </header>
+
+<main class="productCart">
+    <h2>Mi Carrito</h2>
+    <section class="productCart-product">
+        <div class="productCart-Titulos">
+        <h4 >Productos</h4>
+        <h4>Precio por unidad</h4>
+        <h4>Cantidad</h4>
+        <h4>Eliminar</h4>
+    </div>
+        <article class="productCart-Article">
+            <div class="article-img">
+            <a href=""> <img src="/images/bestia.png" alt="bestia"></a>
+        </div>
+        <div class="info-article">
+            <div class="info-article-titulos">
+            <a href="">La bestia</a>
+            <span>Carmen Mola</span>
+            <p>Libro</p>
+            </div>
+            <div class="info-article-funciones">
+            <p>$2990</p>
+            <input class="productCart-input" type="number" placeholder="1">
+            <a class="article-trash" href=""><i class="fa-regular fa-trash-can"></i></a>
+        </div>
+            </div>
+            
+ 
+        </article>
+        <article class="productCart-Article">
+            <div class="article-img"> 
+                <a href=""><img src="/images/kazan.png" alt="kazan"></a></div>
+            <div class="info-article">
+                <div class="info-article-titulos">
+                <a href="">Operacion kazan</a>
+                <span>Vicente Valles</span>
+                <p>Libro</p>
+            </div>
+            <div class="info-article-funciones">
+                <p>$3560</p>
+                <input type="number" placeholder="1">
+                <a class="article-trash" href=""><i class="fa-regular fa-trash-can"></i></a>
+            </div>
+        </div>
+        </article>
+        <article class="productCart-Article">
+            <div class="article-img"> <a href=""><img src="/images/fuego.png" alt="Fuego"></a>
+            </div>
+            <div class="info-article">
+                <div class="info-article-titulo">
+                    <a href="">Trilogia Fuego</a>
+                    <span>Joana Marcus</span>
+                    <p>Audio libro</p>
+                </div>
+                <div class="info-article-funciones">
+                    <p>$1750</p>
+                    <input  type="number" placeholder="1">
+                    <a class="article-trash" href=""><i class="fa-regular fa-trash-can"></i></a>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section class="productCart-infoEstado">
+        <section class="productCart-infoEspecifica">
+            <p>Cupon de descuento</p>
+            <input type="text">
+            <a href=""><button>Añadir</button></a>
+        </section>
+        <section class="productCart-infoEspecifica">
+            <p>Formas de pago</p>
+            <a href="">Agregar Metodo</a>
+        </section>
+        <section class="productCart-infoEspecifica">
+            <p>Metodo de Envio</p>
+            <a href="">Calcular costos de envios</a>
+    </section>
+    <section class="productCart-infoEspecifica" id="productCart-Total">
+        <div class="productCart-span">
+            <span>Total</span>
+            <span>$4800</span>
+        </div>
+            <a class="productCart-button" href=""><button>Comprar</button></a>
+        </section>
+    </section>
+</main>
+<footer class="footer">
+
+    <section class="footer__section">
+
+      <article class="footer__section__redes">
+        <h4>Síguenos en</h4>
+        <ul class="footer__redes">
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+      </article>
+
+      <article class="footer__section__tematicas">
+        <h4>TEMÁTICA</h4>
+        <ul class="footer__list">
+          <li><a href="#">Infantil</a></li>
+          <li><a href="#">Jóvenes</a></li>
+          <li><a href="#">Adultos</a></li>
+          <li><a href="#">Los más vendidos</a></li>
+        </ul>
+      </article>
+
+      <article class="footer__section__autores">
+        <h4>Autores</h4>
+        <ul class="footer__autores">
+          <li><a href="#">Carmen Mola</a></li>
+          <li><a href="#">Joana Marcús</a></li>
+          <li><a href="#">Vicente Vallés</a></li>
+          <li><a href="#">Mikerack</a></li>
+        </ul>
+      </article>
+    </section>  
+
+    <section class="footer__final"> 
+
+      <article class="footer__section__logo">
+        <a href="#"><img src="/images/logo-negro.png" alt=""></a>
+        <h5>Páginas Bellas</h5>
+      </article>
+
+      <article class="footer__section__creditos">
+        <a href="#">Preguntas frecuentes</a>
+        <a href="#">Conocénos</a>
+        <a href="#">Contactanos</a>
+        <a href="#">Condiciones de uso</a>
+        <a href="#">Política de cookies</a>
+        <a href="#">Política de privacidad</a>
+      </article>
+
+      <article class="footer__section__copyright">
+        <p>Copyright © 2022 Páginas Bellas</p>
+        <p>Todos los derechos reservados</p>
+      </article>
+    </section>   
+
+    
+
+  </footer>
+</body>
+
+</html>
