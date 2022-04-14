@@ -1,0 +1,353 @@
+
+
+main div.detalle-producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 00.5rem;
+  padding: 0.5rem 0;
+  font-size: var(--price);
+}
+
+main div.detalle-producto div.imagenes section.imagen-principal {
+  width: 100%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+main div.detalle-producto div.imagenes section.imagen-principal img {
+  border-radius:6px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 400px;
+
+}
+
+
+main div.detalle-producto div.contenido-text {
+  border-radius: 6px;
+  margin: 1rem 0.1rem;
+  width: 100%;
+  padding: 0.4rem 1rem;
+  box-shadow: 2px 2px 2px 2px var(--black);
+}
+
+main div.detalle-producto div.contenido-text section.detalles h1{
+  text-align: center;
+  font-size: var(--title);
+  color:var(--black);
+  font-weight:bolder;
+}
+
+main div.detalle-producto div.contenido-text section.detalles p {
+  text-align: center;
+  font-size: var(--discounts-descriptions);
+  color:var(--black);
+}
+main div.detalle-producto div.contenido-text section.detalles p.descripcion-libro{
+  text-align: initial;
+  font-size: larger;
+}
+main div.detalle-producto div.contenido-text section.detalles div.price{
+  text-align: center;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+main div.detalle-producto div.contenido-text section.detalles p input {
+  width: 1.5rem;
+  text-align: center;
+}
+
+main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito {
+  border-radius:1px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0.5rem 0;
+  outline-color: rgba(49, 138, 172, 0);
+  outline-offset: 80px;
+  text-shadow: 1px 1px 6px rgb(7, 6, 6);
+  
+}
+#codigopostal{
+border-radius:10px;
+font-size: 0.9rem;
+}
+main div.detalle-producto div.contenido-text{
+  border: 2px solid var(--rosa);
+}
+
+main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito button {
+  border-radius: 14px;
+  color: rgba(7, 4, 4, 0.993) !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: var(--rosa);
+  border: 2px solid;
+  border-color: #0e0f0f;
+  position: relative;
+  cursor:pointer
+}
+main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito button:hover{
+  color: rgb(238, 121, 3) !important;
+  box-shadow: 0 4px 16px rgb(228, 231, 181);
+  transition: all 0.2s ease;
+}
+main div.detalle-producto div.contenido-text section.detalles div.medio-pago{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+main div.detalle-producto div.contenido-text section.detalles div.medio-pago a.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: fit-content;
+    padding: 5px;
+    transform: rotateY(-169deg);
+    top: -15px;
+    right: 20px;
+    font-size: var(--title);
+
+}
+main div.detalle-producto div.contenido-text section.detalles div.descripcion h3.autor{
+  font-size: var(--title);
+  text-align: center;
+  color: var(--black);
+  cursor: pointer;
+  font-style: italic;
+}
+main div.detalle-producto div.contenido-text section.detalles div.descripcion p.descripcion-texto{
+  font-size: var(--paragraphs);
+  font-style:inherit;
+
+
+}
+main section.segunda-section{
+  display: flex;
+  width: 480px;
+  height: 600px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 5px;
+  justify-content: space-around; 
+  margin: 2px;
+
+}
+
+main div.titulo-rel h3{
+  
+  font-size:var(--title);
+  text-align: center;
+  
+}
+main section.segunda-section article.producto-rel div.box-img{
+  background-color: var(--grisOscuro);
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding: 10px;
+  margin: 10px;
+  border-bottom: 3px solid var(--rosa);
+}
+main section.segunda-section article.producto-rel div.box-img img{
+  width: 100%
+}
+main section.segunda-section article.producto-rel{
+  width: 40%;
+  height: 60%;
+  border:1px solid var(--rosa);
+ box-shadow : 0px 0px 10px rgb(214, 155, 155);
+ margin-bottom: 10px;
+}
+main section.segunda-section article.producto-rel:hover{
+ box-shadow: 0 4px 16px var(--rosa);
+ transition: all 0.2s ease
+}
+/* Valoracion del libro */
+#form {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+  }
+  
+  #form label {
+  font-size: 20px;
+  }
+  
+  input[type="radio"] {
+  display: none;
+  }
+  
+  label {
+  color: grey;
+  }
+  
+  .clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  }
+  
+  label:hover,
+  label:hover ~ label {
+  color: orange;
+  }
+  
+  input[type="radio"]:checked ~ label {
+  color: orange;
+  }
+
+/* Media queries */
+/* Tablet */
+@media screen and (min-width:768px){
+  main div.detalle-producto div.imagenes {
+      display: flex;
+      flex-direction: row-reverse;
+      
+  }
+  main div.detalle-producto div.contenido-text section.detalles h1{
+    text-align: inherit;
+    font-size: var(--title);
+    color:var(--black);
+    font-weight:bolder;
+    
+  }
+  main div.detalle-producto div.contenido-text section.detalles p {
+    flex-direction: row;
+    text-align: inherit;
+    font-size: var(--discounts-descriptions);
+    color: white; text-shadow: black 0.1em 0.1em 0.2em;
+    font-style: oblique;
+  }
+  main div.detalle-producto div.contenido-text section.detalles div.price{
+    text-align: inherit;
+    color: rgb(221, 148, 148); text-shadow: black 0.1em 0.1em 0.2em 
+   }
+   main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito{
+     justify-content: flex-start;
+   }
+   main div.detalle-producto div.contenido-text section.detalles div.medio-pago{
+     display: flex;
+     justify-content:flex-start;
+   }
+  
+  main section.segunda-section{
+    
+      display: flex;
+      width: 100%;
+      height: 60%;
+      max-width: 100%;
+      flex-wrap: nowrap;
+      flex-direction: row;
+  }
+  main section.segunda-section article.producto-rel{
+    display: flex;
+    flex-direction:column;
+     height: 60%;
+     border:1px solid var(--rosa);
+    box-shadow : 0px 0px 10px rgb(214, 155, 155);
+    margin-bottom: 10px;
+    width: 50%;
+    margin: 6px;
+   }
+   
+   
+    }
+    
+    
+  
+
+
+/* desktop */
+@media screen and (min-width:1024px){
+
+  main div.detalle-producto {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      max-width: 100%;
+  }
+
+
+  main div.detalle-producto div.imagenes {
+      display: flex;
+      flex-direction: row-reverse;
+      width: 40%;
+      height: 60%;
+      max-width: 50%;
+      
+     
+      
+  }
+  main div.detalle-producto div.imagenes section.imagen-principal img{
+    border-radius: 10px;
+  }
+
+  main div.detalle-producto div.contenido-text {
+    border-radius:6px;
+      margin:4px;
+      width: 60%;
+      padding:3px;
+      
+  }
+  main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito {
+    border-radius:1px;
+    display: flex;
+    justify-content:inherit;
+    width: 100%;
+    margin: 0.5rem 0;
+    outline-color: rgba(49, 138, 172, 0);
+    outline-offset: 80px;
+    text-shadow: 1px 1px 6px rgb(7, 6, 6);
+    
+  }
+  main div.detalle-producto div.contenido-text section.detalles h2{
+    text-align: initial;
+  }
+  main div.detalle-producto div.contenido-text section.detalles p{
+    text-align: left;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em
+  }
+  main section.segunda-section{
+    display: flex;
+    height: 800px;
+    align-content: flex-start;
+    padding: 5px;
+    justify-content: space-between;
+    box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 )
+  
+  }
+  main section.segunda-section article.producto-rel{
+   width: 300px;
+   border-radius: 16px;
+   }
+  main div.titulo-rel{
+    
+    font-size: 20px;
+    text-align: center;
+    
+  }
+  main section.segunda-section article.producto-rel div.box-img img{
+    width: 100%;
+  }
+main section.segunda-section article.producto-rel div.text-detalle p{
+text-align: center;
+  font-size: 18px;
+font-weight: 200;
+color: rgb(207, 140, 140); text-shadow: black 0.1em 0.1em 0.2em
+}
+main section.segunda-section article.producto-rel div.producto-favorito h5{
+  color:  white; text-shadow: black 0.1em 0.1em 0.2em;
+  font-size: var(--title);
+  text-align: center;
+  
+}
+}

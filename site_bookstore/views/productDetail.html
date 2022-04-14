@@ -1,13 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Páginas Bellas | Detalle del producto</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/37c7e740fb.js" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
+    <header class="header">
+
+        <a href="#" class="logo"><img src="/images/logo-negro.png" alt=""></a>
+
+        <nav class="navbar">
+            <ul class="nav_links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-search">
+            <input type="text" class="nav-search-input" placeholder="Buscar...">
+            <svg class="lupa" width="512" height="512" viewBox="0 0 512 512" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M505 442.7L405.3 343C400.8 338.5 394.7 336 388.3 336H372C399.6 300.7 416 256.3 416 208C416 93.1 322.9 0 208 0C93.1 0 0 93.1 0 208C0 322.9 93.1 416 208 416C256.3 416 300.7 399.6 336 372V388.3C336 394.7 338.5 400.8 343 405.3L442.7 505C452.1 514.4 467.3 514.4 476.6 505L504.9 476.7C514.3 467.3 514.3 452.1 505 442.7ZM208 336C137.3 336 80 278.8 80 208C80 137.3 137.2 80 208 80C278.7 80 336 137.2 336 208C336 278.7 278.8 336 208 336Z"
+                    fill="#A9A4A4" />
+            </svg>
+        </div>
+
+        <div class="menu-button"><i class="fa-solid fa-bars"></i></div>
+
+        <div class="icons">
+            <a class="cart" href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a class="user" href="#"><i class="fas fa-user-circle"></i></a>
+        </div>
+
+    </header>
+    <main>
+        <div class="detalle-producto">
+            <div class="imagenes">
+                <section class="imagen-principal">
+                    <img src="images/bestia.png" alt="">
+                </section>
+            </div>
+            <div class="contenido-text">
+                <section class="detalles">
+                    <div>
+                        <h1>La Bestia</h1>
+                    </div>
+                    <div class="price">
+                        <span>$1450</span>
+                    </div>
+                    <form>
+                        <p class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5">
+                            <!--
+                          --><label for="radio1">★</label>
+                            <!--
+                          --><input id="radio2" type="radio" name="estrellas" value="4">
+                            <!--
+                          --><label for="radio2">★</label>
+                            <!--
+                          --><input id="radio3" type="radio" name="estrellas" value="3">
+                            <!--
+                          --><label for="radio3">★</label>
+                            <!--
+                          --><input id="radio4" type="radio" name="estrellas" value="2">
+                            <!--
+                          --><label for="radio4">★</label>
+                            <!--
+                          --><input id="radio5" type="radio" name="estrellas" value="1">
+                            <!--
+                          --><label for="radio5">★</label>
+                        </p>
+                    </form>
+                    <div class="precio-pago">
+                        <p> <b>24</b> Cuotas de <b>$138</b> </p>
+                        <a class="icon-card"><i class="fas fa-credit-card"></i></a>
+                        <a class="medio-pago" href="/">Ver Medio De Pago</a>
+                    </div>
+
+                    <div class="añadir-carrito">
+                        
+                        <button>Agregar al carrito</button>
+                    </div>
+                    <div class="medio-pago">
+                        <a class="icon"><i class="fas fa-truck"></i></a>
+                        <p>Modos De Envios</p>
+                    </div>
+                    <div class="añadir-carrito">
+                        <input type="text" id="codigopostal" placeholder="código postal" maxlength="5"
+                            required="required">
+                        <button>Calcular</button>
+                    </div>
+                    <div class="descripcion">
+                        <h3 class="autor">Autor: Carmen Mola</h3>
+                        <p>Corre el año 1834 y Madrid, una pequeña ciudad que trata de abrirse paso más allá de las
+                            murallas que la rodean, sufre una terrible epidemia de cólera. Pero la peste no es lo único que aterroriza a sus
+                            habitantes: en los arrabales aparecen cadáveres desmembrados de niñas que nadie reclama. Todos los rumores apuntan a
+                            la Bestia, un ser a quien nadie ha visto pero al que todos temen..
+                        </p>
+                        <p class=" descripcion-libro">
+                           <p>corresponde a: La Bestia</p> 
+                           <p>Formato: Libro con sobrecubierta| 13.5 x 19 cm |</p>
+                           <p>peso: 300 grs</p>
+                           <p>paginas:403 Págs</p>
+                            
+                        </p>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+        <div class="titulo-rel">
+            <h3>Productos Relacionados</h3>
+        </div>
+        <section class="segunda-section">
+
+            
+
+            <article class="producto-rel">
+                <div class="box-img">
+                    <img src="/images/kazan.png" alt="Dormir en un mar de estrellas"width="100%">
+                </div>
+                        
+                    
+                    <div class="detalles-producto">
+                        <div class="producto-favorito">
+                            <h5 class="name-product">Operacion Kazan</h5>
+                        </div>
+                        <div class="text-detalle">
+                            <p>$4.500</p>
+                            <p>% off</p>
+                        </div>
+                        
+                    </div>
+                </article>
+                <article class="producto-rel">
+                    <div class="box-img">
+                        <img src="/images/kazan.png" alt="Dormir en un mar de estrellas"width="100%">
+                    </div>
+                            
+                        
+                        <div class="detalles-producto">
+                            <div class="producto-favorito">
+                                <h5 class="name-product">Operacion Kazan</h5>
+                            </div>
+                            <div class="text-detalle">
+                                <p>$4.500</p>
+                                <p>% off</p>
+                            </div>
+                            
+                        </div>
+                    </article>
+                    <article class="producto-rel">
+                        <div class="box-img">
+                            <img src="/images/kazan.png" alt="Dormir en un mar de estrellas"width="100%">
+                        </div>
+                                
+                            
+                            <div class="detalles-producto">
+                                <div class="producto-favorito">
+                                    <h5 class="name-product">Operacion Kazan</h5>
+                                </div>
+                                <div class="text-detalle">
+                                    <p>$4.500</p>
+                                    <p>% off</p>
+                                </div>
+                                
+                            </div>
+                        </article>
+                        <article class="producto-rel">
+                            <div class="box-img">
+                                <img src="/images/kazan.png" alt="Dormir en un mar de estrellas"width="100%">
+                            </div>
+                                    
+                                
+                                <div class="detalles-producto">
+                                    <div class="producto-favorito">
+                                        <h5 class="name-product">Operacion Kazan</h5>
+                                    </div>
+                                    <div class="text-detalle">
+                                        <p>$4.500</p>
+                                        <p>% off</p>
+                                    </div>
+                                    
+                                </div>
+                            </article>
+        </section>
+
+    </main>
+    <footer class="footer">
+
+        <section class="footer__section">
     
+          <article class="footer__section__redes">
+            <h4>Síguenos en</h4>
+            <ul class="footer__redes">
+              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+          </article>
+    
+          <article class="footer__section__tematicas">
+            <h4>TEMÁTICA</h4>
+            <ul class="footer__list">
+              <li><a href="#">Infantil</a></li>
+              <li><a href="#">Jóvenes</a></li>
+              <li><a href="#">Adultos</a></li>
+              <li><a href="#">Los más vendidos</a></li>
+            </ul>
+          </article>
+    
+          <article class="footer__section__autores">
+            <h4>Autores</h4>
+            <ul class="footer__autores">
+              <li><a href="#">Carmen Mola</a></li>
+              <li><a href="#">Joana Marcús</a></li>
+              <li><a href="#">Vicente Vallés</a></li>
+              <li><a href="#">Mikerack</a></li>
+            </ul>
+          </article>
+        </section>  
+    
+        <section class="footer__final"> 
+    
+          <article class="footer__section__logo">
+            <a href="#"><img src="/images/logo-negro.png" alt=""></a>
+            <h5>Páginas Bellas</h5>
+          </article>
+    
+          <article class="footer__section__creditos">
+            <a href="#">Preguntas frecuentes</a>
+            <a href="#">Conocénos</a>
+            <a href="#">Contactanos</a>
+            <a href="#">Condiciones de uso</a>
+            <a href="#">Política de cookies</a>
+            <a href="#">Política de privacidad</a>
+          </article>
+    
+          <article class="footer__section__copyright">
+            <p>Copyright © 2022 Páginas Bellas</p>
+            <p>Todos los derechos reservados</p>
+          </article>
+        </section>   
+    
+        
+    
+      </footer>
 </body>
+
 </html>

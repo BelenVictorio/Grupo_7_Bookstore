@@ -1,5 +1,4 @@
 * {
-    font-family: 'Barlow Condensed', sans-serif;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
@@ -10,5 +9,9 @@
 
 body {
     font-size: 62.5%;
-    background-color: var(--grisOscuro);
+     background-color: var(--grisOscuro);
+
+}
+a{
+    color:var(--rosa)
 }

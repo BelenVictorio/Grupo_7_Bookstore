@@ -6,4 +6,10 @@
   --grisOscuro: #373737;
   --rosa: #ffc2ae;
   --amarilloEstrellas: #FFE346;
+ /* fuentes  tamaño*/
+  --paragraphs: 12px;
+ --title: 22px;
+ --prices: 18px;
+ --discounts-descriptions: 16px
+
 }
