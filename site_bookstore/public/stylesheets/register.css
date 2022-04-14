@@ -1,21 +1,25 @@
 .register{
-    background-image: url(/images/img-registercel.jpg);
+    background-image: url(/images/fondo-register.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
 }
-
+ /* Caja contenedora de la seccion*/
 .register-box{
     width: 80%;
     margin: auto;
-    background-color: rgba(128, 128, 128, 0.7);
+    background-color: rgba(55, 55, 55, 0.8);
     text-align: center;
     padding: 20px;
+    color: var(--white);
 }
 .register-box h2{
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 600;
     padding: 10px;
+    text-align: justify;
     text-transform: uppercase;
 }
 
@@ -26,6 +30,7 @@
     text-align: justify;
 }
 
+/* caja contenedora del formulario*/
 .register-form{
     display: flex;
     flex-direction: column;
@@ -35,8 +40,220 @@
 
 }
 
+/* Div del formulario*/
 .register-info{
     margin:10px;
-    text-align: justify;
+    text-align: center;
     font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.register-info input{
+    padding: 15px;
+    color: var(--black);
+    background-color: var(--rosa);
+    width: 100%;
+    border: none;
+}
+
+.register-info span{
+    text-align: justify;
+    font-size: 12px;
+    color: red;
+}
+
+.register-info select{
+    color: var(--black);
+    background-color: var(--rosa);
+    font-size: 12px;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Div de las preferencias*/
+.register-eleccion{
+    margin: 20px;
+    width: 100%;
+    flex: wrap;
+}
+
+ul li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    padding-bottom: 20px;
+    font-size: 16px;
+
+}
+ul input{
+    margin: 5px;
+    align-items: center;
+}
+
+/* Terminos y condiciones*/
+.register-condiciones{
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    margin-left: 10%;
+    margin-bottom: 5px;
+}
+
+.register-condiciones a{
+    color: var(--black);
+}
+
+/* Botones*/
+.register-boton-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.register-button{
+    padding: 10px;
+    background-color: var(--rosa);
+    color: var(--black);
+    margin: auto;
+}
+
+.register-boton-rojo{
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid;
+    background-color:  red;
+    color: var(--white);
+    margin: auto;
+}
+
+.register-boton-azul {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid;
+    background-color: blue;
+    color: var(--white);
+    margin: auto;
+}
+
+
+@media (min-width: 480px){
+
+    .register-box h2{
+        text-align: center;
+    }
+    
+
+    .register-info input{
+        padding: 5px;
+        width: 90%;
+    }
+
+    .register-info select{
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px){
+    .register{
+        background-image: url(/images/fondoRegister.jpg);
+    }
+
+    .register-form-info{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .register-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 40%;
+    }
+
+    .register-info input{
+        padding: 10px;
+        width: 100%;
+    }
+
+    .register-info select{
+        width: 100%;
+    }
+    .register-info p{
+        margin: auto;
+    }
+
+    .register-eleccion{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin-left: 12%;
+        text-align: start;
+    }
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-right: 20px;
+        width: 80%;
+    }
+
+    ul li{
+        width: 40%;
+    }
+
+    .register-condiciones{
+        width: 100%;
+    }
+
+    .register-boton-box{
+        align-content:space-around;
+        width: 60%;
+        margin: auto;
+    }
+    .register-button{
+        margin-right: 20px;
+    }
+
+    .register-boton-rojo{
+        display: flex;
+        direction: row;
+        margin-right: 20px;
+    }
+
+    .register-boton-azul{
+        display: flex;
+        direction: row;
+        margin: 1px;
+    }
+
+}
+
+
+@media (min-width: 1024px){
+    
+    .register-box{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .register-box h2{
+        order: -1;
+    }
+    .register-box p{
+        order: -1;
+    }
 }
