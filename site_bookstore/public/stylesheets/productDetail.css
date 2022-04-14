@@ -1,4 +1,6 @@
-
+body{
+  background-color:var(--grisOscuro)
+}
 
 main div.detalle-producto {
   display: flex;
@@ -132,13 +134,10 @@ main div.detalle-producto div.contenido-text section.detalles div.descripcion p.
 }
 main section.segunda-section{
   display: flex;
-  width: 480px;
-  height: 600px;
   flex-wrap: wrap;
   align-content: flex-start;
   padding: 5px;
   justify-content: space-around; 
-  margin: 2px;
 
 }
 
