@@ -96,7 +96,7 @@ main div.detalle-producto div.contenido-text section.detalles div.añadir-carrit
 }
 main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito button:hover{
   color: rgb(238, 121, 3) !important;
-  box-shadow: 0 4px 16px rgb(228, 231, 181);
+  box-shadow: 0 4px 16px rgb(5, 5, 4);
   transition: all 0.2s ease;
 }
 main div.detalle-producto div.contenido-text section.detalles div.medio-pago{
