@@ -1,0 +1,125 @@
+.login{
+    background-image: url(/images/fondologin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* caja contenedora*/
+.login-box{
+    width: 70%;
+    margin: auto;
+    background-color: rgba(55, 55, 55, 0.7);
+    text-align: center;
+    padding: 10px;
+}
+
+ /* Titulo*/
+.login-box h2{
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px;
+    text-align:justify;
+    text-transform: uppercase;
+}
+
+/* Caja contenedora del form */
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 10px;
+    margin: 0px 20px;
+    color: var(--white);
+}
+
+/* informacion de inicio de sesion*/
+.login-info{
+    margin:10px;
+    text-align: justify;
+    font-size: 14px;
+}
+
+.login-info input{
+    border-radius: 5%;
+    border: none;
+    padding: 15px;
+    background-color: var(--rosa);
+    color: var(--white);
+    width: 100%;
+}
+
+.login-info label{
+    font-size: 12px;
+}
+
+.login-info p{
+    font-size: 12px;
+}
+
+#recordarme{
+    width: 10%;
+    padding: 5px;
+    text-align: justify;
+}
+
+/* olvido de contraseña*/
+.login-pregunta{
+    text-align: justify;
+    font-size: 12px;
+}
+
+/* boton de inicio*/
+.login-info a{
+    padding: 5px;
+    font-size: 12px;
+    color: var(--white);
+    text-align: center;
+    display: block;
+}
+
+.login-info button{
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10%;
+    display: inline;
+    color: var(--black);
+    background-color: var(--rosa);
+}
+
+/*direcciones para poder entrar en con google o facebook*/
+.login-info-direcciones{
+    text-align: justify;
+    padding: 5px;
+    margin: 10px;
+    font-size: 12px;
+}
+
+.login-direccion-rojo button{
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.login-direccion-azul button{
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+@media (min-width: 768px){
+    .login{
+        background-image: url(/images/fondoHome.jpg);
+    }
+}
