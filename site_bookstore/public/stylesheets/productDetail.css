@@ -13,6 +13,7 @@ main div.detalle-producto {
 
 main div.detalle-producto div.imagenes section.imagen-principal {
   width: 100%;
+  display:flex;
   position: relative;
   align-items: center;
   justify-content: center;
@@ -46,7 +47,7 @@ main div.detalle-producto div.contenido-text section.detalles h1{
 main div.detalle-producto div.contenido-text section.detalles p {
   text-align: center;
   font-size: var(--discounts-descriptions);
-  color:var(--black);
+  color: rgb(214, 209, 209); text-shadow: black 0.1em 0.1em 0.2em;
 }
 main div.detalle-producto div.contenido-text section.detalles p.descripcion-libro{
   text-align: initial;
@@ -56,6 +57,7 @@ main div.detalle-producto div.contenido-text section.detalles div.price{
   text-align: center;
   font-size: 24px;
   font-weight: bolder;
+  color: rgb(221, 148, 148); text-shadow: black 0.1em 0.1em 0.2em
 }
 
 main div.detalle-producto div.contenido-text section.detalles p input {
@@ -82,23 +84,26 @@ main div.detalle-producto div.contenido-text{
   border: 2px solid var(--rosa);
 }
 
-main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito button {
-  border-radius: 14px;
-  color: rgba(7, 4, 4, 0.993) !important;
-  font-size: 20px;
-  font-weight: 500;
-  padding: 0.5em 1.2em;
-  background: var(--rosa);
-  border: 2px solid;
-  border-color: #0e0f0f;
-  position: relative;
-  cursor:pointer
+button.add-button {
+  background-color: var(--black);
+  border-radius: 9px;
+  border-style: none;
+  padding: 6px;
+  transition: all 0.5s ease-in;
 }
-main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito button:hover{
-  color: rgb(238, 121, 3) !important;
-  box-shadow: 0 4px 16px rgb(5, 5, 4);
-  transition: all 0.2s ease;
+
+button.add-button:hover{
+  background-color: var(--rosa);
+  
 }
+
+button.add-button p.add{
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--title); 
+  margin-left: -4px;
+}
+
 main div.detalle-producto div.contenido-text section.detalles div.medio-pago{
   display:flex;
   align-items: center;
@@ -256,9 +261,16 @@ main section.segunda-section article.producto-rel:hover{
     width: 50%;
     margin: 6px;
    }
+   main section.segunda-section article.producto-rel div.producto-favorito h5.name-product{
+    color:  white; text-shadow: black 0.1em 0.1em 0.2em;
+    font-size: var(--title);
+    text-align: center;
+    
+  }
+  }
    
    
-    }
+    
     
     
   

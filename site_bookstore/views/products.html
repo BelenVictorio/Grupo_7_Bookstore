@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas Bellas | Detalle del producto</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/37c7e740fb.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header class="header">
+
+        <a href="#" class="logo"><img src="/images/logo-negro.png" alt=""></a>
+
+        <nav class="navbar">
+            <ul class="nav_links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-search">
+            <input type="text" class="nav-search-input" placeholder="Buscar...">
+            <svg class="lupa" width="512" height="512" viewBox="0 0 512 512" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M505 442.7L405.3 343C400.8 338.5 394.7 336 388.3 336H372C399.6 300.7 416 256.3 416 208C416 93.1 322.9 0 208 0C93.1 0 0 93.1 0 208C0 322.9 93.1 416 208 416C256.3 416 300.7 399.6 336 372V388.3C336 394.7 338.5 400.8 343 405.3L442.7 505C452.1 514.4 467.3 514.4 476.6 505L504.9 476.7C514.3 467.3 514.3 452.1 505 442.7ZM208 336C137.3 336 80 278.8 80 208C80 137.3 137.2 80 208 80C278.7 80 336 137.2 336 208C336 278.7 278.8 336 208 336Z"
+                    fill="#A9A4A4" />
+            </svg>
+        </div>
+
+        <div class="menu-button"><i class="fa-solid fa-bars"></i></div>
+
+        <div class="icons">
+            <a class="cart" href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a class="user" href="#"><i class="fas fa-user-circle"></i></a>
+        </div>
+
+    </header>
+        <main class="main-catalogo">
+            <h1 class="titulo-catalogo">Productos</h1>
+            <hr class="hr-separacion">
+            <div class="container-catego">
+                <div class="orden-info">
+            
+                    <label for="sort">Ordenar por:</label>
+                    <select name="Orden" id="Orden">
+                      <option value="">-Mas vendidos</option>
+                      <option value="m">Precio: Mayor a Menor</option>
+                      <option value="n">Precio: Menor a Mayor</option>
+                      <option value="de">A-Z</option>
+                      <option value="as">Z-A</option>
+                      <option value="Nuevo">Mas Nuevo a Mas viejo</option>
+                      <option value="viejo">Mas Viejo a Mas Nuevo</option>
+                      <option value="mas">Mas vendidos</option>
+                      
+                    </select>
+        
+                  </div>
+                  <div class="orden-info">
+                    <label for="sort">Categorias</label>
+                    <select name="categoria" id="categoria">
+                      <option value="">Categorias</option>
+                      <option value="jovenes">Jovenes</option>
+                      <option value="niños">Niños</option>
+                      <option value="adulto">Adultos</option>
+                      
+                    </select>
+        
+                  </div>
+            </div>
+           
+              
+            <section class="section-producto">
+                <article class="productos-catalogo">
+                    <div class="foto-catalogo">
+                        <a href="#"><img class="zoom" width="100%" src="/images/bestia.png" alt="La Bestia"></a><!-- image a photo -->
+                    </div>
+                    <article class="detalles-catalogo">
+                        <p>La Bestia</p>
+                        <p>Precio por unidad</p>
+                        <p class="precio-catalogo">$1450</p>
+                        <button class="add-button">
+                            <a href="product-detail"><p class="add">Agregar al carrito</p></a>
+                        </button>
+                    </article>
+                </article>
+                <article class="productos-catalogo">
+                    <div class="foto-catalogo">
+                        <a href="#"><img width="100%" src="/images/kazan.png" alt="Operacion Kazan"></a><!-- image a photo -->
+                    </div>
+                    <article class="detalles-catalogo">
+                        <p>Operacion  Kazan</p>
+                        <p>Precio por unidad</p>
+                        <p class="precio-catalogo">$8000</p>
+                        <button class="add-button">
+                            <a href="product-detail"><p class="add">Agregar al carrito</p></a>
+                        </button>
+                    </article>
+                </article>
+                <article class="productos-catalogo">
+                    <div class="foto-catalogo">
+                        <a href="#"><img width="100%" src="/images/fuego.png" alt="trilogia Fuego"></a><!-- image a photo -->
+                    </div>
+                    <article class="detalles-catalogo">
+                        <p>Trilogia Fuego</p>
+                        <p>Precio por unidad</p>
+                        <p class="precio-catalogo">$2200</p>
+                        <button class="add-button">
+                            <a href="product-detail"><p class="add">Agregar al carrito</p></a>
+                        </button>
+                    </article>
+                </article>
+                <article class="productos-catalogo">
+                    <div class="foto-catalogo">
+                        <a href="#"><img width="100%" src="/images/book-adults.png" alt="Dormir en un Mar de Estrella"></a><!-- image a photo -->
+                    </div>
+                    <article class="detalles-catalogo">
+                        <p>Mar de Estrella</p>
+                        <p>Precio por unidad</p>
+                        <p class="precio-catalogo">$4200</p>
+                        <button class="add-button">
+                            <a href="product-detail"><p class="add">Agregar al carrito</p></a>
+                        </button>
+                    </article>
+                </article>
+                <article class="productos-catalogo">
+                    <div class="foto-catalogo">
+                        <a href="#"><img width="100%" src="/images/book-jovs.png" alt="a Dos metrs de ti"></a><!-- image a photo -->
+                    </div>
+                    <article class="detalles-catalogo">
+                        <p>A dos Metros de ti</p>
+                        <p>Precio por unidad</p>
+                        <p class="precio-catalogo">$8000</p>
+                        <button class="add-button">
+                            <a href="product-detail"><p class="add">Agregar al carrito</p></a>
+                        </button>
+                    </article>
+                </article>
+                <article class="productos-catalogo">
+                    <div class="foto-catalogo">
+                        <a href="#"><img width="100%" src="/images/book-kids.png" alt="Operacion Kazan"></a><!-- image a photo -->
+                    </div>
+                    <article class="detalles-catalogo">
+                        <p>Alicia el pais de las maravillas</p>
+                        <p>Precio por unidad</p>
+                        <p class="precio-catalogo">$3325</p>
+                        <button class="add-button">
+                            <a href="product-detail"><p class="add">Agregar al carrito</p></a>
+                        </button>
+                    </article>
+                </article>
+                <article class="productos-catalogo">
+                    <div class="foto-catalogo">
+                        <a href="#"><img width="100%" src="/images/fuego.png" alt="Operacion Kazan"></a><!-- image a photo -->
+                    </div>
+                    <article class="detalles-catalogo">
+                        <p>Trilogia Fuego</p>
+                        <p>Precio por unidad</p>
+                        <p class="precio-catalogo">$2200</p>
+                        <button class="add-button">
+                            <a href="product-detail"><p class="add">Agregar al carrito</p></a>
+                        </button>
+                    </article>
+                </article>
+                <article class="productos-catalogo">
+                    <div class="foto-catalogo">
+                        <a href="#"><img width="100%" src="/images/mike.png" alt="Mike Craft"></a><!-- image a photo -->
+                    </div>
+                    <article class="detalles-catalogo">
+                        <p>Mike Crack</p>
+                        <p>Precio Por Unidad</p>
+                        <p class="precio-catalogo">$2700</p>
+                        <button class="add-button">
+                            <a href="product-detail"><p class="add">Agregar al carrito</p></a>
+                        </button>
+                    </article>
+                </article>
+                
+            </section>
+      </main>
+</body>
+</html>
