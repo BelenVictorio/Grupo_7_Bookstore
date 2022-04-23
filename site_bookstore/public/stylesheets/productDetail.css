@@ -83,7 +83,15 @@ font-size: 0.9rem;
 main div.detalle-producto div.contenido-text{
   border: 2px solid var(--rosa);
 }
-
+main div.detalle-producto button.add-button2{
+  display: flex;
+  background-color: var(--black);
+  justify-content: center;
+  border-radius: 9px;
+  border-style: none;
+  padding: 6px;
+  transition: all 0.5s ease-in;
+}
 button.add-button {
   background-color: var(--black);
   border-radius: 9px;
@@ -174,6 +182,95 @@ main section.segunda-section article.producto-rel{
 main section.segunda-section article.producto-rel:hover{
  box-shadow: 0 4px 16px var(--rosa);
  transition: all 0.2s ease
+}
+.testimonios{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+}
+.testimonios__header{
+  margin: 50px 0;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonios__header h1{
+  font-size: var(--title);
+  font-weight: 500;
+  background-color: black;
+  color:white;
+  padding: 10px 20px
+
+}
+.testimonios__header span{
+  font-size: 2.2rem;
+  color:var(--white);
+  margin-bottom: 25px;
+  text-transform: uppercase;
+
+}
+.testimonios__contenedor{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.testimonios_caja{
+  width: 500px;
+  box-shadow: 2px 2px 30px rgba(49, 138, 172, 0.1);
+  background-color: var(--white);
+  padding: 20px;
+  margin: 15px;
+  cursor: pointer;
+}
+.perfil-img{
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 30px;
+}
+.perfil-img img{
+  width: 100%;
+  height: 100%;
+  object-fit:center ;
+}
+.perfil{
+  display: flex;
+  align-items: center;
+}
+.name-user{
+  display: flex;
+  flex-direction: column;
+}
+.name-user strong{
+  color:var(--black);
+  font-size: 1.3rem;
+}
+.name-user span{
+  color:grey;
+  font-size: 1.3rem;
+}
+.reseña{
+  color:orange;
+}
+.caja-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.comentarios__clientes{
+  color:rgb(110, 95, 95)
+}
+::selection{
+  color:var(--white);
+  background-color: #252525;
 }
 /* Valoracion del libro */
 #form {
@@ -266,6 +363,13 @@ main section.segunda-section article.producto-rel:hover{
     font-size: var(--title);
     text-align: center;
     
+  }
+  .testimonios{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
   }
   }
    
