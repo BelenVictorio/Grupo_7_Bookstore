@@ -43,12 +43,14 @@
 
 .article-img {
     background-color: var(--rosa);
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
 }
 
 .article-img img {
     width: 120px;
-
+    margin: 12px;
 }
 
 /* Informacion como nombre, y libro, precio*/
