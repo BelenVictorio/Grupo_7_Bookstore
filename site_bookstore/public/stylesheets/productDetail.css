@@ -1,5 +1,5 @@
 body{
-  background-color:var(--grisOscuro)
+  background-color: var(--grisOscuro);
 }
 
 main div.detalle-producto {
@@ -135,7 +135,7 @@ main div.detalle-producto div.contenido-text section.detalles div.medio-pago a.i
 main div.detalle-producto div.contenido-text section.detalles div.descripcion h3.autor{
   font-size: var(--title);
   text-align: center;
-  color: var(--black);
+  color: var(--white);
   cursor: pointer;
   font-style: italic;
 }
@@ -154,20 +154,27 @@ main section.segunda-section{
 
 }
 
-main div.titulo-rel h3{
-  
-  font-size:var(--title);
+main div.titulo-rel h4{
+  font-size: 2.0rem;
+  color:var(--white);
+  margin-bottom: 25px;
+  text-transform: uppercase;
   text-align: center;
-  
 }
 main section.segunda-section article.producto-rel div.box-img{
-  background-color: var(--grisOscuro);
+  background-color: var(--rosa);
+  border-radius: 60%;
   display: flex;
   flex-direction: row;
   position: relative;
   padding: 10px;
   margin: 10px;
-  border-bottom: 3px solid var(--rosa);
+  
+}
+main section.segunda-section article.producto-rel div.producto-favorito h5.name-product{
+  color:  white; text-shadow: black 0.1em 0.1em 0.2em;
+  font-size: var(--title);
+  text-align: center;
 }
 main section.segunda-section article.producto-rel div.box-img img{
   width: 100%
@@ -176,13 +183,20 @@ main section.segunda-section article.producto-rel{
   width: 40%;
   height: 60%;
   border:1px solid var(--rosa);
- box-shadow : 0px 0px 10px rgb(214, 155, 155);
+ box-shadow : 0px 0px 10px rgb(218, 211, 211);
  margin-bottom: 10px;
 }
 main section.segunda-section article.producto-rel:hover{
  box-shadow: 0 4px 16px var(--rosa);
  transition: all 0.2s ease
 }
+main section.segunda-section article.producto-rel div.text-detalle p{
+  text-align: center;
+    font-size: 18px;
+  font-weight: 200;
+  color: rgb(218, 213, 213); text-shadow: black 0.1em 0.1em 0.2em
+  }
+/* CAJA DE COMENTARIOS */
 .testimonios{
   display: flex;
   justify-content: center;
