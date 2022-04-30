@@ -118,7 +118,6 @@
 
                         </p>
                     </div>
-
                 </section>
             </div>
         </div>
@@ -198,6 +197,30 @@
                 </div>
             </article>
         </section>
+        <article class="caja__slider">
+            <div class="slider__banner"style="max-width: 700px;">
+                <img class="mySlides" src="/images/slider2.jpg" style="width:100%">
+                <img class="mySlides" src="/images/slider1.jpg" style="width:100%">
+                <img class="mySlides" src="/images/slider3.jpg" style="width:100%">
+              </div>
+              
+              <script>
+              var myIndex = 0;
+              carousel();
+              
+              function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                  x[i].style.display = "none";  
+                }
+                myIndex++;
+                if (myIndex > x.length) {myIndex = 1}    
+                x[myIndex-1].style.display = "block";  
+                setTimeout(carousel, 3000); // cambia la imagen cada 3 segundos
+              }
+              </script>
+        </article>
         <!-- CAJA DE COMENTARIOS -->
         <hr class="hr-separacion">
         <section class="testimonios">
@@ -217,7 +240,7 @@
                             </div>
                             <!-- NOMBRE Y USUARIO -->
                             <div class="name-user">
-                                <strong>Armando Perez</strong>
+                                <strong>Armando Wega</strong>
                                 <span>@perezdo</span>
                             </div>
                         </div>

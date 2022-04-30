@@ -14,12 +14,17 @@ main.main-catalogo h1.titulo-catalogo{
     color: white; text-shadow: black 0.1em 0.1em 0.2em;
     margin: 25px 0 5px 0;
 }
+.category_list{
+    display: none;
+    
+}
 
 main.main-catalogo hr.hr-separacion{
     margin-bottom: 10px;
 }
 div.container-catego{
     display:flex;
+    flex-direction: column-reverse;
     justify-content: space-around;
     text-align: center;
     font-size: 14px;
@@ -47,6 +52,10 @@ main.main-catalago section.section-producto article.productos-catalago div.foto-
     width: 350px;
     height: 200px;
     
+}
+.orden::lista{
+    display: flex;
+    flex-direction: row-reverse;
 }
 .transition {
     -webkit-transform: scale(1.8); 
@@ -120,6 +129,32 @@ button.add-button p.add{
     main.main-catalogo h3.titulo-catalogo{
         font-size: 28px;
     }
+    div.container-catego  div.orden-info{
+        display:none;
+        
+    }
+    div.category_list{
+        display: inline;
+    }
+    .orden__lista{
+        list-style-type: none;
+        text-align: center
+      }
+      
+     .orden__lista_li {
+        background-color: #F6E3CA;
+        border: #7a6868 2px solid;
+        border-radius: 6px;
+        display: inline;
+        margin-right: 10px;
+        text-transform: uppercase;
+        text-align: center;
+         width: 100%;
+      }
+      .orden__lista_li:hover{
+        background-color: var(--black);
+         color: #D7C8B6;
+      }  
     main.main-catalogo section.section-producto{
         justify-content: space-around;
         max-width: fit-content;
