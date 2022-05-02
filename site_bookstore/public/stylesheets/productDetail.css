@@ -145,6 +145,11 @@ main div.detalle-producto div.contenido-text section.detalles div.descripcion p.
 
 
 }
+main div.detalle-producto div.contenido-text section.detalles div.descripcion p.caractericas-libro{
+  text-align: center;
+  font-style: italic;
+  color: var(--white);
+}
 main section.segunda-section{
   display: flex;
   flex-wrap: wrap;
@@ -164,6 +169,8 @@ main div.titulo-rel h4{
 main section.segunda-section article.producto-rel div.box-img{
   background-color: var(--rosa);
   border-radius: 60%;
+  box-shadow: 5px 5px 10px #0e0d0d,
+             -5px -5px 10px #070707;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -300,6 +307,8 @@ main section.segunda-section article.producto-rel div.text-detalle p{
   border-radius: 9px;
   border-style: none;
   padding: 6px;
+  box-shadow: 2px 2px 7px #020202,
+             -2px -2px 7px #070707;
   transition: all 0.5s ease-in;
   margin-bottom: 6px;
 }
@@ -461,6 +470,8 @@ main section.segunda-section article.producto-rel div.text-detalle p{
       margin:4px;
       width: 60%;
       padding:3px;
+      box-shadow: 2px 2px 5px #d6c1c1,
+             -2px -2px 5px #070707;
       
   }
   main div.detalle-producto div.contenido-text section.detalles div.añadir-carrito {
@@ -492,6 +503,9 @@ main section.segunda-section article.producto-rel div.text-detalle p{
   main section.segunda-section article.producto-rel{
    width: 300px;
    border-radius: 16px;
+ background: var(--grisOscuro);
+ box-shadow: 15px 15px 30px #0f0f0f,
+             -10px -10px 25px #070707;
    }
   main div.titulo-rel{
     
@@ -506,7 +520,7 @@ main section.segunda-section article.producto-rel div.text-detalle p{
 text-align: center;
   font-size: 18px;
 font-weight: 200;
-color: rgb(207, 140, 140); text-shadow: black 0.1em 0.1em 0.2em
+color: rgb(230, 214, 214); text-shadow: black 0.1em 0.1em 0.2em
 }
 main section.segunda-section article.producto-rel div.producto-favorito h5{
   color:  white; text-shadow: black 0.1em 0.1em 0.2em;
@@ -523,5 +537,9 @@ main section.segunda-section article.producto-rel div.producto-favorito h5{
   display: flex;
   justify-content: space-around;
   flex-direction: unset;
+}
+#cajacomentarios{
+  box-shadow: 10px 10px 20px #b37373,
+             -10px -10px 20px #070707;
 }
 }

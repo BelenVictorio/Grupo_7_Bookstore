@@ -19,7 +19,7 @@
         <nav class="navbar">
             <ul class="nav_links">
                 <li><a href="/">Inicio</a></li>
-                <li><a href="#">Productos</a></li>
+                <li><a href="/products">Productos</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
@@ -37,7 +37,7 @@
         <div class="menu-button"><i class="fa-solid fa-bars"></i></div>
 
         <div class="icons">
-            <a class="cart" href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a class="cart" href="/product-Cart"><i class="fas fa-shopping-cart"></i></a>
             <a class="user" href="/register"><i class="fas fa-user-circle"></i></a>
         </div>
 
@@ -112,9 +112,17 @@
                         </p>
                         <p class=" descripcion-libro">
                         <p>corresponde a: La Bestia</p>
-                        <p>Formato: Libro con sobrecubierta| 13.5 x 19 cm |</p>
-                        <p>peso: 300 grs</p>
-                        <p>paginas:403 Págs</p>
+                        <p class="caractisticas-libro">
+                            Autor: Maria Dueñas
+                            Editorial: Planeta
+                            Categoría: Ficción
+                            Año: 2014
+                            Idioma: Español
+                            N° páginas: 608
+                            Encuadernación: Rústica
+                            Isbn13: 9789504962694
+                            N° edición :2018
+                        </p>
 
                         </p>
                     </div>
@@ -198,28 +206,28 @@
             </article>
         </section>
         <article class="caja__slider">
-            <div class="slider__banner"style="max-width: 700px;">
+            <div class="slider__banner" style="max-width: 700px;">
                 <img class="mySlides" src="/images/slider2.jpg" style="width:100%">
                 <img class="mySlides" src="/images/slider1.jpg" style="width:100%">
                 <img class="mySlides" src="/images/slider3.jpg" style="width:100%">
-              </div>
-              
-              <script>
-              var myIndex = 0;
-              carousel();
-              
-              function carousel() {
-                var i;
-                var x = document.getElementsByClassName("mySlides");
-                for (i = 0; i < x.length; i++) {
-                  x[i].style.display = "none";  
+            </div>
+
+            <script>
+                var myIndex = 0;
+                carousel();
+
+                function carousel() {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    myIndex++;
+                    if (myIndex > x.length) { myIndex = 1 }
+                    x[myIndex - 1].style.display = "block";
+                    setTimeout(carousel, 3000); // cambia la imagen cada 3 segundos
                 }
-                myIndex++;
-                if (myIndex > x.length) {myIndex = 1}    
-                x[myIndex-1].style.display = "block";  
-                setTimeout(carousel, 3000); // cambia la imagen cada 3 segundos
-              }
-              </script>
+            </script>
         </article>
         <!-- CAJA DE COMENTARIOS -->
         <hr class="hr-separacion">
@@ -343,13 +351,14 @@
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, dolorum?
                     </div>
                 </article>
-                
-                    <div>	
-                    <form  class="caja__comentario"method="post">
-                        <textarea id="cajacomentarios" cols="70%" name="mensaje" required="" rows="8" placeholder="Escriba aquí"></textarea><br/><br/>
+
+                <div>
+                    <form class="caja__comentario" method="post">
+                        <textarea id="cajacomentarios" cols="70%" name="mensaje" required="" rows="8"
+                            placeholder="Escriba aquí"></textarea><br /><br />
                         <input class="boton__comentar" type="submit" name="Guardar" value="Comentar">
                     </form>
-                    </div>	
+                </div>
             </div>
 
 
