@@ -117,6 +117,9 @@
     margin: 5px;
     font-size: 14px;
 }
+.login-direccion-azul button{
+    background-color: #0423ad;
+}
 
 @media (min-width: 768px){
     .login{
