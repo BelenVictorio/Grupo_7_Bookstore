@@ -9,11 +9,12 @@
 
 /* caja contenedora*/
 .login-box{
-    width: 70%;
+    width: 100%;
     margin: auto;
     background-color: rgba(55, 55, 55, 0.7);
     text-align: center;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
  /* Titulo*/
@@ -31,9 +32,9 @@
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    padding: 10px;
     margin: 0px 20px;
     color: var(--white);
+    width: 100%;
 }
 
 /* informacion de inicio de sesion*/
@@ -41,6 +42,7 @@
     margin:10px;
     text-align: justify;
     font-size: 14px;
+    width: 100%;
 }
 
 .login-info input{
@@ -50,8 +52,13 @@
     background-color: var(--rosa);
     color: var(--white);
     width: 100%;
-}
+    outline-color: rgba(49, 138, 172, 0);
+    transition: all 0.5s ease-in;
 
+}
+.login-info input:hover{
+    box-shadow: 0 4px 16px var(--rosa);
+}
 .login-info label{
     font-size: 12px;
 }
@@ -81,15 +88,6 @@
     display: block;
 }
 
-.login-info button{
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 10%;
-    display: inline;
-    color: var(--black);
-    background-color: var(--rosa);
-}
-
 /*direcciones para poder entrar en con google o facebook*/
 .login-info-direcciones{
     text-align: justify;
@@ -97,25 +95,49 @@
     margin: 10px;
     font-size: 12px;
 }
+.login-info button{
+    background-color: var(--rosa);
+    color: var(--grisOscuro);
+    border-radius: 9px;
+    border-style: none;
+    padding: 10px;
+    transition: all 0.5s ease-in;
+}
+.login-info button:hover{
+    color: var(--white);
+    box-shadow: 0 4px 16px var(--rosa);
+}
 
 .login-direccion-rojo button{
-    background-color: red;
-    color: white;
+    background-color: rgb(243, 87, 87);
+    color: var(--white);
     padding: 5px;
     border: 1px solid;
     border-radius: 5px;
     margin: 5px;
     font-size: 14px;
+    transition: all 0.5s ease-in;
+}
+.login-direccion-rojo button:hover{
+    background-color: var(--rosa);
+    color: rgb(243,87,87);
+    box-shadow: 0 4px 16px rgb(247,74,74);
 }
 
 .login-direccion-azul button{
-    background-color: blue;
-    color: white;
+    background-color: rgb(88, 119, 160);
+    color: var(--white);
     padding: 5px;
     border: 1px solid;
     border-radius: 5px;
     margin: 5px;
     font-size: 14px;
+    transition: all 0.5s ease-in;
+}
+.login-direccion-azul button:hover{
+    background-color: var(--rosa);
+    color: rgb(88, 119, 160);
+    box-shadow: 0 4px 16px rgb(88, 119, 160);
 }
 .login-direccion-azul button{
     background-color: #0423ad;
@@ -124,5 +146,24 @@
 @media (min-width: 768px){
     .login{
         background-image: url(/images/fondoHome.jpg);
+    }
+    .login-box{
+        width: 70%;
+    }
+    .login-form{
+        padding: 10px;
+    }
+    .login-info label{
+        font-size: 14px;
+    }
+    
+    .login-info p{
+        font-size: 14px;
+    }
+    .login-info a{
+        font-size: 14px;
+    }
+    .login-info-direcciones p{
+        font-size: 14px;
     }
 }
