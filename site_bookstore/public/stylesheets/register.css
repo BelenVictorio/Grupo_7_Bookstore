@@ -43,6 +43,7 @@
 /* Div del formulario*/
 .register-info{
     margin:10px;
+    margin-bottom: 20px;
     text-align: center;
     font-size: 14px;
     display: flex;
@@ -56,6 +57,11 @@
     background-color: var(--rosa);
     width: 100%;
     border: none;
+    outline-color: rgba(49, 138, 172, 0);
+    transition: all 0.5s ease-in;
+}
+.register-info input:hover{
+    box-shadow: 0 4px 16px var(--rosa);
 }
 
 .register-info span{
@@ -70,6 +76,11 @@
     font-size: 12px;
     padding: 10px;
     width: 100%;
+    outline-color: rgba(49, 138, 172, 0);
+    transition: all 0.5s ease-in;
+}
+.register-info select:hover{
+    box-shadow: 0 4px 16px var(--rosa);
 }
 
 /* Div de las preferencias*/
@@ -97,13 +108,17 @@
 .register-condiciones{
     display: flex;
     flex-direction: row;
-    font-size: 12px;
+    font-size: 14px;
     margin-left: 10%;
     margin-bottom: 5px;
+    transition: 0.5s ease-in;
+}
+.register-condiciones:hover{
+    box-shadow: 0 2px 0px var(--rosa);
 }
 
 .register-condiciones a{
-    color: var(--black);
+    color: var(--rosa);
 }
 
 /* Botones*/
@@ -112,7 +127,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    align-content: center;
+    flex-wrap: wrap;
     padding: 10px;
     margin-right: 10px;
     margin-top: 5px;
@@ -120,28 +135,50 @@
 }
 
 .register-button{
-    padding: 10px;
     background-color: var(--rosa);
-    color: var(--black);
-    margin: auto;
+    color: var(--grisOscuro);
+    border-radius: 9px;
+    border-style: none;
+    padding: 10px;
+    margin: 10px;
+    transition: all 0.5s ease-in;
+}
+.register-button:hover{
+    color: var(--white);
+    box-shadow: 0 4px 16px var(--rosa);
+    background-color:var(--grisOscuro);
 }
 
 .register-boton-rojo{
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid;
-    background-color:  red;
+    background-color: rgb(243, 87, 87);
     color: var(--white);
-    margin: auto;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 14px;
+    transition: all 0.5s ease-in;
+}
+.register-boton-rojo:hover{
+    background-color: var(--rosa);
+    color: rgb(243,87,87);
+    box-shadow: 0 4px 16px rgb(247,74,74);
 }
 
-.register-boton-azul {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid;
-    background-color: blue;
+.register-boton-azul{
+    background-color: rgb(88, 119, 160);
     color: var(--white);
-    margin: auto;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 14px;
+    transition: all 0.5s ease-in;
+}
+.register-boton-azul:hover{
+    background-color: var(--rosa);
+    color: rgb(88, 119, 160);
+    box-shadow: 0 4px 16px rgb(88, 119, 160);
 }
 
 
@@ -153,7 +190,6 @@
     
 
     .register-info input{
-        padding: 5px;
         width: 90%;
     }
 
@@ -184,7 +220,6 @@
     }
 
     .register-info input{
-        padding: 10px;
         width: 100%;
     }
 
@@ -255,5 +290,11 @@
     }
     .register-box p{
         order: -1;
+    }
+    .register-box p{
+        font-size: 16px;
+    }
+    .register-condiciones{
+        font-size: 16px;
     }
 }
