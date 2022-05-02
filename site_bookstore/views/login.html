@@ -16,8 +16,8 @@
             <nav class="navbar">
               <ul class="nav_links">
                 <li><a href="/">Inicio</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="/productos">Productos</a></li>
+                <li><a href="/contactos">Contacto</a></li>
               </ul>
             </nav>
         
@@ -42,11 +42,11 @@
             <h2>Ingresa</h2>
           <form action="" class="login-form-info">
               <div class="login-info">
-                <input type="email" id="email" name="email" placeholder="Email">
+                <input type="email" id="email" name="email" placeholder="Email" required>
                 <label for="email"></label>
               </div>
               <div class="login-info">
-                <input type="password" id="password" name="password" placeholder="Contraseña">
+                <input type="password" id="password" name="password" placeholder="Contraseña" required minlength="8">
                 <label for="password"></label>
                 <a class="login-pregunta" href="">¿Haz olvidado la contraseña?</a>
               </div>

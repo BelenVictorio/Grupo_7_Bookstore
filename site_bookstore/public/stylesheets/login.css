@@ -9,11 +9,12 @@
 
 /* caja contenedora*/
 .login-box{
-    width: 70%;
+    width: 100%;
     margin: auto;
     background-color: rgba(55, 55, 55, 0.7);
     text-align: center;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
  /* Titulo*/
@@ -31,9 +32,9 @@
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    padding: 10px;
     margin: 0px 20px;
     color: var(--white);
+    width: 100%;
 }
 
 /* informacion de inicio de sesion*/
@@ -41,6 +42,7 @@
     margin:10px;
     text-align: justify;
     font-size: 14px;
+    width: 100%;
 }
 
 .login-info input{
@@ -99,27 +101,52 @@
 }
 
 .login-direccion-rojo button{
-    background-color: red;
-    color: white;
+    background-color: rgb(255, 65, 57);
+    color: var(--white);
     padding: 5px;
     border: 1px solid;
     border-radius: 5px;
     margin: 5px;
     font-size: 14px;
 }
+.login-direccion-rojo i{
+    color: red;
+}
 
 .login-direccion-azul button{
-    background-color: blue;
-    color: white;
+    background-color: rgb(62, 95, 138);
+    color: var(--white);
     padding: 5px;
     border: 1px solid;
     border-radius: 5px;
     margin: 5px;
     font-size: 14px;
+}
+.login-direccion-azul i{
+    color: blue;
 }
 
 @media (min-width: 768px){
     .login{
         background-image: url(/images/fondoHome.jpg);
+    }
+    .login-box{
+        width: 70%;
+    }
+    .login-form{
+        padding: 10px;
+    }
+    .login-info label{
+        font-size: 14px;
+    }
+    
+    .login-info p{
+        font-size: 14px;
+    }
+    .login-info a{
+        font-size: 14px;
+    }
+    .login-info-direcciones p{
+        font-size: 14px;
     }
 }
