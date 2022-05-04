@@ -24,7 +24,7 @@ module.exports = [
         price: 2700
     },
     {
-        
+        id: 5,
         name: "Mikecrack y la Estrella Maldita",
         description:"Amanece un nuevo día en Ciudad Cubo, y en casa de Mike y Trolli todo parece en calma. ¡Es el día de la excursión! Preparan todo lo necesario para sobrevivir en un bosque misterioso: linterna, brújula, chocolate y más chocolate",
         price: 2700
