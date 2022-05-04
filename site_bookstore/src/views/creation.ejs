@@ -4,9 +4,9 @@
   <body>
     <%- include('partials/header') %>
     <main>
-        <section>
-            <h2>Nuevo producto</h2>
-            <form action="">
+        <section class="">
+            <form action="" class="">
+                <h2>Nuevo producto</h2>
                 <div>
                     <input type="text" id="titulo" name="titulo" placeholder="Titulo">
                     <label for="titulo"></label>
@@ -16,12 +16,12 @@
                     <label for="autor"></label>
                 </div>
                 <div>
-                    <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion">
+                    <textarea id="descripcion" name="descripcion" placeholder="Descripcion"></textarea>
                     <label for="descripcion"></label>
                 </div>
-                <div>
+                <div >
                     <label for="img">Subir imagen</label>
-                    <input type="file" id="img" name="img" accept=".jpg, .png" multiple>
+                    <input class="form-control" type="file" id="img" name="img" accept=".jpg, .png" multiple>
                 </div>
                 <div>
                     <input type="text" id="formato" name="formato" placeholder="Formato">
@@ -51,6 +51,14 @@
                 <div>
                     <input type="text" id="cuotas" name="cuotas" placeholder="cuotas">
                     <label for="cuotas"></label>
+                </div>
+                <div>
+                    <button  class="">
+                        <a href="">Limpiar</a>
+                    </button>
+                    <button  class="">
+                        <a href="">Guardar</a>
+                    </button>
                 </div>
             </form>
         </section>
