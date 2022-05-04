@@ -3,31 +3,31 @@
   <%- include('partials/head') %>
   <body>
     <%- include('partials/header') %>
-    <main>
-        <section>
-            <h2>Nuevo producto</h2>
-            <form action="">
-                <div>
+    <main class="main-creaEdit">
+        <section class="creaEdit-section">
+            <form action="" class="creaEdit-form">
+                <h2>Editar producto</h2>
+                <div class="creaEdit-div">
                     <input type="text" id="titulo" name="titulo" placeholder="Titulo">
                     <label for="titulo"></label>
                 </div>
-                <div>
+                <div class="creaEdit-div">
                     <input type="text" id="autor" name="autor" placeholder="Autor/a">
                     <label for="autor"></label>
                 </div>
-                <div>
-                    <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion">
+                <div class="creaEdit-div">
+                    <textarea id="descripcion" name="descripcion" placeholder="Descripcion"></textarea>
                     <label for="descripcion"></label>
                 </div>
-                <div>
-                    <label for="img">Subir imagen</label>
-                    <input type="file" id="img" name="img" accept=".jpg, .png" multiple>
+                <div class="creaEdit-div">
+                    <label for="img"></label>
+                    <input class=" form-control" type="file" id="img" name="img" accept=".jpg, .png" multiple>
                 </div>
-                <div>
+                <div class="creaEdit-div">
                     <input type="text" id="formato" name="formato" placeholder="Formato">
                     <label for="formato"></label>
                 </div>
-                <div>
+                <div class="creaEdit-div">
                     <label for="Categorias"></label>
                     <select name="Categorias" id="Categorias">
                     <option value="">-Seleccione la categoria correspondiente</option>
@@ -44,17 +44,26 @@
                     <option value="ot">Otros</option>
             </select>
                 </div>
-                <div>
+                <div class="creaEdit-div">
                     <input type="text" id="precio" name="precio" placeholder="Precio">
                     <label for="precio"></label>
                 </div>
-                <div>
+                <div class="creaEdit-div">
                     <input type="text" id="cuotas" name="cuotas" placeholder="cuotas">
                     <label for="cuotas"></label>
+                </div>
+                <div class="creaEdit-button">
+                    <button  class="">
+                        <a href="/">Cancelar</a>
+                    </button>
+                    <button  class="">
+                        <a href="/products/edit">Editar</a>
+                    </button>
                 </div>
             </form>
         </section>
     </main>
     <%- include('partials/footer') %>
   </body>
+  
 </html>
