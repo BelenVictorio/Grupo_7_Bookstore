@@ -74,7 +74,7 @@
     color: var(--black);
     background-color: var(--rosa);
     font-size: 12px;
-    padding: 10px;
+    padding: 13px;
     width: 100%;
     outline-color: rgba(49, 138, 172, 0);
     transition: all 0.5s ease-in;
@@ -113,6 +113,9 @@
     margin-bottom: 5px;
     transition: 0.5s ease-in;
 }
+.register-condiciones label{
+    color: var(--white);
+}
 .register-condiciones:hover{
     box-shadow: 0 2px 0px var(--rosa);
 }
@@ -147,6 +150,9 @@
     color: var(--white);
     box-shadow: 0 4px 16px var(--rosa);
     background-color:var(--grisOscuro);
+}
+.register-button a:hover{
+    color: var(--white);
 }
 
 .register-boton-rojo{

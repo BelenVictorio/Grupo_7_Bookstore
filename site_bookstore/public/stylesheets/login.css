@@ -97,6 +97,7 @@
     border-style: none;
     padding: 10px;
     transition: all 0.5s ease-in;
+    margin-top: 10px;
 }
 .login-info button:hover {
     box-shadow: 0 4px 16px var(--rosa);
