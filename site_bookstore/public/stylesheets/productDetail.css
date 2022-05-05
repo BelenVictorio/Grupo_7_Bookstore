@@ -285,6 +285,7 @@ main section.segunda-section article.producto-rel div.text-detalle p{
 }
 .reseña{
   color:orange;
+  margin:3px;
 }
 .caja-top{
   display: flex;

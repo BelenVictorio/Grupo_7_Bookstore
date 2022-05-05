@@ -99,7 +99,7 @@ li {
     .footer__section {
         width: 80%;
         display: flex;
-        padding: 40px 0px 80px;
+        padding: 20px 0px 40px;
     }
  
     .footer__section__redes,
@@ -120,10 +120,10 @@ li {
     .footer__final {
         display: flex;
         align-items: center;
-        width: 70%;
+        width: 86%;
         margin: 0px auto;
         text-align: center;
-        padding-bottom: 40px;
+        
     }
  
     .footer__section__logo {
