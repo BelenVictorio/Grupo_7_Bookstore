@@ -6,20 +6,20 @@
       <%- include('partials/header') %>
 
     <main>
-        <% products.forEach(product => { %>
+        
             <div class="detalle-producto">
                 <div class="imagenes">
                     <section class="imagen-principal">
-                        <img src="images/<%= product.id %> " alt="">
+                        <img src="/images/bestia.png" alt="">
                     </section>
                 </div>
                 <div class="contenido-text">
                     <section class="detalles">
                         <div>
-                            <h1><%= product.name %>  </h1>
+                            <h1>la Bestia </h1>
                         </div>
                         <div class="price">
-                            <strong>$ <%= product.price %> </strong>
+                            <strong>$ 1450 </strong>
                         </div>
                         <form>
                             <p class="clasificacion">
@@ -51,7 +51,7 @@
                         </div>
     
                         <button class="add-button">
-                            <a href="product-Cart">
+                            <a href="/products/cart">
                                 <p class="add">Agregar al carrito</p>
                             </a>
                         </button>
@@ -72,7 +72,10 @@
                         </button>
                         <div class="descripcion">
                             <h3 class="autor">Autor: Carmen Mola</h3>
-                            <p> <%= product.description %> 
+                            <p> "Corre el año 1834 y Madrid, una pequeña ciudad que trata de abrirse paso más allá de las murallas que la rodean,
+                                sufre una terrible epidemia de cólera. Pero la peste no es lo único que aterroriza a sus habitantes: en los
+                                arrabales aparecen cadáveres desmembrados de niñas que nadie reclama. Todos los rumores apuntan a la Bestia, un ser
+                                a quien nadie ha visto pero al que todos temen.",
                             </p>
                             <p class=" descripcion-libro">
                             <p>corresponde a: La Bestia</p>
@@ -94,7 +97,7 @@
                     </section>
                 </div>
             </div>
-        <% }) %>
+        
         
             <h4>Productos Relacionados</h4>
         </div>
