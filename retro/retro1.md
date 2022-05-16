@@ -1,4 +1,4 @@
-# Retrospectiva:
+# Retrospectiva primer sprint:
 
   * **Seguir haciendo:**
 
