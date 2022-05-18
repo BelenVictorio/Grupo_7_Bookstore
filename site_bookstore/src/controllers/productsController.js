@@ -26,15 +26,22 @@ update: (req, res) => {
 erase: (req, res) => {
     return res.send('erase')
 },
-search:(req,res) =>{
-    
-const {keyword} = req.query;
+search : (req,res) => {
+        
+    const {keyword} = req.query;
+    const result = products.filter(product => product.name.toLowerCase().includes(keyword.toLowerCase()));
 
-const result = products.filter(product => product.name .includes(keyword))
- 
+    /* let namesCategories = categories.map(category => {
+        return {
+            id : category.id,
+            name : category.name
+        }
+    }); */
 
     return res.render('result',{
-        products: result
+        products : result,
+        keyword,
+        
     })
-}
+},
 }
