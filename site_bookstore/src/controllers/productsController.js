@@ -25,5 +25,16 @@ update: (req, res) => {
 },
 erase: (req, res) => {
     return res.send('erase')
+},
+search:(req,res) =>{
+    
+const {keyword} = req.query;
+
+const result = products.filter(product => product.name .includes(keyword))
+ 
+
+    return res.render('result',{
+        products: result
+    })
 }
 }
