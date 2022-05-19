@@ -11,7 +11,9 @@ router.get('/search', search);
 
 /* formulario y creacion de productos */
 router.get('/creation', creation);
-router.post('/cart', cart);
+
+/* carrito */
+router.get('/cart', cart);
 
 /* detalle de producto */
 router.get('/detail/:id',detail);
