@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {detail, cart, products, creation, edit, update, erase, search} =require('../controllers/productsController');
+const {detail, cart, products, creation, edit, update, erase, search, store} =require('../controllers/productsController');
 
 /* /products */
 
@@ -11,6 +11,7 @@ router.get('/search', search);
 
 /* formulario y creacion de productos */
 router.get('/creation', creation);
+router.post('/creation', store);
 
 /* carrito */
 router.get('/cart', cart);
