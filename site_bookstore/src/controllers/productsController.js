@@ -46,9 +46,9 @@ update: (req, res) => {
         if(product.id === +req.params.id){
             let productModify ={
                 ...product,
-                name: name.trim(),
-                author: author.trim(),
-                description: description.trim(),
+                name,
+                author,
+                description,
                 price: +price,
                 category
             }
@@ -56,7 +56,6 @@ update: (req, res) => {
         }
         return product
     })
-    return res.send(productsModify)
     saveProducts(productsModify);
 },
 
