@@ -40,30 +40,24 @@ edit: (req, res) => {
 },
 
 update: (req, res) => {
-   let products = readProducts();
+   /*let products = readProducts();
     const {name, author, description, price, category} = req.body;
     let productsModify = products.map(product => {
         if(product.id === +req.params.id){
             let productModify ={
                 ...product,
-                name,
-                author,
-                description,
-                price: +price,
+                name : name.trim(),
+                author : author.trim(),
+                description : description.trim(),
+                price : +price,
                 category
             }
             return productModify
         }
         return product
     })
-    saveProducts(productsModify);
-},
-
-erase: (req, res) => {
-
-    let products = readProducts();
-    let productDelete = products.filter(product => product.id !== +req.params.id);
-    saveProducts(productDelete);
+    return res.send(productsModify)
+    saveProducts(productsModify);*/
 },
 search : (req,res) => {
     let products = readProducts();
@@ -82,5 +76,11 @@ search : (req,res) => {
                 keyword
                 
             })
+        },
+        erase: (req, res) => {
+            let products = readProducts();
+            let productDelete = products.filter(product => product.id !== +req.params.id);
+            saveProducts(productDelete);
+            return res.redirect('/products/products');
         }
 }

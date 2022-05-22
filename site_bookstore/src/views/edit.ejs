@@ -38,13 +38,9 @@
                     <button type="submit">
                         <a href="/">Cancelar</a>
                     </button>
-                    <button type="submit">
-                        <a href="/products/edit/<%= product.id %>">Editar</a>
-                    </button>
+                    <button type="submit" name="editar">Editar</button>
                 <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                    <button type="submit">
-                        <a href="">eliminar</a>
-                    </button>
+                    <button type="submit" name="eliminar">Eliminar</button>
                 </form>
                 </div>
             </form>
