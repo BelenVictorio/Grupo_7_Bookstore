@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const productsFilePath = path.join(__dirname, '../data/products.json')
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const products = require('../data/products.json');
+
 const readProducts = () =>{
     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
     return products;
@@ -19,7 +21,28 @@ cart: (req, res) => {
 },
 
 store: (req, res) => {
-    return res.render('productCart')
+
+    const {name, author, description, price, category } = req.body;
+
+    let lastID = products[products.length - 1].id;
+
+    let newProduct = {
+        id: +lastID + 1,
+        name,
+        author,
+        description,
+        price: +price,
+        category,
+        image: "not-found.jpg"
+    }
+
+    products.push(newProduct);
+
+    fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'), JSON.stringify(products, null, 3), 'utf-8');
+
+    return res.redirect('/')
+
+    
 },
 
 products: (req, res) => {
@@ -29,8 +52,9 @@ products: (req, res) => {
 },
 
 creation: (req, res) => {
-    return res.render('creation');
+    return res.render('creation')
 },
+
 edit: (req, res) => {
     let products = readProducts();
     let productEdit = products.find(product => product.id === +req.params.id);
