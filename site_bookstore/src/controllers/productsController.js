@@ -1,11 +1,27 @@
-const products = require('../data/products')
+const path = require('path');
+const fs = require('fs');
+const productsFilePath = path.join(__dirname, '../data/products.json');
+
+const readProducts = () => {
+	const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+	return products
+}; 
+const toThousand = n => n.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+const guardarJson = (array) => fs.writeFileSync(productsFilePath, JSON.stringify(array, null, 3));
 
 module.exports={
-detail:(req,res) =>{
-    return res.render('productDetail',{
-        products
-    });
-},
+    detail: (req, res) => {
+        let products= readProducts(); 
+        const {
+            id
+        } = req.params;
+        const product = products.find(producto => producto.id === +id);
+
+        res.render('productDetail', {
+            product
+        })
+    },
 
 cart: (req, res) => {
     return res.render('productCart');
