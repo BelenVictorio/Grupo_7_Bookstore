@@ -13,9 +13,7 @@ const guardarJson = (array) => fs.writeFileSync(productsFilePath, JSON.stringify
 module.exports={
     detail: (req, res) => {
         let products= readProducts(); 
-        const {
-            id
-        } = req.params;
+        const {id} = req.params;
         const product = products.find(producto => producto.id === +id);
 
         res.render('productDetail', {
@@ -32,6 +30,8 @@ store: (req, res) => {
 },
 
 products: (req, res) => {
+    let products= readProducts(); 
+        const {id} = req.params;
     return res.render('products',{
         products
     });
@@ -60,7 +60,8 @@ erase: (req, res) => {
 },
 
 search : (req,res) => {
-        
+    let products= readProducts(); 
+    const {id} = req.params;
     const {keyword} = req.query;
     const result = products.filter(product => product.name.toLowerCase().includes(keyword.toLowerCase()));
 
