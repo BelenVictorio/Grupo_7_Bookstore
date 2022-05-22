@@ -7,7 +7,7 @@
     <%- include('partials/header') %>
     <main class="main-creaEdit">
         <section class="creaEdit-section">
-            <form method="POST" action="/products/update/<%= product.id %>?_method=PUT" class="creaEdit-form">
+            <form action="/products/update/<%= product.id %>?_method=PUT" method="POST" class="creaEdit-form">
                 <h2>Editar producto: <%= product.name %></h2>
                 <div class="creaEdit-div">
                     <input type="text" id="titulo" name="titulo" placeholder="Titulo" value="<%= product.name %>">
@@ -39,7 +39,7 @@
                         <a href="/">Cancelar</a>
                     </button>
                     <button >
-                        <a href="">Editar</a>
+                        <a href="/products/edit/<%= product.id %>">Editar</a>
                     </button>
                 <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
                     <button >
