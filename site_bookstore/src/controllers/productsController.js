@@ -1,9 +1,16 @@
-const products = require('../data/products')
+const fs = require('fs');
+const path = require('path');
+const productsFilePath = path.join(__dirname, '../data/products.json')
+const readProducts = () =>{
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    return products;
+} 
+const saveProducts = (products) => fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 3));
 
 module.exports={
 detail:(req,res) =>{
     return res.render('productDetail',{
-        products
+        readProducts
     });
 },
 cart: (req, res) => {
@@ -11,37 +18,62 @@ cart: (req, res) => {
 },
 products: (req, res) => {
     return res.render('products',{
-        products
+        readProducts
     });
 },
 creation: (req, res) => {
     return res.render('creation');
 },
 edit: (req, res) => {
-    return res.render('edit');
+    let products = readProducts();
+    let productEdit = products.find(product => product.id === +req.params.id);
+    return res.render('edit', {
+        productEdit
+    });
 },
 update: (req, res) => {
-    return res.send('update')
+    let products = readProducts();
+    const {name, author, description, price, category} = req.body;
+    let productsModify = products.map(product => {
+        if(product.id === +req.params.id){
+            let productModify ={
+                ...product,
+                name: name.trim(),
+                author: author.trim(),
+                description: description.trim(),
+                price: +price,
+                category
+            }
+            return productModify
+        }
+        return product
+    })
+    saveProducts(productsModify);
+    return res.redirect('/products/products');
 },
 erase: (req, res) => {
-    return res.send('erase')
+
+    let products = readProducts();
+    let productDelete = products.filter(product => product.id !== +req.params.id)
+    saveProducts(productDelete);
+    return res.redirect('/products/products');
 },
 search : (req,res) => {
+    let products = readProducts();
+        const {keyword} = req.query;
+        const result = products.filter(product => product.name.toLowerCase().includes(keyword.toLowerCase()) || product.author.toLowerCase().includes(keyword.toLowerCase()) || product.category.toLowerCase().includes(keyword.toLowerCase()));
         
-    const {keyword} = req.query;
-    const result = products.filter(product => product.name.toLowerCase().includes(keyword.toLowerCase()));
-
-    /* let namesCategories = categories.map(category => {
-        return {
-            id : category.id,
-            name : category.name
+            /* let namesCategories = categories.map(category => {
+                return {
+                    id : category.id,
+                    name : category.name
+                }
+            }); */
+        
+            return res.render('result',{
+                products: result,
+                keyword
+                
+            })
         }
-    }); */
-
-    return res.render('result',{
-        products : result,
-        keyword,
-        
-    })
-},
 }

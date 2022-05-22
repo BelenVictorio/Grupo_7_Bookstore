@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('partials/head') %>
+    <%- include('partials/head') %><%- include('partials/head', {
+        title: 'Paginas Bellas || Detalle de Producto'
+    }) %>
     <body>
       <%- include('partials/header') %>
 
@@ -56,7 +58,7 @@
                             </a>
                         </button>
                         <button class="add-button">
-                            <a href="/products/edit">
+                            <a href="/products/edit/<%=product.id%>">
                                 <p class="add">Editar</p>
                             </a>
                         </button>
