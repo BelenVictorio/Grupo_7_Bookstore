@@ -32,7 +32,7 @@
       "author": "Mikecrack",
       "description": "Amanece un nuevo día en Ciudad Cubo, y en casa de Mike y Trolli todo parece en calma. ¡Es el día de la excursión! Preparan todo lo necesario para sobrevivir en un bosque misterioso: linterna, brújula, chocolate y más chocolate",
       "price": "2700",
-      "category": "niños",
+      "category": "infantil",
       "image": "mike.png"
    },
    {
@@ -41,7 +41,7 @@
       "author": "Lewis Carroll",
       "description": "Estás a punto de entrar en el mundo de Alicia, el más extraño y asombroso, disparatado e insólito que hayas conocido y que jamás vas a olvidar. En este mundo, los gatos desaparecen sonrientes, las reinas tienen ejércitos de naipes, los conejos visten chaleco y te apremian para que los sigas. Y si los sigues, caerás por el agujero de su madriguera… Hasta el País de las Maravillas.Allí, las reglas que conocemos no funcionan; en el País de las Maravillas todo tiene su propia lógica. La hora del té no acaba nunca, Tiempo es un señor que se enfada si no sigues el compás cuando cantas y las lágrimas pueden llegar a formar un mar si justo en aquel momento tu cuerpo se encoge hasta ser diminuto. Desde su publicación, Alicia en el país de las maravillas ha fascinado a lectores como tú.",
       "price": "2000",
-      "category": "niños",
+      "category": "infantil",
       "image": "alicia.png"
    },
    {
@@ -59,7 +59,7 @@
       "author": "Carlo Collodi",
       "description": "Geppetto tomó en seguida las herramientas y se puso a esculpir y a fabricar su muñeco.«¿Qué nombre le pondré? —se preguntó—. Le voy a llamar Pinocho. Este nombre le traerá suerte.»",
       "price": "5770",
-      "category": "niños",
+      "category": "infantil",
       "image": "pinocho.png"
    },
    {
