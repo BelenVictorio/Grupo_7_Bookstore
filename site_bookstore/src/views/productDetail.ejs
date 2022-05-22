@@ -7,19 +7,20 @@
 
     <main>
         
+        <%products.forEach(({id,name,author,description,price,image}) => { %>
             <div class="detalle-producto">
                 <div class="imagenes">
                     <section class="imagen-principal">
-                        <img src="/images/bestia.png" alt="">
+                        <img src="/images/<%= image %>" alt="">
                     </section>
                 </div>
                 <div class="contenido-text">
                     <section class="detalles">
                         <div>
-                            <h1>la Bestia </h1>
+                            <h1><%= name %></h1>
                         </div>
                         <div class="price">
-                            <strong>$ 1450 </strong>
+                            <strong>$<%= price %> </strong>
                         </div>
                         <form>
                             <p class="clasificacion">
@@ -71,16 +72,12 @@
                             </a>
                         </button>
                         <div class="descripcion">
-                            <h3 class="autor">Autor: Carmen Mola</h3>
-                            <p> "Corre el año 1834 y Madrid, una pequeña ciudad que trata de abrirse paso más allá de las murallas que la rodean,
-                                sufre una terrible epidemia de cólera. Pero la peste no es lo único que aterroriza a sus habitantes: en los
-                                arrabales aparecen cadáveres desmembrados de niñas que nadie reclama. Todos los rumores apuntan a la Bestia, un ser
-                                a quien nadie ha visto pero al que todos temen.",
-                            </p>
+                            <h3 class="autor">Autor:<%= author %></h3>
+                            <p><%= description %></p>
                             <p class=" descripcion-libro">
-                            <p>corresponde a: La Bestia</p>
+                            <p>corresponde a:<%= name %> </p>
                             <p class="caractisticas-libro">
-                                Autor: Maria Dueñas
+                                Autor: <%= author %> 
                                 Editorial: Planeta
                                 Categoría: Ficción
                                 Año: 2014
@@ -97,6 +94,8 @@
                     </section>
                 </div>
             </div>
+        <% }) %>
+           
         
         
             <h4>Productos Relacionados</h4>

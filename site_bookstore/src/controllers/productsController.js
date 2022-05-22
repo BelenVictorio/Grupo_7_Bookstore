@@ -25,8 +25,14 @@ creation: (req, res) => {
     return res.render('creation');
 },
 
-edit: (req, res) => {
-    return res.render('edit');
+edit : (req,res) => {
+
+    const {id} = req.params;
+    const product = products.find(product => product.id === +id);
+
+    return res.render('edit',{
+        product
+    })
 },
 
 update: (req, res) => {
