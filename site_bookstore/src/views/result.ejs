@@ -8,13 +8,14 @@
       <%- include('partials/header') %>
 
         <main class="main-catalogo">
-            <h1 class="titulo-catalogo">Resultado de la busqueda:</h1>
-            <hr class="hr-separacion">
+            
 
-            <% products.forEach(({id,name,price,image}) => { %>
-              <article class="productos-catalogo">
-                <div class="foto-catalogo">
-                    <a href="/products/detail/<%= id %> "><img class="zoom" width="100%" src="/images/<%= image %>" alt="Nombre del producto"></a><!-- image a photo -->
+            <% products.forEach(({id, name, author, price, image})=> { %>
+              <h1 class="titulo-catalogo">Resultado de la busqueda:  "<%= name %>"</h1>
+            <hr class="hr-separacion">
+              <article class="home__best-sellers__producto1">
+                <div class="home__best-sellers__producto1__circulo">
+                  <a href="/products/detail/<%= id %>"><img src="/images/<%= image %>" alt="libro La Bestia"></a>
                 </div>
                 <article class="detalles-catalogo">
                     <p><%= name %> </p>

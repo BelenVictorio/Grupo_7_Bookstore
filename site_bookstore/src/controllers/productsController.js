@@ -13,14 +13,21 @@ detail:(req,res) =>{
         readProducts
     });
 },
+
 cart: (req, res) => {
     return res.render('productCart');
 },
+
+store: (req, res) => {
+    return res.render('productCart')
+},
+
 products: (req, res) => {
     return res.render('products',{
         readProducts
     });
 },
+
 creation: (req, res) => {
     return res.render('creation');
 },
@@ -31,6 +38,7 @@ edit: (req, res) => {
         productEdit
     });
 },
+
 update: (req, res) => {
     let products = readProducts();
     const {name, author, description, price, category} = req.body;
@@ -51,6 +59,7 @@ update: (req, res) => {
     saveProducts(productsModify);
     return res.redirect('/products/products');
 },
+
 erase: (req, res) => {
 
     let products = readProducts();
@@ -58,6 +67,7 @@ erase: (req, res) => {
     saveProducts(productDelete);
     return res.redirect('/products/products');
 },
+
 search : (req,res) => {
     let products = readProducts();
         const {keyword} = req.query;
