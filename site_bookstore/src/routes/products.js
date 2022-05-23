@@ -20,11 +20,11 @@ router.get('/cart', cart);
 router.get('/detail/:id',detail);
 
 /* formulario y edicion de producto */
-router.get('/:id/edit', edit);
-router.put('/:id', update)
+router.get('/edit/:id', edit);
+router.put('/update/:id', update);
 
 /* Eliminar un producto */
-router.delete('/:id', erase)
+router.delete('/delete/:id', erase)
 
 
 
