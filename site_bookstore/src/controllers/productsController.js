@@ -1,18 +1,14 @@
 const fs = require('fs');
 const path = require('path');
-const productsFilePath = path.join(__dirname, '..', 'data', 'products.json');
-const products = require('../data/products.json');
-
-const readProducts = () =>{
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    return products;
-} 
+const productsFilePath = path.resolve(__dirname, '..', 'data', 'products.json');
+//const products = require('../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const saveProducts = (products) => fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 3));
 
 module.exports={
 detail:(req,res) =>{
     return res.render('productDetail',{
-        readProducts
+        products
     });
 },
 
@@ -47,7 +43,7 @@ store: (req, res) => {
 
 products: (req, res) => {
     return res.render('products',{
-        readProducts
+        products
     });
 },
 
@@ -56,7 +52,6 @@ creation: (req, res) => {
 },
 
 edit: (req, res) => {
-    let products = readProducts();
     let product = products.find(product => product.id === +req.params.id);
     return res.render('edit', {
         product
@@ -64,15 +59,14 @@ edit: (req, res) => {
 },
 
 update: (req, res) => {
-    let products = readProducts();
     const {name, author, description, price, category} = req.body;
     let productsModify = products.map(product => {
         if(product.id === +req.params.id){
-            let productModify ={
+            let productModify = {
                 ...product,
-                name,
-                author,
-                description,
+                name : name.trim(),
+                author : author.trim(),
+                description : description.trim(),
                 price : +price,
                 category
             }
@@ -80,11 +74,11 @@ update: (req, res) => {
         }
         return product
     })
-    return res.send(productsModify)
     saveProducts(productsModify);
+    return res.redirect('/products')
 },
 search : (req,res) => {
-    let products = readProducts();
+    
         const {keyword} = req.query;
         const result = products.filter(product => product.name.toLowerCase().includes(keyword.toLowerCase()) || product.author.toLowerCase().includes(keyword.toLowerCase()) || product.category.toLowerCase().includes(keyword.toLowerCase()));
         
@@ -102,9 +96,8 @@ search : (req,res) => {
             })
         },
         erase: (req, res) => {
-            let products = readProducts();
             let productDelete = products.filter(product => product.id !== +req.params.id);
             saveProducts(productDelete);
-            return res.redirect('/products/products');
+            return res.redirect('/products');
         }
 }

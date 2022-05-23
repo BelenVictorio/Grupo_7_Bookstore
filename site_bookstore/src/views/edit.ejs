@@ -10,28 +10,28 @@
             <form action="/products/update/<%= product.id %>?_method=PUT" method="POST" class="creaEdit-form">
                 <h2>Editar producto: <%= product.name %></h2>
                 <div class="creaEdit-div">
-                    <input type="text" id="titulo" name="titulo" placeholder="Titulo" value="<%= product.name %>">
+                    <input type="text" id="titulo" name="name" placeholder="Titulo" value="<%= product.name %>">
                     <label for="titulo"></label>
                 </div>
                 <div class="creaEdit-div">
-                    <input type="text" id="autor" name="autor" placeholder="Autor/a" value="<%= product.author %>">
+                    <input type="text" id="autor" name="author" placeholder="Autor/a" value="<%= product.author %>">
                     <label for="autor"></label>
                 </div>
                 <div class="creaEdit-div">
-                    <textarea id="descripcion" name="descripcion" placeholder="Descripcion"><%= product.description %></textarea>
+                    <textarea id="descripcion" name="description" placeholder="Descripcion"><%= product.description %></textarea>
                     <label for="descripcion"></label>
                 </div>
                 <div class="creaEdit-div">
                     <label for="Categorias"></label>
-                    <select name="Categorias" id="Categorias">
+                    <select name="category" id="Categorias">
                     <option value="">-Seleccione la categoria correspondiente</option>
-                    <option value="ad" <%= product.category === "adultos" && 'selected' %>>adultos</option>
-                    <option value="jo" <%= product.category === "jovenes" && 'selected' %>>jovenes</option>
-                    <option value="in"<%= product.category === "Infantil" && 'selected' %>>infantil</option>
+                    <option value="adultos" <%= product.category === "adultos" && 'selected' %>>adultos</option>
+                    <option value="jovenes" <%= product.category === "jovenes" && 'selected' %>>jovenes</option>
+                    <option value="infantil"<%= product.category === "Infantil" && 'selected' %>>infantil</option>
             </select>
                 </div>
                 <div class="creaEdit-div">
-                    <input type="text" id="precio" name="precio" placeholder="Precio" value="<%= product.price %>">
+                    <input type="text" id="precio" name="price" placeholder="Precio" value="<%= product.price %>">
                     <label for="precio"></label>
                 </div>
                 <div class="creaEdit-button">
@@ -39,9 +39,7 @@
                         <a href="/">Cancelar</a>
                     </button>
                     <button type="submit" name="editar">Editar</button>
-                <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                    <button type="submit" name="eliminar">Eliminar</button>
-                </form>
+                    
                 </div>
             </form>
         </section>
