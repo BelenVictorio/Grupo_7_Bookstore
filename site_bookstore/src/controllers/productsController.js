@@ -8,7 +8,7 @@ const readProducts = () => {
 }; 
 const toThousand = n => n.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-const guardarJson = (array) => fs.writeFileSync(productsFilePath, JSON.stringify(array, null, 3));
+const saveProducts = (products) => fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 3));
 
 module.exports={
     detail: (req, res) => {
