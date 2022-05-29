@@ -17,13 +17,13 @@ module.exports={
         const {id} = req.params;
         const product = products.find(producto => producto.id === +id);
 
-        res.render('productDetail', {
+        res.render('productos/productDetail', {
             product
         })
     },
 
 cart: (req, res) => {
-    return res.render('productCart');
+    return res.render('productos/productCart');
 },
 
 store: (req, res) => {
@@ -54,18 +54,18 @@ store: (req, res) => {
 products: (req, res) => {
     let products= readProducts(); 
         const {id} = req.params;
-    return res.render('products',{
+    return res.render('productos/products',{
         products
     });
 },
 
 creation: (req, res) => {
-    return res.render('creation')
+    return res.render('admin/creation')
 },
 
 edit: (req, res) => {
     let product = products.find(product => product.id === +req.params.id);
-    return res.render('edit', {
+    return res.render('admin/edit', {
         product
     });
 },
