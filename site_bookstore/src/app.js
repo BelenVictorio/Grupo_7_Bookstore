@@ -4,6 +4,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override')
+const session = require('express-session');
+const cookieSession = require('./middlewares/cookieSession');
 
 var app = express();
 
@@ -25,6 +27,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.resolve(__dirname,'..','public')));
 app.use(methodOverride('_method'));
+
+app.use(session({
+  secret: 'Paginas Bellas',
+  resave: false,
+  saveUninitialized: true,
+  cookie:{}
+}));
 
 /* ****middlewares de rutas**** */
 app.use('/', indexRouter);

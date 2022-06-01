@@ -1,19 +1,29 @@
-const fs = require('fs');
 const path = require('path');
-const productsFilePath = path.resolve(__dirname, '..', 'data', 'products.json');
-//const products = require('../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const fs = require('fs');
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const products = require('../data/products.json');
+
+const readProducts = () => {
+	const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+	return products
+}; 
+const toThousand = n => n.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 const saveProducts = (products) => fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 3));
 
 module.exports={
-detail:(req,res) =>{
-    return res.render('productDetail',{
-        products
-    });
-},
+    detail: (req, res) => {
+        let products= readProducts(); 
+        const {id} = req.params;
+        const product = products.find(producto => producto.id === +id);
+
+        res.render('productos/productDetail', {
+            product
+        })
+    },
 
 cart: (req, res) => {
-    return res.render('productCart');
+    return res.render('productos/productCart');
 },
 
 store: (req, res) => {
@@ -42,18 +52,20 @@ store: (req, res) => {
 },
 
 products: (req, res) => {
-    return res.render('products',{
+    let products= readProducts(); 
+        const {id} = req.params;
+    return res.render('productos/products',{
         products
     });
 },
 
 creation: (req, res) => {
-    return res.render('creation')
+    return res.render('admin/creation')
 },
 
 edit: (req, res) => {
     let product = products.find(product => product.id === +req.params.id);
-    return res.render('edit', {
+    return res.render('admin/edit', {
         product
     });
 },
@@ -78,16 +90,12 @@ update: (req, res) => {
     return res.redirect('/products')
 },
 search : (req,res) => {
-    
+        let products= readProducts(); 
+        const {id} = req.params;
         const {keyword} = req.query;
         const result = products.filter(product => product.name.toLowerCase().includes(keyword.toLowerCase()) || product.author.toLowerCase().includes(keyword.toLowerCase()) || product.category.toLowerCase().includes(keyword.toLowerCase()));
         
-            /* let namesCategories = categories.map(category => {
-                return {
-                    id : category.id,
-                    name : category.name
-                }
-            }); */
+        
         
             return res.render('result',{
                 products: result,

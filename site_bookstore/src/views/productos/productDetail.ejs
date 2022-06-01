@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('partials/head', {
+    <%- include('../partials/head', {
         title: 'Paginas Bellas || Detalle de Producto'
     }) %>
     
     <body>
-      <%- include('partials/header') %>
+      <%- include('../partials/header') %>
 
     <main>
         
-        <%products.forEach(({id,name,author,description,price,image}) => { %>
+        
             <div class="detalle-producto">
                 <div class="imagenes">
                     <section class="imagen-principal">
-                        <img src="/images/<%= image %>" alt="">
+                        <img src="/images/<%= product.image %>" alt="">
                     </section>
                 </div>
                 <div class="contenido-text">
                     <section class="detalles">
                         <div>
-                            <h1><%= name %></h1>
+                            <h1><%= product.name %></h1>
                         </div>
                         <div class="price">
-                            <strong>$<%= price %> </strong>
+                            <strong>$<%= product.price %> </strong>
                         </div>
                         <form>
                             <p class="clasificacion">
@@ -78,12 +78,12 @@
                             </a>
                         </button>
                         <div class="descripcion">
-                            <h3 class="autor">Autor:<%= author %></h3>
-                            <p><%= description %></p>
+                            <h3 class="autor">Autor:<%= product.author %></h3>
+                            <p><%= product.description %></p>
                             <p class=" descripcion-libro">
-                            <p>corresponde a:<%= name %> </p>
+                            <p>corresponde a:<%= product.name %> </p>
                             <p class="caractisticas-libro">
-                                Autor: <%= author %> 
+                                Autor: <%= product.author %> 
                                 Editorial: Planeta
                                 Categoría: Ficción
                                 Año: 2014
@@ -100,7 +100,6 @@
                     </section>
                 </div>
             </div>
-        <% }) %>
            
         
         
@@ -340,7 +339,7 @@
 
         </section>
     </main>
-    <%- include('partials/footer') %>
+    <%- include('../partials/footer') %>
 </body>
 
 </html>
