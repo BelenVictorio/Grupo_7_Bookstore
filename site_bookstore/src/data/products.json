@@ -97,5 +97,13 @@
       "price": 6000,
       "category": "jovenes",
       "image": "bestia.png"
+   },
+   {
+      "id": 12,
+      "name": "",
+      "author": "",
+      "description": "",
+      "price": 0,
+      "image": "not-found.jpg"
    }
 ]
