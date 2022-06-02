@@ -22,9 +22,9 @@ processRegister: (req, res) => {
             name: req.body.name,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
-            avatar: req.file ? req.file.filename : "default-image.png",
-            rol: "user"
-        }
+            image: req.file ? req.file.filename : "default-image.png",
+            category: "user"
+        };
 
         getUsers.push(newUser);
 
@@ -51,8 +51,8 @@ processLogin: (req, res) => {
             id: user.id,
             name: user.name,
             email: user.email,
-            avatar: user.avatar,
-            rol: user.rol
+            image: user.image,
+            category: user.category
         }
 
         if (req.body.remember) {

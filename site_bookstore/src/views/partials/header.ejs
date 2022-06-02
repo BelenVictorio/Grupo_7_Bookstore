@@ -8,6 +8,9 @@
         <li><a href="/products/">Productos</a></li>
         <li><a href="#">Contacto</a></li>
         <li><a href="/products/creation">AgregarProducto</a></li>
+        <% if (locals.user?.category === 'admin') { %>
+         <li><a href="/admin">Admin</a></li>
+        <% } %>
       </ul>
     </nav>
 
@@ -26,4 +29,16 @@
       <a class="cart" href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
       <a class="user" href="/users/login"><i class="fas fa-user-circle"></i></a>
     </div>
+
+    <ul class="header__menu__usuarios">
+      <% if (!locals.user) { %>
+          <li><a href="/users/register">REGISTRATE</a></li>
+          <li><a href="/users/login">INGRESA</a></li>
+      <% }else{ %>
+          <li><a href="/">MI PERFIL</a></li>
+          <li><a href="/">SALIR</a></li>
+      <% } %>
+     
+  </ul>
+
   </header>
