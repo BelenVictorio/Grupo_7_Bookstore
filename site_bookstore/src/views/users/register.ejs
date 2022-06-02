@@ -12,16 +12,15 @@
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam exercitationem expedita ratione, nemo quas fuga a nihil ut vel perspiciatis natus, distinctio architecto repudiandae porro voluptatibus neque optio qui tempore.
       </p>
       <article class="register-form">
-        <form action="" class="register-form-info">
+        <form method="POST" action="" class="register-form-info">
           <div class="register-info">
-            <input type="text" id="nombre" name="nombre" placeholder="Escribi tu nombre">
-            <label for="nombre"></label>
-            <span hidden>Obligatorio</span>
+            <input class="<%= locals.errors && errors.nombre ? 'Es invalid' : null %>" type="text" id="nombre" name="nombre" placeholder="Escribi tu nombre" value="<%= locals.old && old.nombre ? old.nombre : null%>">
+            <span><%= locals.errors && errors.nombre ? errors.nombre.msg : null%></span>
           </div>
           <div class="register-info">
-            <input type="text" id="apellido" name="apellido" placeholder="Escribi tu apellido">
+            <input class="<%= locals.errors && errors.apellido ? 'Es invalid' : null %>" type="text" id="apellido" name="apellido" placeholder="Escribi tu apellido" value="<%= locals.old && old.apellido ? old.apellido : null%>">
             <label for="apellido"></label>
-            <span hidden>Obligatorio</span>
+            <span><%= locals.errors && errors.apellido ? errors.apellido.msg : null%></span>
           </div>
           <div class="register-info">
             <label for="pais"></label>
@@ -114,26 +113,27 @@
           </ul>
         </div>
           <div class="register-info">
-            <input type="email" id="email" name="email" placeholder="Email">
+            <input class="<%= locals.errors && errors.email ? 'Is invalid' : null %>" type="email" id="email" name="email" placeholder="Email" value="<%= locals.old && old.email ? old.email : null%>">
             <label for="email"></label>
-            <span hidden>Obligatorio</span>
+            <span><%= locals.errors && errors.email ? errors.email.msg : null%></span>
           </div>
           <div class="register-info">
-            <input type="password" id="password" name="password" placeholder="Contraseña">
+            <input class="<%= locals.errors && errors.password ? 'Is invalid' : null %>" type="password" id="password" name="password" placeholder="Contraseña">
             <label for="password"></label>
-            <span hidden>Obligatorio</span>
+            <span><%= locals.errors && errors.password ? errors.password.msg : null%></span>
           </div>
           <div class="register-info">
-            <input type="password" id="password" name="password" placeholder="Contraseña">
+            <input class="<%= locals.errors && errors.password2 ? 'Is invalid' : null %>" type="password" id="password" name="password2" placeholder="Repeti la contraseña">
             <label for="password"></label>
-            <span hidden>Obligatorio</span>
+            <span><%= locals.errors && errors.password2 ? errors.password.msg : null%></span>
           </div>
           <div class="register-condiciones">
             <input type="checkbox" name="terminos" id="terminos">
             <label for="terminos">Aceptar <a href="">Terminos y Condiciones</a></label>
+            <span><%= locals.errors && errors.terminos ? errors.terminos.msg : null%></span>
           </div>
           <div class="register-boton-box">
-            <button class="register-button" type="submit"><a href="/users/login">Registrarme</a></button>
+            <button class="register-button" type="submit">Registrarme</button>
             <button class="register-button" type="reset"> <a href="/">Cancelar</a></button>
           </div>
 

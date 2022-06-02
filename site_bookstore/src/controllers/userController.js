@@ -2,6 +2,7 @@ const {getUsers,writeUsers} =require('../data')
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 
+
 module.exports={
 register:(req,res) =>{
     return res.render('users/register');
@@ -19,22 +20,31 @@ processRegister: (req, res) => {
 
         let newUser = {
             id: lastId + 1,
-            name: req.body.name,
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
             avatar: req.file ? req.file.filename : "default-image.png",
-            rol: "user"
+            category: "user"
         }
 
         getUsers.push(newUser);
 
         writeUsers(getUsers);
 
+        //levantar sesion
+        const {id, nombre, category} = newUser
+        req.session.userLogin = {
+            id,
+            nombre,
+            category
+        }
+
         res.redirect("/users/login");
     } else {
-        res.render("users/registro", {
-            errors: errors.mapped(),
+        res.render("users/register", {
             old: req.body,
+            errors: errors.mapped(),
             session: req.session
         })
     }
