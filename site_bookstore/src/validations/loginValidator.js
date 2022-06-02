@@ -1,5 +1,5 @@
  const bcryptjs = require('bcryptjs');
-const {check, body } = require('express-validator');
+const {check } = require('express-validator');
 const users = require('../data/users.json')
 
 module.exports = [
@@ -11,7 +11,7 @@ module.exports = [
         .isEmail()
         .withMessage('Debes ingresar un email válido'),
 
-    body('password')
+    check('password')
         .notEmpty()
         .withMessage('Debes ingresar la contraseña')
         .bail()
@@ -20,11 +20,9 @@ module.exports = [
             const user = users.find(user => user.email === req.body.email); 
 
                 if(!user){
-                    console.log(user);
                     return false
                 } else {
                     if(!bcryptjs.compareSync(value, user.password)) { 
-                        console.log(user);
                     return false
                 }
             }

@@ -1,6 +1,6 @@
 [{
         "id": 1,
-        "first_name": "Mab",
+        "name": "Mab",
         "last_name": "Reinmar",
         "email": "victoriobell@gmail.com",
         "password": "DmljSL8VF",
@@ -9,7 +9,7 @@
     },
     {
         "id": 2,
-        "first_name": "Deanna",
+        "name": "Deanna",
         "last_name": "Ganderton",
         "email": "dganderton1@mozilla.com",
         "password": "KeGm4SFtLY9n",
@@ -18,7 +18,7 @@
     },
     {
         "id": 3,
-        "first_name": "Janenna",
+        "name": "Janenna",
         "last_name": "Truckett",
         "email": "jtruckett2@deviantart.com",
         "password": "Sqv3t9zu6F",
@@ -27,7 +27,7 @@
     },
     {
         "id": 4,
-        "first_name": "Casandra",
+        "name": "Casandra",
         "last_name": "Gawen",
         "email": "cgawen3@wiley.com",
         "password": "FPQb8B",
@@ -36,7 +36,7 @@
     },
     {
         "id": 5,
-        "first_name": "Eli",
+        "name": "Eli",
         "last_name": "Cruess",
         "email": "ecruess4@artisteer.com",
         "password": "JVpcMPmiiYl",
