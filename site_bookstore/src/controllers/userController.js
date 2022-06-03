@@ -61,7 +61,7 @@ processLogin: (req, res) => {
             name: user.name,
             email: user.email,
             avatar: user.avatar,
-            rol: user.rol
+            category: user.rol
         }
 
         if (req.body.remember) {

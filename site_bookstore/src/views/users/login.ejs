@@ -9,14 +9,16 @@
       <section class="login-box">
           <article class="login-form">
             <h2>Ingresa</h2>
-          <form action="" class="login-form-info">
+          <form method="POST" class="login-form-info">
               <div class="login-info">
                 <input type="email" id="email" name="email" placeholder="Email">
                 <label for="email"></label>
+                <small class="text-danger"><%= locals.errors && errors.email ? errors.email.msg: null %> </small>
               </div>
               <div class="login-info">
-                <input type="password" id="password" name="password" placeholder="Contraseña" minlength="8">
+                <input type="password" id="password" name="password" placeholder="Contraseña">
                 <label for="password"></label>
+                <small class="text-danger"><%= locals.errors && errors.password ? errors.password.msg: null %> </small>
                 <a class="login-pregunta" href="">¿Haz olvidado la contraseña?</a>
               </div>
               <div  class="login-info">
@@ -24,7 +26,7 @@
                 <label for="recordarme">Recordarme</label>
                 </div>
               <div  class="login-info">
-              <button type="submit"><a href="/">Iniciar Sesión</a></button>
+                <button type="submit">Iniciar Sesión</button>
             </div>
           <div class="login-info-direcciones" >
           <p>O puedes ingresar con:</p>

@@ -5,6 +5,7 @@ const {register,processRegister ,processLogin,login, logout, profile, updateProf
 
 /*  Middlewares */
 const registerValidator = require('../validations/registerValidator')
+const loginValidator = require('../validations/loginValidator')
 
 const userCheck = require('../middlewares/userInSessionCheck')
 
@@ -13,7 +14,7 @@ const userCheck = require('../middlewares/userInSessionCheck')
 router.get('/register', register);
 router.post('/register', registerValidator, processRegister);
 router.get('/login', login);
-router.post('/login', processLogin);
+router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
 router.get('/profile', userCheck, profile);
 router.put('/updateprofile', updateProfile)
