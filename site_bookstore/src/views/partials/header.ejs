@@ -7,7 +7,10 @@
         <li><a href="/">Inicio</a></li>
         <li><a href="/products/">Productos</a></li>
         <li><a href="#">Contacto</a></li>
-        <li><a href="/products/creation">AgregarProducto</a></li>
+        <% if(locals.userLogin && userLogin.category === 'admin'){ %>
+          <li><a href="/products/creation">AgregarProducto</a></li>
+        <% } %> 
+        
       </ul>
     </nav>
 
@@ -24,6 +27,12 @@
 
     <div class="icons">
       <a class="cart" href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
-      <a class="user" href="/users/login"><i class="fas fa-user-circle"></i></a>
+
+      <% if(!locals.userLogin){ %>
+        <a class="user" href="/users/login"><i class="fas fa-user-circle"></i></a>
+      <% }else { %>
+        <li> Hola <%=userLogin.nombre%>!</li> 
+        <a class="user" href="/users/logout"><i class="fas fa-user-circle"></i> Salir</a>
+      <% } %> 
     </div>
   </header>

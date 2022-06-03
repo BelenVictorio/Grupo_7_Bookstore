@@ -84,4 +84,8 @@ processLogin: (req, res) => {
     })
 }
 },
+logout: (req, res) => {
+    req.session.destroy()
+    res.redirect('/')
+}
 }

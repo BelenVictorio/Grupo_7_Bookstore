@@ -5,7 +5,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override')
 const session = require('express-session');
+//middlewares
 const cookieSession = require('./middlewares/cookieSession');
+const localsCheck = require('./middlewares/localsCheck');
 
 var app = express();
 
@@ -34,6 +36,7 @@ app.use(session({
   saveUninitialized: true,
   cookie:{}
 }));
+app.use(localsCheck);
 
 /* ****middlewares de rutas**** */
 app.use('/', indexRouter);
