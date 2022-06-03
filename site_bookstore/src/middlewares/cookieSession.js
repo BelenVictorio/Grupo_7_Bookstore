@@ -1,8 +1,8 @@
 const cookieSession = (req, res, next) => {
     if(typeof req.cookies !== "undefined"){
         if (req.cookies.paginasCookie){
-            req.session.user = req.cookies.paginasCookie;
-            res.locals.users = req.session.user;
+            req.session.userLogin = req.cookies.paginasCookie;
+            res.locals.userLogin = req.session.userLogin;
         }
         next()
     }

@@ -2,7 +2,6 @@ const {getUsers,writeUsers} =require('../data')
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 
-
 module.exports={
 register:(req,res) =>{
     return res.render('users/register');
@@ -57,7 +56,7 @@ processLogin: (req, res) => {
     if(errors.isEmpty()){
         let user = getUsers.find(user => user.email === req.body.email) 
         
-        req.session.user = {
+        req.session.userLogin = {
             id: user.id,
             name: user.name,
             email: user.email,
@@ -67,14 +66,14 @@ processLogin: (req, res) => {
 
         if (req.body.remember) {
             const TIME_IN_MILISECONDS = 60000;
-            res.cookie("paginasCookie", req.session.user, {
+            res.cookie("paginasCookie", req.session.userLogin, {
                 expires: new Date(Date.now() + TIME_IN_MILISECONDS),
                 httpOnly: true,
                 secure: true
             });
         } 
 
-        res.locals.user = req.session.user
+        res.locals.userLogin = req.session.userLogin
 
         res.redirect('/')
 } else {
@@ -86,6 +85,17 @@ processLogin: (req, res) => {
 },
 logout: (req, res) => {
     req.session.destroy()
+    res.cookie('paginasCookie', null, {maxAge: -1})
     res.redirect('/')
+},
+profile:(req, res) => {
+    const users = getUsers;
+    const user = users.find(user => user.id === req.session.userLogin.id)
+    return res.render('users/profile',{
+        user
+    });
+},
+updateProfile: (req, res) =>{
+    
 }
 }

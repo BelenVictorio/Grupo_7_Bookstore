@@ -6,10 +6,10 @@ const logger = require('morgan');
 const methodOverride = require('method-override')
 const session = require('express-session');
 //middlewares
-const cookieSession = require('./middlewares/cookieSession');
 const localsCheck = require('./middlewares/localsCheck');
+const cookieSession = require('./middlewares/cookieSession');
 
-var app = express();
+//var app = express();
 
 /* ****Enrutadores**** */
 var indexRouter = require('./routes/index');
@@ -36,6 +36,7 @@ app.use(session({
   saveUninitialized: true,
   cookie:{}
 }));
+app.use(cookieSession);
 app.use(localsCheck);
 
 /* ****middlewares de rutas**** */

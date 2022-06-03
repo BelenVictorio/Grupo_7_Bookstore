@@ -47,6 +47,6 @@
             "email":"solcastro@gmail.com",
             "password":"$2a$10$FPm5I47ohJnXUsgW.MGtgu76S/GpM5BdByuFu9TFnDSHFT/lTQQW6",
             "avatar":"default-image.png",
-            "rol":"user"
+            "rol":"admin"
         }
     ]
