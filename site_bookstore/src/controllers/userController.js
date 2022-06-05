@@ -96,6 +96,43 @@ profile:(req, res) => {
     });
 },
 updateProfile: (req, res) =>{
-    
-}
+    let errores = validationResult(req);
+    if(errores.isEmpty()){
+        const {nombre, apellido, pais, direccion, fecha, avatar, preferencias, email} = req.body
+        const {id} = getUsers.find(usuario => usuario.id === req.session.userLogin.id)
+        const usuariosModify = getUsers.map(usuario => {
+            if(usuario.id === +id){
+                let usuarioModify = {
+                    ...usuario,
+                    nombre: nombre.trim(),
+                    apellido: apellido.trim(),
+                    pais,
+                    direccion: direccion.trim(),
+                    fecha,
+                    //avatar: req.file ? req.file.filename : usuario.img,
+                    preferencias,
+                    email
+                }
+                const {id,category} = userModify
+                req.session.userLogin = {
+                     id,
+                    nombre,
+                    category
+                }
+                res.locals.userLogin = req.session.userLogin;
+                return usuarioModify;
+            }
+            return getUsers;
+        })
+        writeUsers(usuariosModify)
+        return res.redirect('/')
+    }else{
+        console.log(errores);
+        return res.render('profile', {
+            usuario: req.body,
+            errors: errores.mapped(),
+            session: req.session
+        })
+    }
+    }
 }
