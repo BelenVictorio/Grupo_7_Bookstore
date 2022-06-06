@@ -19,7 +19,7 @@ module.exports = [
         .isEmail().withMessage('Email no valido').bail()
         .custom((value)=>{
             const user = users.find(user => user.email === value)
-                if(!user){
+                if(user){
                     return false
                 }else{
                     return true  
