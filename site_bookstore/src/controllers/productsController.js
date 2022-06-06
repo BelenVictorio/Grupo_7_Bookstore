@@ -93,7 +93,7 @@ search : (req,res) => {
         let products= readProducts(); 
         const {id} = req.params;
         const {keyword} = req.query;
-        const result = products.filter(product => product.name.toLowerCase().includes(keyword.toLowerCase()) || product.author.toLowerCase().includes(keyword.toLowerCase()) || product.category.toLowerCase().includes(keyword.toLowerCase()));
+        const result = products.filter(products => products.name.toLowerCase().includes(keyword.toLowerCase()) )|| products.author.toLowerCase().includes(keyword.toLowerCase()) || products.category.toLowerCase().includes(keyword.toLowerCase());
         
         
         
