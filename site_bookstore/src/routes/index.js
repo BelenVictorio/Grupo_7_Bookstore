@@ -7,6 +7,6 @@ const adminCheck = require('../middlewares/adminCheck');
 /* GET home page. */
 router.get('/',index)
 router.get('/search', search)
-//router.get('/admin', adminCheck, admin)
+router.get('/admin', adminCheck, admin)
 
 module.exports = router;
