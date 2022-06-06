@@ -12,11 +12,11 @@
       <article class="register-form">
         <form method="POST" action="/users/updateprofile?_method=PUT" class="register-form-info" enctype="multipart/form-data">
           <div class="register-info">
-            <input class="<%= locals.errors && errors.nombre ? 'Es invalid' : null %>" type="text" id="nombre" name="nombre" placeholder="Escribi tu nombre" value="<%= users.name%>">
+            <input class="<%= locals.errors && errors.nombre ? 'Es invalid' : null %>" type="text" id="nombre" name="nombre" placeholder="Escribi tu nombre" value="<%= user.nombre%>">
             <span><%= locals.errors && errors.nombre ? errors.nombre.msg : null%></span>
           </div>
           <div class="register-info">
-            <input class="<%= locals.errors && errors.apellido ? 'Es invalid' : null %>" type="text" id="apellido" name="apellido" placeholder="Escribi tu apellido" value="<%= users.apellido %>">
+            <input class="<%= locals.errors && errors.apellido ? 'Es invalid' : null %>" type="text" id="apellido" name="apellido" placeholder="Escribi tu apellido" value="<%= user.apellido%>">
             <label for="apellido"></label>
             <span><%= locals.errors && errors.apellido ? errors.apellido.msg : null%></span>
           </div>

@@ -98,20 +98,19 @@ profile:(req, res) => {
 updateProfile: (req, res) =>{
     let errores = validationResult(req);
     if(errores.isEmpty()){
-        const {nombre, apellido, pais, direccion, fecha, avatar, preferencias, email} = req.body
-        const {id} = getUsers.find(usuario => usuario.id === req.session.userLogin.id)
-        const usuariosModify = getUsers.map(usuario => {
-            if(usuario.id === +id){
-                let usuarioModify = {
-                    ...usuario,
-                    nombre: nombre.trim(),
-                    apellido: apellido.trim(),
+        const {nombre, apellido, pais, direccion, fecha, avatar, preferencias} = req.body
+        const {id} = getUsers.find(user => user.id === req.session.userLogin.id)
+        const usersModify = getUsers.map(user => {
+            if(user.id === +id){
+                let userModify = {
+                    ...user,
+                    nombre,
+                    apellido,
                     pais,
-                    direccion: direccion.trim(),
+                    direccion,
                     fecha,
-                    //avatar: req.file ? req.file.filename : usuario.img,
-                    preferencias,
-                    email
+                    avatar,
+                    preferencias: preferencias
                 }
                 const {id,category} = userModify
                 req.session.userLogin = {
@@ -120,16 +119,17 @@ updateProfile: (req, res) =>{
                     category
                 }
                 res.locals.userLogin = req.session.userLogin;
-                return usuarioModify;
+                return userModify;
             }
-            return getUsers;
+            return user;
         })
-        writeUsers(usuariosModify)
+        getUsers.push(usersModify)
+        writeUsers(usersModify)
         return res.redirect('/')
     }else{
         console.log(errores);
         return res.render('profile', {
-            usuario: req.body,
+            user: req.body,
             errors: errores.mapped(),
             session: req.session
         })
