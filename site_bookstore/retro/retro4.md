@@ -2,14 +2,17 @@
 
 * Qué hicimos bien: 
 
-Se pudo terminar el trabajo a tiempo y en forma, sin problemas. Nos ayudamos entre todos y el trabajo en equipo se notó. Si alguno tenía problemas, se veía de como resolverlo. 
+Pudimos repartirnos bien las tareas y también terminarlas en tiempo y forma. 
 
 * Qué hicimos mal:
 
-Tuvimos problemas con los tiempos. 
+Tuvimos problemas con las tareas, y pasamos mucho tiempo tratando de resolverlo. Pequeños detalles que no querían salir.  
 
 * Qué deberíamos comenzar a hacer:
 
-Poder dividirnos mejor las tareas y pensar bien como encarar el trabajo.
+
+
 
 * Qué deberíamos dejar de hacer:
+
+Siempre tenemos problemas para hacer las reuniones, ya que no contamos con mucho tiempo, pero siempre tratamos de juntarnos mínimo una vez a la semana y el resto hablarlo por escrito en slack. Ahí nos comunicamos y eso nos ayuda mucho a afrontar el trabajo. 
