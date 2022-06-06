@@ -1,51 +1,32 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/admin"><img src="/images/logo.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Productos
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/products/add">Agregar</a></li>
-                <li><a class="dropdown-item" href="/products/list">Listar</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categorias
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/categories/add">Agregar</a></li>
-                <li><a class="dropdown-item" href="/categories/list">Listar</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Usuarios
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/users/add">Agregar</a></li>
-                <li><a class="dropdown-item" href="/users/list">Listar</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light" type="submit">Buscar</button>
-            </form>
-          </ul>
+<!-- HEADER-->
+<header class="header">
+    <a href="/" class="logo"><img src="/images/logo-negro.png" alt="logo" /></a>
+
+    <nav class="navbar">
+      <ul class="nav_links">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/products/">Productos</a></li>
+        <li><a href="#">Contacto</a></li>
+        <% if(locals.userLogin && userLogin.category === 'admin'){ %>
+          <li><a href="/products/creation">AgregarProducto</a></li>
+        <% } %> 
+        <% if (locals.userLogin?.category === 'admin') { %>
+          <li><a href="/admin">Admin</a></li>
+         <% } %>
         
-        </div>
-      </div>
+      </ul>
     </nav>
-</header>
+
+    <div class="menu-button"><i class="fa-solid fa-bars"></i></div>
+
+    <div class="icons">
+      <a class="cart" href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+
+      <% if(!locals.userLogin){ %>
+        <a class="user" href="/users/login"><i class="fas fa-user-circle"></i></a>
+      <% }else { %>
+        <a class="user" href="/users/profile"><i class="fas fa-user-circle"></i> Mi perfil</a>
+        <a class="user" href="/users/logout"><i class="fas fa-user-circle"></i> Salir</a>
+      <% } %> 
+    </div>
+  </header>
