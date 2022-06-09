@@ -7,10 +7,6 @@ const readProducts = () => {
 	const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 	return products
 }; 
-const toThousand = n => n.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-const saveProducts = (products) => fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 3));
-
 module.exports={
     detail: (req, res) => {
         let products= readProducts(); 
@@ -26,31 +22,6 @@ cart: (req, res) => {
     return res.render('productos/productCart');
 },
 
-store: (req, res) => {
-
-    const {name, author, description, price, category } = req.body;
-
-    let lastID = products[products.length - 1].id;
-
-    let newProduct = {
-        id: +lastID + 1,
-        name,
-        author,
-        description,
-        price: +price,
-        category,
-        image: "not-found.jpg"
-    }
-
-    products.push(newProduct);
-
-    fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'), JSON.stringify(products, null, 3), 'utf-8');
-
-    return res.redirect('/')
-
-    
-},
-
 products: (req, res) => {
     let products= readProducts(); 
         const {id} = req.params;
@@ -59,36 +30,6 @@ products: (req, res) => {
     });
 },
 
-creation: (req, res) => {
-    return res.render('admin/creation')
-},
-
-edit: (req, res) => {
-    let product = products.find(product => product.id === +req.params.id);
-    return res.render('admin/edit', {
-        product
-    });
-},
-
-update: (req, res) => {
-    const {name, author, description, price, category} = req.body;
-    let productsModify = products.map(product => {
-        if(product.id === +req.params.id){
-            let productModify = {
-                ...product,
-                name : name.trim(),
-                author : author.trim(),
-                description : description.trim(),
-                price : +price,
-                category
-            }
-            return productModify
-        }
-        return product
-    })
-    saveProducts(productsModify);
-    return res.redirect('/products')
-},
 search : (req,res) => {
         let products= readProducts(); 
         const {id} = req.params;

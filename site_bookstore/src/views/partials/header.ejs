@@ -8,11 +8,9 @@
         <li><a href="/products/">Productos</a></li>
         <li><a href="#">Contacto</a></li>
         <% if(locals.userLogin && userLogin.category === 'admin'){ %>
-          <li><a href="/products/creation">AgregarProducto</a></li>
+          <li><a href="/admin/creation">ADMIN</a></li>
         <% } %> 
-        <% if (locals.userLogin?.category === 'admin') { %>
-          <li><a href="/admin">Admin</a></li>
-         <% } %>
+        
         
       </ul>
     </nav>
@@ -28,8 +26,8 @@
 
     <div class="menu-button"><i class="fa-solid fa-bars"></i></div>
 
-    <div class="icons">
-      <a class="cart" href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+   <!--  <div class="icons">
+      <a class="cart" href="/products/cart"><i class="fas fa-shopping-cart"></i></a> -->
 
       <% if(!locals.userLogin){ %>
         <a class="user" href="/users/login"><i class="fas fa-user-circle"></i></a>
