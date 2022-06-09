@@ -16,5 +16,4 @@ router.put('/update/:id',upload.array('image'),update);
 router.delete('/delete/:id',admincheck,erase)
 router.get("/search", search);
 
-
 module.exports = router;
