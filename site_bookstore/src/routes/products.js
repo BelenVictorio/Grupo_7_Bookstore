@@ -1,31 +1,20 @@
 const express = require('express');
 const router = express.Router();
+const upload =require('../middlewares/uploadImageProduct');
+const admincheck = require('../middlewares/admincheck');
+const userInsessionCheck=require('../middlewares/userInSessionCheck');
+const {creation, edit, update,detail ,store,products, erase, search} = require('../controllers/productController');
 
-const {detail, cart, products, creation, edit, update, erase, search, store} =require('../controllers/productsController');
 
-/* /products */
-
-/* listado de productos */
-router.get('/',products)
-router.get('/search', search);
-
-/* formulario y creacion de productos */
-router.get('/creation', creation);
-router.post('/creation', store);
-
-/* carrito */
-router.get('/cart', cart);
-
-/* detalle de producto */
-router.get('/detail/:id',detail);
-
-/* formulario y edicion de producto */
-router.get('/edit/:id', edit);
-router.put('/update/:id', update);
-
-/* Eliminar un producto */
-router.delete('/delete/:id', erase)
-
+/*Products*/
+router.get('/', userInsessionCheck ,products);
+router.get('/detail/:id',userInsessionCheck,detail);
+router.get('/creation', admincheck, creation);
+router.post('/add',upload.array('image'), store);
+router.get('/edit/:id', admincheck, edit);
+router.put('/update/:id',upload.array('image'),update);
+router.delete('/delete/:id',admincheck,erase)
+router.get("/search", search);
 
 
 module.exports = router;
