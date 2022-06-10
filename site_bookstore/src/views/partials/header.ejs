@@ -8,7 +8,7 @@
         <li><a href="/products/">Productos</a></li>
         <li><a href="#">Contacto</a></li>
         <% if(locals.userLogin && userLogin.category === 'admin'){ %>
-          <li><a href="/admin/creation">ADMIN</a></li>
+          <li><a href="/admin">ADMIN</a></li>
         <% } %> 
         
         
@@ -26,12 +26,14 @@
 
     <div class="menu-button"><i class="fa-solid fa-bars"></i></div>
 
-   <!--  <div class="icons">
-      <a class="cart" href="/products/cart"><i class="fas fa-shopping-cart"></i></a> -->
+    <div class="icons">
+      
+      
 
       <% if(!locals.userLogin){ %>
         <a class="user" href="/users/login"><i class="fas fa-user-circle"></i></a>
       <% }else { %>
+        <a class="cart" href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
         <a class="user" href="/users/profile"><i class="fas fa-user-circle"></i> Mi perfil</a>
         <a class="user" href="/users/logout"><i class="fas fa-user-circle"></i> Salir</a>
       <% } %> 

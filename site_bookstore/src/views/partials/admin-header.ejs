@@ -1,32 +1,34 @@
-<!-- HEADER-->
-<header class="header">
-    <a href="/" class="logo"><img src="/images/logo-negro.png" alt="logo" /></a>
-
-    <nav class="navbar">
-      <ul class="nav_links">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/products/">Productos</a></li>
-        <li><a href="#">Contacto</a></li>
-        <% if(locals.userLogin && userLogin.category === 'admin'){ %>
-          <li><a href="/products/creation">AgregarProducto</a></li>
-        <% } %> 
-        <% if (locals.userLogin?.category === 'admin') { %>
-          <li><a href="/admin">Admin</a></li>
-         <% } %>
-        
-      </ul>
-    </nav>
-
-    <div class="menu-button"><i class="fa-solid fa-bars"></i></div>
-
-    <div class="icons">
-      <a class="cart" href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
-
-      <% if(!locals.userLogin){ %>
-        <a class="user" href="/users/login"><i class="fas fa-user-circle"></i></a>
-      <% }else { %>
-        <a class="user" href="/users/profile"><i class="fas fa-user-circle"></i> Mi perfil</a>
-        <a class="user" href="/users/logout"><i class="fas fa-user-circle"></i> Salir</a>
-      <% } %> 
-    </div>
-  </header>
+<header class="admin">
+  <div class="adminHeader">
+    <img id="logo" src="/images/logofinal.svg" alt="logotipo">
+  </div>
+  <nav>
+    <ul id="menu">
+      <li><a href="/admin/productos">Productos</a>
+        <ul>
+          <li><a href="/admin/productos">Lista</a></li>
+          <li><a href="/admin/productos/agregar">Agregar</a></li>
+        </ul>  
+      </li>
+    </ul>
+  </nav>
+  <nav>
+    <ul id="menu">
+      <li><a href="/admin/categorias">Categorias</a>
+        <ul>
+          <li><a href="/admin/categorias">Lista</a></li>
+          <li><a href="/admin/categorias/agregar">Agregar</a></li>
+        </ul>  
+      </li>
+    </ul>
+  </nav>
+  <form action="/admin/productos/search" method="GET">
+    <input type="search" placeholder="Search" name="keywords">
+    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </form>
+  <nav>
+    <ul id="menu">
+      <li><a href="/users/logout">Cerrar Sesión</a></li>
+    </ul>
+  </nav>
+</header>
