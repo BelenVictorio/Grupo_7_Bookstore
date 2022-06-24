@@ -6,14 +6,14 @@ const {register,processRegister ,processLogin,login, logout, profile, updateProf
 /*  Middlewares */
 const registerValidator = require('../validations/registerValidator')
 const loginValidator = require('../validations/loginValidator')
-
+const upload = require('../middlewares/uploadImageProduct');
 const userCheck = require('../middlewares/userInSessionCheck')
-
+const sessionCheck=require('../middlewares/sessionCheck');
 
 /* users */
-router.get('/register', register);
-router.post('/register', registerValidator, processRegister);
-router.get('/login', login);
+router.get('/register',sessionCheck, register);
+router.post('/register',upload.single('image') ,registerValidator, processRegister);
+router.get('/login', sessionCheck ,login);
 router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
 router.get('/profile', userCheck, profile);

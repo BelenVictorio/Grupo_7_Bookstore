@@ -38,7 +38,7 @@
            
               
             <section class="section-producto">
-              <<% products.forEach(({id,name,price,image}) => { %>
+              <% products.forEach(({id,name,price,image}) => { %>
                 <article class="productos-catalogo">
                   <div class="foto-catalogo">
                       <a href="/products/detail/<%= id %>"><img class="zoom" width="100%" src="/images/<%= image %>" alt="imagen del producto"></a><!-- image a photo -->

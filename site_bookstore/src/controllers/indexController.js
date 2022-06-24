@@ -14,5 +14,8 @@ module.exports ={
             products,
 
         })
-  }
+      },
+      admin: (req,res) => {
+        res.render('admin')
+      }
 }
