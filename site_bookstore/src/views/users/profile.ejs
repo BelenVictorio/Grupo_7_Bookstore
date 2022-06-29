@@ -10,10 +10,11 @@
     <section class="register-box">
       <h2>Perfil</h2>
       <article class="register-form">
-        <form method="POST" action="/users/updateprofile?_method=PUT" class="register-form-info" enctype="multipart/form-data">
+        <form method="POST" action="/users/updateprofile?_method=PUT" class="register-form-info" 
+         >
           <div class="register-info">
-            <input class="<%= locals.errors && errors.nombre ? 'Es invalid' : null %>" type="text" id="nombre" name="nombre" placeholder="Escribi tu nombre" value="<%= user.name%>">
-            <span><%= locals.errors && errors.nombre ? errors.nombre.msg : null%></span>
+            <input class="<%= locals.errors && errors.nombre ? 'Es invalid' : null %>" type="text" id="nombre" name="nombre" placeholder="Escribi tu nombre" value="<%= user.nombre%>">
+            <span><%= locals.errores && errores.nombre ? errores.nombre.msg : null%></span>
           </div>
           <div class="register-info">
             <input class="<%= locals.errors && errors.apellido ? 'Es invalid' : null %>" type="text" id="apellido" name="apellido" placeholder="Escribi tu apellido" value="<%= user.apellido %>">
@@ -54,57 +55,57 @@
           <p>Elige tus preferencias:</p>
           <ul>
             <li>
-              <input type="checkbox" name="preferecias" id="Ficcion" value="F">
+              <input type="checkbox" name="preferencias" id="Ficcion" value="F">
               <label for="Ficcion">Ficcion</label>
             </li>
 
 
             <li>
-              <input type="checkbox" name="preferecias" id="Romance" value="R">
+              <input type="checkbox" name="preferencias" id="Romance" value="R">
               <label for="Romance">Romance</label>
             </li>
 
 
             <li>
-              <input type="checkbox" name="preferecias" id="Comics-Mangas" value="C">
+              <input type="checkbox" name="preferencias" id="Comics-Mangas" value="C">
               <label for="Comics-Mangas">Comics y Mangas</label>
             </li>
 
 
             <li>
-              <input type="checkbox" name="preferecias" id="Literatura" value="l">
+              <input type="checkbox" name="preferencias" id="Literatura" value="l">
               <label for="Literatura">Literatura</label>
             </li>
 
 
             <li> 
-              <input type="checkbox" name="preferecias" id="no Ficcion" value="n">
+              <input type="checkbox" name="preferencias" id="no Ficcion" value="n">
               <label for="no Ficcion">No Ficcion </label>
             </li>
 
 
             <li>
-              <input type="checkbox" name="preferecias" id="Infantiles" value="i">
+              <input type="checkbox" name="preferencias" id="Infantiles" value="i">
               <label for="Infantiles">Infantiles</label>
             </li>
 
 
 
             <li>
-              <input type="checkbox" name="preferecias" id="Arte" value="a">
+              <input type="checkbox" name="preferencias" id="Arte" value="a">
               <label for="Arte">Arte</label>
             </li>
 
 
             <li>
-              <input type="checkbox" name="preferecias" id="Filosofia" value="f">
+              <input type="checkbox" name="preferencias" id="Filosofia" value="f">
               <label for="Filosofia">Filosofia</label>
             </li>
 
 
 
             <li>
-              <input type="checkbox" name="preferecias" id="Otros" value="o">
+              <input type="checkbox" name="preferencias" id="Otros" value="o">
               <label for="Otros">Otros</label>
             </li>
 

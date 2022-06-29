@@ -104,26 +104,25 @@ updateProfile: (req, res) =>{
             if(user.id === +id){
                 let userModify = {
                     ...user,
-                    nombre,
-                    apellido,
+                    nombre : nombre.trim(),
+                    apellido : apellido.trim(),
                     pais,
-                    direccion,
+                    direccion : direccion.trim(),
                     fecha,
                     avatar,
-                    preferencias: preferencias
+                    preferencias: getUsers.push(preferencias)
                 }
-                const {id,category} = userModify
+                const {id, category} = userModify
                 req.session.userLogin = {
                      id,
                     nombre,
                     category
                 }
-                res.locals.userLogin = req.session.userLogin;
+                res.locals.userLogin === req.session.userLogin;
                 return userModify;
             }
             return user;
         })
-        getUsers.push(usersModify)
         writeUsers(usersModify)
         return res.redirect('/')
     }else{
