@@ -21,7 +21,10 @@ module.exports=(sequelize, DataTypes) => {
     }
     const Author = sequelize.define(alias, cols, config)
     Author.associate = function(models){
-        
+        Author.belongsTo(models.Product, {
+            as: "Product",
+            foreignKey: "author_id"
+        })
     }
     return Author;
 
