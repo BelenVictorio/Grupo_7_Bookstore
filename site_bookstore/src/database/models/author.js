@@ -10,7 +10,7 @@ module.exports=(sequelize, DataTypes) => {
            allowNull:false
         },
         name: {
-            type: DataTypes.VARCHAR(100),
+            type: DataTypes.STRING(100),
             allowNull:false
         }
     }

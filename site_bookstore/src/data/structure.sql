@@ -149,6 +149,7 @@ CREATE TABLE `users` (
   `roles_id` int unsigned NOT NULL,
   `image` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `Fk_users_rol_idx` (`roles_id`),
   CONSTRAINT `Fk_users_rol` FOREIGN KEY (`roles_id`) REFERENCES `rols` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -163,4 +164,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-02 19:55:12
+-- Dump completed on 2022-07-07 13:20:01

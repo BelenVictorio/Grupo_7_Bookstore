@@ -1,27 +1,28 @@
 module.exports=(sequelize, DataTypes) => {
-    let alias ="user";
+    let alias ="User";
     
     let cols ={
        id:{
            type:DataTypes.INTEGER.UNSIGNED,
-           primarykey:true,
+           primaryKey:true,
            allowNull:false,
            autoIncrement:true
        },
        first_name:{
-           type:DataTypes.VARCHAR(45),
+           type:DataTypes.STRING(45),
            allowNull:false,
        },
        last_name:{
-        type:DataTypes.VARCHAR(45),
+        type:DataTypes.STRING(45),
         allowNull:false,
        },
        email:{
-        type:DataTypes.VARCHAR(45),
+        type:DataTypes.STRING(45),
+        unique: true,
         allowNull:false,
        },
        password:{
-        type:DataTypes.VARCHAR(100),
+        type:DataTypes.STRING(100),
         allowNull:false,
        },
        roles_id:{
@@ -29,7 +30,7 @@ module.exports=(sequelize, DataTypes) => {
            allowNull:false
        },
        image:{
-           type:DataTypes.VARCHAR(45),
+           type:DataTypes.STRING(45),
            allowNull:true,
        }
     }
@@ -40,7 +41,7 @@ module.exports=(sequelize, DataTypes) => {
     }
     const User = sequelize.define(alias, cols, config)
     User.associate = function(models){
-        User.belongsTo(models.UserRol, {
+        User.belongsTo(models.Rol, {
             as: "rol",
             foreignKey: "rol_id"
         })
