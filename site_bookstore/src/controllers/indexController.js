@@ -8,7 +8,7 @@ const { Op } = require('sequelize')
 module.exports = {
 
   index: (req, res, ) => {
-    let products = db.Product.findAll()
+     db.Product.findAll()
       .then(products => {
         res.render('index', {
           products,

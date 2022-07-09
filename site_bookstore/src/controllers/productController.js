@@ -7,11 +7,11 @@ const {Op} = require('sequelize');
 module.exports = {
     detail: (req, res) => {
         db.Product.findByPk(req.params.id, {
-            includes : ['image', 'author']
+            includes : ['images', 'authors']
         })
-        .then(product => {
+        .then(products => {
              res.render('productos/productDetail', {
-                product
+                products
             })
         })
         .catch(error => console.log(error))
@@ -48,9 +48,11 @@ module.exports = {
     },
 
     products: (req, res) => {
-        db.Product.findAll({includes : ['image']})
+        db.Product.findAll({
+            includes : ['images', 'authors']
+        })
 			.then(products => {
-                res.render('productos/products', {
+                return res.render('productos/products', {
                     products
                 })
 			})
