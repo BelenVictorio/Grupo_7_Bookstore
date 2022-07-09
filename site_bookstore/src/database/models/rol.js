@@ -17,6 +17,7 @@ module.exports=(sequelize, DataTypes) => {
     let config ={
         tableName:"rols",
         timestamps:false,
+        underscored : true
     }
     const Rol = sequelize.define(alias, cols, config)
     Rol.associate = function(models){

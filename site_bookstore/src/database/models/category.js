@@ -18,6 +18,7 @@ module.exports=(sequelize, DataTypes) => {
     let config ={
         tableName:"categories",
         timestamps:false,
+        underscored : true
     }
     const Category = sequelize.define(alias, cols, config)
     Category.associate = function(models){
