@@ -18,11 +18,12 @@ module.exports=(sequelize, DataTypes) => {
     let config ={
         tableName:"authors",
         timestamps:false,
+        underscored : true
     }
     const Author = sequelize.define(alias, cols, config)
     Author.associate = function(models){
         Author.belongsTo(models.Product, {
-            as: "Product",
+            as: "products",
             foreignKey: "author_id"
         })
     }

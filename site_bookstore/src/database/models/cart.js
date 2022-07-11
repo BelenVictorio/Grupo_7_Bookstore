@@ -26,6 +26,7 @@ module.exports=(sequelize, DataTypes) => {
     let config ={
         tableName:"carts",
         timestamps:false,
+        underscored : true
     }
     const Cart = sequelize.define(alias, cols, config)
     Cart.associate = function(models){

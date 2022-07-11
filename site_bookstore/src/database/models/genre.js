@@ -17,6 +17,7 @@ module.exports=(sequelize, DataTypes) => {
     let config ={
         tableName:"genres",
         timestamps:false,
+        underscored : true
     }
     const Genre = sequelize.define(alias, cols, config)
     Genre.associate = function(models){

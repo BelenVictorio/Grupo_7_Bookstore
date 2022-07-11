@@ -1,21 +1,20 @@
 const path = require('path');
 const fs = require('fs');
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = require('../data/products.json');
+const db = require('../database/models');
+const {Op} = require('sequelize');
 
-const readProducts = () => {
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    return products
-};
+
 module.exports = {
     detail: (req, res) => {
-        let products = readProducts();
-        const { id } = req.params;
-        const product = products.find(producto => producto.id === +id);
-
-        res.render('productos/productDetail', {
-            product
+        db.Product.findByPk(req.params.id, {
+            includes : ['images', 'authors']
         })
+        .then(products => {
+             res.render('productos/productDetail', {
+                products
+            })
+        })
+        .catch(error => console.log(error))
     },
 
     store: (req, res) => {
@@ -49,11 +48,15 @@ module.exports = {
     },
 
     products: (req, res) => {
-        let products = readProducts();
-        const { id } = req.params;
-        return res.render('productos/products', {
-            products
-        });
+        db.Product.findAll({
+            includes : ['images', 'authors']
+        })
+			.then(products => {
+                return res.render('productos/products', {
+                    products
+                })
+			})
+			.catch(error => console.log(error))
     },
 
     creation: (req, res) => {
@@ -61,10 +64,8 @@ module.exports = {
     },
 
     edit: (req, res) => {
-        let product = products.find(product => product.id === +req.params.id);
-        return res.render('admin/edit', {
-            product
-        });
+        
+        
     },
 
     update: (req, res) => {
