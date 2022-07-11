@@ -89,18 +89,13 @@ module.exports = {
     },
 
     search: (req, res) => {
-        let products = readProducts();
-        const { id } = req.params;
-        const { keyword } = req.query;
-        const result = products.filter(products => products.name.toLowerCase().includes(keyword.toLowerCase())) || products.author.toLowerCase().includes(keyword.toLowerCase()) || products.category.toLowerCase().includes(keyword.toLowerCase());
+        
+        const {keyword} = req.query;
 
-
-
-        return res.render('result', {
-            products: result,
-            keyword
-
-        })
+        db.Product.findAll({ where: {[Op.or]: [{name: {[Op.substring]: keyword}},{description: {[Op.substring]: keyword}}]},
+            
+        }).then(results => {return res.render('result', {results,keyword,})
+        }).catch(error => console.log(error))
     },
     erase: (req, res) => {
         let productDelete = products.filter(product => product.id !== +req.params.id);
