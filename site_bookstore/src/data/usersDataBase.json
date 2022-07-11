@@ -5,7 +5,7 @@
     "last_name": "Reirmar",
     "email": "mreinmar0@uol.com.br",
     "password": "DmljSL8VF",
-    "rols_id": 2,
+    "roles_id": 2,
     "image": "default-user.jpg"
     },
     {
@@ -14,7 +14,7 @@
         "last_name": "Ganderton",
         "email": "dganderton1@mozilla.com",
         "password": "KeGm4SFtLY9n",
-        "rols_id": 2,
+        "roles_id": 2,
         "image": "default-user.jpg"
     },
     {
@@ -23,7 +23,7 @@
         "last_name": "Truckett",
         "email": "jtruckett2@deviantart.com",
         "password": "Sqv3t9zu6F",
-        "rols_id": 2,
+        "roles_id": 2,
         "image": "default-user.jpg"
     },
     {
@@ -32,7 +32,7 @@
         "last_name": "Gwen",
         "email": "cgawen3@wiley.com",
         "password": "FPQb8B",
-        "rols_id": 2,
+        "roles_id": 2,
         "image": "default-user.jpg"
     },
     {
@@ -41,7 +41,7 @@
         "last_name": "Cruess",
         "email": "ecruess4@artisteer.com",
         "password": "JVpcMPmiiYl",
-        "rols_id": 2,
+        "roles_id": 2,
         "image": "default-user.jpg"
     },
     {
@@ -50,7 +50,7 @@
         "last_name": "Castro",
         "email": "solcastro@gmail.com",
         "password": "$2a$10$FPm5I47ohJnXUsgW.MGtgu76S/GpM5BdByuFu9TFnDSHFT/lTQQW6",
-        "rols_id": 1,
+        "roles_id": 1,
         "image": "default-user.jpg"
     },
     {
@@ -59,7 +59,7 @@
         "last_name": "Victorio",
         "email": "sabasta@gmail.com",
         "password": "$2a$10$RQ6dDvh4MsB4sejysYpJkOCUDw1OTZ5hvGRf8iRn0K81rs6HpREJK",
-        "rols_id": 1,
+        "roles_id": 1,
         "image": "default-user.jpg"
     },
     {
@@ -68,7 +68,7 @@
         "last_name": "Fernandez",
         "email": "damian@fernandez.com",
         "password": "$2a$10$7Q8KWT4Rl31ckiKHYP50SedVBpX2AYbM0lwzYQ8EigoAp1gaMWAF2",
-        "rols_id": 1,
+        "roles_id": 1,
         "image": "default-user.jpg"
     }
 ]

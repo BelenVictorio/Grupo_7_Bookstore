@@ -14,13 +14,13 @@
       <article class="register-form">
         <form method="POST" action="" class="register-form-info">
           <div class="register-info">
-            <input class="<%= locals.errors && errors.nombre ? 'Es invalid' : null %>" type="text" id="nombre" name="nombre" placeholder="Escribi tu nombre" value="<%= locals.old && old.nombre ? old.nombre : null%>">
-            <span><%= locals.errors && errors.nombre ? errors.nombre.msg : null%></span>
+            <input class="<%= locals.errors && errors.first_name ? 'Es invalid' : null %>" type="text" id="first_name" name="first_name" placeholder="Escribi tu nombre" value="<%= locals.old && old.first_name ? old.first_name : null%>">
+            <span><%= locals.errors && errors.first_name ? errors.first_name.msg : null%></span>
           </div>
           <div class="register-info">
-            <input class="<%= locals.errors && errors.apellido ? 'Es invalid' : null %>" type="text" id="apellido" name="apellido" placeholder="Escribi tu apellido" value="<%= locals.old && old.apellido ? old.apellido : null%>">
-            <label for="apellido"></label>
-            <span><%= locals.errors && errors.apellido ? errors.apellido.msg : null%></span>
+            <input class="<%= locals.errors && errors.last_name ? 'Es invalid' : null %>" type="text" id="last_name" name="last_name" placeholder="Escribi tu apellido" value="<%= locals.old && old.last_name ? old.last_name : null%>">
+            <label for="last_name"></label>
+            <span><%= locals.errors && errors.last_name ? errors.last_name.msg : null%></span>
           </div>
           <div class="register-info">
             <input class="<%= locals.errors && errors.email ? 'Is invalid' : null %>" type="email" id="email" name="email" placeholder="Email" value="<%= locals.old && old.email ? old.email : null%>">
