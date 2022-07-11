@@ -1,0 +1,34 @@
+<header class="admin">
+    <div class="adminHeader">
+      <img id="logo" src="/images/logofinal.svg" alt="logotipo">
+    </div>
+    <nav>
+      <ul id="menu">
+        <li><a href="/admin/productos">Productos</a>
+          <ul>
+            <li><a href="/admin/productos">Lista</a></li>
+            <li><a href="/admin/productos/agregar">Agregar</a></li>
+          </ul>  
+        </li>
+      </ul>
+    </nav>
+    <nav>
+      <ul id="menu">
+        <li><a href="/admin/categorias">Categorias</a>
+          <ul>
+            <li><a href="/admin/categorias">Lista</a></li>
+            <li><a href="/admin/categorias/agregar">Agregar</a></li>
+          </ul>  
+        </li>
+      </ul>
+    </nav>
+    <form action="/admin/productos/search" method="GET">
+      <input type="search" placeholder="Search" name="keywords">
+      <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <nav>
+      <ul id="menu">
+        <li><a href="/users/logout">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+</header>
