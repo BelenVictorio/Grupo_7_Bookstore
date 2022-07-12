@@ -1,4 +1,4 @@
-## Retrospectiva 3er sprint: 
+## Retrospectiva 4to sprint: 
 
 * Qué hicimos bien: 
 
