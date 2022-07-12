@@ -32,7 +32,23 @@ module.exports=(sequelize, DataTypes) => {
        image:{
            type:DataTypes.STRING(45),
            allowNull:true,
-       }
+       },
+       country:{
+        type:DataTypes.STRING(45),
+        allowNull:true,
+       },
+       address:{
+        type:DataTypes.STRING(100),
+        allowNull:true,
+       },
+       Date:{
+        type:DataTypes.DATE,
+        allowNull:true,
+       },
+       preferences:{
+        type:DataTypes.STRING(100),
+        allowNull:true,
+       },
     }
 
     let config ={
