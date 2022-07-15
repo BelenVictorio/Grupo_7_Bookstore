@@ -8,7 +8,18 @@
     <%- include('../partials/header') %>
   <main class="register">
     <section class="register-box">
-      <h2>Perfil</h2>
+      <h2>Perfil de <%= user.first_name %></h2>
+      <div class="register-box-img">
+      <% if (user.image === undefined) { %>
+        <div class="register-box-user-img">
+            <img src="/images/userImg/default-user.jpg" alt="" id="image">
+        </div>
+    <% } else { %>
+        <div class="register-box-user-img">
+            <img src="/images/userImg/<%= user.image%>" alt="" id="image">
+        </div>
+    <% } %>  
+      </div>  
       <article class="register-form">
         <form method="POST" action="/users/updateprofile?_method=PUT" class="register-form-info" 
         enctype="multipart/form-data" >
@@ -39,18 +50,18 @@
 
           </div>
           <div class="register-info">
-            <input type="text" id="address" name="address" placeholder="address">
+            <input class="<%= locals.errors && errors.address ? 'Es invalid' : null %>" type="text" id="address" name="address" placeholder="address" value="<%= user.address%>">
             <label for="address"></label>
             <span><%= locals.errors && errors.address ? errors.address.msg : null%></span>
           </div>
           <div class="register-info">
-            <input type="date" name="date" min="1930-01-01" max="2012-12-31" placeholder="Fecha de nacimiento">
+            <input class="<%= locals.errors && errors.address ? 'Es invalid' : null %>" type="date" name="date" min="1930-01-01" max="2012-12-31" placeholder="Fecha de nacimiento" value="<%= user.date %>">
             <label for="date"></label>
           </div>
           <div class="register-info">
             <label for="image"></label>
-            <input class=" form-control" type="file" id="image" name="image" accept=".jpg, .png" multiple>
-        </div>
+            <input class=" form-control" type="file" id="image" name="image" accept=".jpg, .png" value="<%= user.image %>">
+          </div>       
           <div class="register-eleccion">
           <p>Elige tus preferencias:</p>
           <ul>

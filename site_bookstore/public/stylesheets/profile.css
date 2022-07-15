@@ -1,5 +1,5 @@
 .register{
-    background-image: url(/images/fondo-register.jpg);
+    background-image: url(/images/fondologin.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -21,6 +21,17 @@
     padding: 10px;
     text-align: justify;
     text-transform: uppercase;
+}
+.register-box-img{
+    padding: 10px;
+}
+.register-box-img{
+    border-radius: 50px;
+}
+.register-box-user-img img{
+    width: 200px;
+    border-radius: 150px;
+    border-color: 1px, var(--rosa) 1px;
 }
 
 /* caja contenedora del formulario*/
@@ -146,9 +157,6 @@
 }
 
 @media (min-width: 768px){
-    .register{
-        background-image: url(/images/fondoRegister.jpg);
-    }
 
     .register-form-info{
         display: flex;

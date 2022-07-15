@@ -5,7 +5,9 @@
 
 .home__banner img {
     width: 100%;
-    
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
 }
 
 /* categorías-box */
@@ -235,6 +237,12 @@ a {
 /* tablet */
 
 @media (min-width: 768px) {
+    .home__banner img {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        margin: 0px auto;
+    }
 
     .home__categorias {
         padding: 80px 0;
@@ -283,7 +291,7 @@ a {
     }
 
     .home__banner img {
-        width: 70%;
+        width: 60%;
         display: flex;
         justify-content: center;
         margin: 0px auto;

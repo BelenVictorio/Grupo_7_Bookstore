@@ -105,7 +105,7 @@ updateProfile: (req, res) =>{
             country: country.trim(),
             address : address.trim(),
             date,
-            image: req.file && req.file.filename,
+            image: req.file ? req.file.filename : image,
             preferences,
         },
         {
@@ -117,8 +117,9 @@ updateProfile: (req, res) =>{
                req.session.userLogin = {
                id : req.session.userLogin.id,
                fist_name: req.body.fist_name,
+               last_name: req.body.last_name,
                image: req.file && req.file.filename||req.session.userLogin.image,
-               roles_id:  req.session.userLogin.rol
+               roles_id: req.session.userLogin.rol
                }
            res.redirect('/users/profile')
        })  
@@ -126,7 +127,7 @@ updateProfile: (req, res) =>{
 
     } else {
        return res.render('profile', {
-           usuario: req.body,
+           old: req.body,
            errors: errors.mapped(),
 
        });
