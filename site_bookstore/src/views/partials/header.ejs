@@ -6,8 +6,8 @@
       <ul class="nav_links">
         <li><a href="/">Inicio</a></li>
         <li><a href="/products/">Productos</a></li>
-        <li><a href="#">Contacto</a></li>
-        <% if(locals.userLogin && userLogin.category === 'admin'){ %>
+        <li><a href="/contact">Contacto</a></li>
+        <% if(locals.userLogin && userLogin.roles_id === 1){ %>
           <li><a href="/admin">ADMIN</a></li>
         <% } %> 
         
@@ -31,6 +31,7 @@
       
 
       <% if(!locals.userLogin){ %>
+        <a class="cart" href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
         <a class="user" href="/users/login"><i class="fas fa-user-circle"></i></a>
       <% }else { %>
         <a class="cart" href="/products/cart"><i class="fas fa-shopping-cart"></i></a>

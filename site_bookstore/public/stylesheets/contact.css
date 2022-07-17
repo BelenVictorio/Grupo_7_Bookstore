@@ -1,0 +1,99 @@
+/* para toda la pagina*/
+.page-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--grisOscuro);
+    width: 100%;
+}
+
+.contact-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    margin: 0px 30px;
+    color: var(--white);
+}
+
+.contact-article h2 {
+    color: var(--white);
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+    border-bottom: 3px solid var(--rosa);
+}
+.article-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+.contact-article p{
+    padding: 10px;
+    text-align: justify;
+    font-size: 18px;
+}
+.contact-article div{
+    font-size: 12px;
+    text-align: justify;
+}
+.contact-article div h4{
+    font-size: 20px;
+    color: var(--rosa);
+    font-weight: normal;
+    border-bottom:1px solid var(--rosa);
+}
+.contact-article div h4 i{
+    font-size: 25px;
+    color: var(--rosa);
+    padding: 10px;
+}
+.contact-article div p{
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+}
+.article-div p a{
+    font-size: 14px;
+    color: var(--rosa);
+}
+.article-p a{
+    color: var(--white);
+    font-size: 16px;
+}
+.contact-image{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.contact-image img{
+    padding: 10px;
+    margin: 0px 30px;
+    width: 90%;
+    padding: 10px;
+}
+
+/* TABLET */
+
+@media(min-width: 768px) {
+
+    .page-contact{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .contact-article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+ 
+    .contact-image{
+        width: 100%;
+    }
+    .contact-image img{
+      width: 100%;
+    }
+}

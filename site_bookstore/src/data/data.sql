@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `paginasbellas_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `paginasbellas_db`;
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
 -- Host: localhost    Database: paginasbellas_db
@@ -91,7 +93,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Mab','Reirmar','mreinmar0@uol.com.br','DmljSL8VF',2,'default-user.jpg'),(2,'Deanna','Ganderton','      \"email\": \"dganderton1@mozilla.com\",','KeGm4SFtLY9n',2,'default-user.jpg'),(3,'Janenna','Truckett','jtruckett2@deviantart.com','Sqv3t9zu6F',2,'default-user.jpg'),(4,'Casandra','Gwen','cgawen3@wiley.com','FPQb8B',2,'default-user.jpg'),(5,'Eli','Cruess','ecruess4@artisteer.com','JVpcMPmiiYl',2,'defualt-user.jpg'),(6,'Sol Anna','Castro','solcastro@gmail.com','$2a$10$FPm5I47ohJnXUsgW.MGtgu76S/GpM5BdByuFu9TFnDSHFT/lTQQW6',1,'default-user.jpg'),(7,'Belen','Victorio','sabasta@gmail.com','$2a$10$RQ6dDvh4MsB4sejysYpJkOCUDw1OTZ5hvGRf8iRn0K81rs6HpREJK',1,'default-user.jpg'),(8,'Damian','Fernandez','damian@fernandez.com','$2a$10$7Q8KWT4Rl31ckiKHYP50SedVBpX2AYbM0lwzYQ8EigoAp1gaMWAF2',1,'default-user.jpg');
+INSERT INTO `users` VALUES (1,'Mab','Reirmar','mreinmar0@uol.com.br','DmljSL8VF',2,'default-user.jpg','','',NULL,'0'),(2,'Deanna','Ganderton','      \"email\": \"dganderton1@mozilla.com\",','KeGm4SFtLY9n',2,'default-user.jpg','','',NULL,'0'),(3,'Janenna','Truckett','jtruckett2@deviantart.com','Sqv3t9zu6F',2,'default-user.jpg','','',NULL,'0'),(4,'Casandra','Gwen','cgawen3@wiley.com','FPQb8B',2,'default-user.jpg','','',NULL,'0'),(5,'Eli','Cruess','ecruess4@artisteer.com','JVpcMPmiiYl',2,'defualt-user.jpg','','',NULL,'0'),(6,'Sol Anna','Castro','solcastro@gmail.com','$2a$10$FPm5I47ohJnXUsgW.MGtgu76S/GpM5BdByuFu9TFnDSHFT/lTQQW6',1,'default-user.jpg','','',NULL,'0'),(7,'Belen','Victorio','sabasta@gmail.com','$2a$10$RQ6dDvh4MsB4sejysYpJkOCUDw1OTZ5hvGRf8iRn0K81rs6HpREJK',1,'default-user.jpg','','',NULL,'0'),(8,'Damian','Fernandez','damian@fernandez.com','$2a$10$7Q8KWT4Rl31ckiKHYP50SedVBpX2AYbM0lwzYQ8EigoAp1gaMWAF2',1,'default-user.jpg','','',NULL,'0'),(9,'fiona','DeEncantador','srfionadeencantador@gmail.com','$2a$10$chWS5.RifO08plI84HDOZusrE9DHETxIfBYw01cN.pqZk7OB5ot7W',2,'default-user.jpg','','',NULL,'0'),(10,'fiona','DeEncantador','fhv@mail.com','$2a$10$nH/gX/TS9QpCuEinF6OlLOG83YEuy.roFanoKNhcfns7LwyY82Tmm',2,'default-user.jpg','','',NULL,'0'),(11,'miri','martines','miri@gmail.com','$2a$10$vN9h8xuQlotmucyOv3stmeegmwygy98PbP9BJ9kE4IhqQgwjx/GtK',2,'default-user.jpg','','',NULL,'0');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -104,4 +106,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-02 19:55:42
+-- Dump completed on 2022-07-11 21:04:11

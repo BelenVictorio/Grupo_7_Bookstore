@@ -8,104 +8,97 @@
     <%- include('../partials/header') %>
   <main class="register">
     <section class="register-box">
-      <h2>Perfil</h2>
+      <h2>Perfil de <%= user.first_name %></h2>
+      <div class="register-box-img">
+      <% if (user.image === undefined) { %>
+        <div class="register-box-user-img">
+            <img src="/images/userImg/default-user.jpg" alt="" id="image">
+        </div>
+    <% } else { %>
+        <div class="register-box-user-img">
+            <img src="/images/userImg/<%= user.image%>" alt="" id="image">
+        </div>
+    <% } %>  
+      </div>  
       <article class="register-form">
         <form method="POST" action="/users/updateprofile?_method=PUT" class="register-form-info" 
-         >
+        enctype="multipart/form-data" >
           <div class="register-info">
-            <input class="<%= locals.errors && errors.nombre ? 'Es invalid' : null %>" type="text" id="nombre" name="nombre" placeholder="Escribi tu nombre" value="<%= user.nombre%>">
-            <span><%= locals.errores && errores.nombre ? errores.nombre.msg : null%></span>
+            <input class="<%= locals.errors && errors.first_name ? 'Es invalid' : null %>" type="text" id="first_name" name="first_name" placeholder="Escribi tu nombre" value="<%= user.first_name%>">
+            <span><%= locals.errores && errores.first_name ? errores.first_name.msg : null%></span>
           </div>
           <div class="register-info">
-            <input class="<%= locals.errors && errors.apellido ? 'Es invalid' : null %>" type="text" id="apellido" name="apellido" placeholder="Escribi tu apellido" value="<%= user.apellido %>">
-            <label for="apellido"></label>
-            <span><%= locals.errors && errors.apellido ? errors.apellido.msg : null%></span>
+            <input class="<%= locals.errors && errors.last_name ? 'Es invalid' : null %>" type="text" id="last_name" name="last_name" placeholder="Escribi tu apellido" value="<%= user.last_name %>">
+            <label for="last_name"></label>
+            <span><%= locals.errors && errors.last_name? errors.last_name.msg : null%></span>
           </div>
           <div class="register-info">
-            <label for="pais"></label>
-            <select name="pais" id="pais">
+            <label for="country"></label>
+            <select name="country" id="country">
               <option value="">-Seleccione su país</option>
-              <option value="ar">Argentina</option>
-              <option value="br">Brasil</option>
-              <option value="bo">Bolivia</option>
-              <option value="ch">Chile</option>
-              <option value="co">Colombia</option>
-              <option value="ec">Ecuador</option>
-              <option value="pa">Paraguay</option>
-              <option value="pe">Perú</option>
-              <option value="ve">Venezuela</option>
-              <option value="ur">Uruguay</option>
+              <option value="ar"<%= locals.user && user.country && user.country == 'ar' ? 'selected' : null %>>Argentina</option>
+              <option value="br"<%= locals.user && user.country && user.country == 'br' ? 'selected' : null %>>Brasil</option>
+              <option value="bo"<%= locals.user && user.country && user.country == 'bo' ? 'selected' : null %>>Bolivia</option>
+              <option value="ch"<%= locals.user && user.country && user.country == 'ch' ? 'selected' : null %>>Chile</option>
+              <option value="co"<%= locals.user && user.country && user.country == 'co' ? 'selected' : null %>>Colombia</option>
+              <option value="ec"<%= locals.user && user.country && user.country == 'ec' ? 'selected' : null %>>Ecuador</option>
+              <option value="pa"<%= locals.user && user.country && user.country == 'pa' ? 'selected' : null %>>Paraguay</option>
+              <option value="pe"<%= locals.user && user.country && user.country == 'pe' ? 'selected' : null %>>Perú</option>
+              <option value="ve"<%= locals.user && user.country && user.country == 've' ? 'selected' : null %>>Venezuela</option>
+              <option value="ur"<%= locals.user && user.country && user.country == 'ur' ? 'selected' : null %>>Uruguay</option>
             </select>
 
           </div>
           <div class="register-info">
-            <input type="text" id="direccion" name="direccion" placeholder="direccion">
-            <label for="direccion"></label>
-            <span><%= locals.errors && errors.direccion ? errors.direccion.msg : null%></span>
+            <input class="<%= locals.errors && errors.address ? 'Es invalid' : null %>" type="text" id="address" name="address" placeholder="address" value="<%= user.address%>">
+            <label for="address"></label>
+            <span><%= locals.errors && errors.address ? errors.address.msg : null%></span>
           </div>
           <div class="register-info">
-            <input type="date" name="fecha" min="1930-01-01" max="2010-12-31" placeholder="Fecha de nacimiento">
-            <label for="fecha"></label>
+            <input class="<%= locals.errors && errors.address ? 'Es invalid' : null %>" type="date" name="date" min="1930-01-01" max="2012-12-31" placeholder="Fecha de nacimiento" value="<%= user.date %>">
+            <label for="date"></label>
           </div>
           <div class="register-info">
-            <label for="avatar"></label>
-            <input class=" form-control" type="file" id="avatar" name="avatar" accept=".jpg, .png" multiple>
-        </div>
+            <label for="image"></label>
+            <input class=" form-control" type="file" id="image" name="image" accept=".jpg, .png" value="<%= user.image %>">
+          </div>       
           <div class="register-eleccion">
           <p>Elige tus preferencias:</p>
           <ul>
             <li>
-              <input type="checkbox" name="preferencias" id="Ficcion" value="F">
+              <input type="checkbox" name="preferences" id="Ficcion" value="F">
               <label for="Ficcion">Ficcion</label>
             </li>
-
-
             <li>
-              <input type="checkbox" name="preferencias" id="Romance" value="R">
+              <input type="checkbox" name="preferences" id="Romance" value="R">
               <label for="Romance">Romance</label>
             </li>
-
-
             <li>
-              <input type="checkbox" name="preferencias" id="Comics-Mangas" value="C">
+              <input type="checkbox" name="preferences" id="Comics-Mangas" value="C-M">
               <label for="Comics-Mangas">Comics y Mangas</label>
             </li>
-
-
             <li>
-              <input type="checkbox" name="preferencias" id="Literatura" value="l">
+              <input type="checkbox" name="preferences" id="Literatura" value="L">
               <label for="Literatura">Literatura</label>
             </li>
-
-
             <li> 
-              <input type="checkbox" name="preferencias" id="no Ficcion" value="n">
+              <input type="checkbox" name="preferences" id="no Ficcion" value="NF">
               <label for="no Ficcion">No Ficcion </label>
             </li>
-
-
             <li>
-              <input type="checkbox" name="preferencias" id="Infantiles" value="i">
+              <input type="checkbox" name="preferences" id="Infantiles" value="I">
               <label for="Infantiles">Infantiles</label>
             </li>
-
-
-
             <li>
-              <input type="checkbox" name="preferencias" id="Arte" value="a">
+              <input type="checkbox" name="preferences" id="Arte" value="A">
               <label for="Arte">Arte</label>
             </li>
-
-
             <li>
-              <input type="checkbox" name="preferencias" id="Filosofia" value="f">
+              <input type="checkbox" name="preferences" id="Filosofia" value="F">
               <label for="Filosofia">Filosofia</label>
             </li>
-
-
-
             <li>
-              <input type="checkbox" name="preferencias" id="Otros" value="o">
+              <input type="checkbox" name="preferences" id="Otros" value="O">
               <label for="Otros">Otros</label>
             </li>
 

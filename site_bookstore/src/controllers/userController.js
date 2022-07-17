@@ -1,7 +1,7 @@
-const {getUsers,writeUsers} =require('../data')
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const db = require('../database/models');
+const user = require('../database/models/user');
 
 module.exports={
 register:(req,res) =>{
@@ -18,14 +18,18 @@ register:(req,res) =>{
 processRegister: (req, res) => {
     let errors = validationResult(req);
     if(errors.isEmpty()){
-        const {first_name, last_name, email, password, roles_id, image} = req.body
+        const {first_name, last_name, email, password, roles_id, image, country, address, date, preferences} = req.body
         db.User.create({
             first_name: first_name.trim(),
             last_name: last_name.trim(),
             email,
             password: bcrypt.hashSync(password, 10),
             roles_id: 2,
-            image: "default-user.jpg"
+            image: "default-user.jpg",
+            country: "default", 
+            address: "default", 
+            date: "default", 
+            preferences: "default"
         },{include:{
             association : "rols"
         }}).then(() => {
@@ -48,7 +52,7 @@ login: (req, res) => {
     }).catch(error =>{
         console.log(error)
     })
-   // return res.render('users/login');
+
 },
 processLogin: (req, res) => {
     let errors = validationResult(req);
@@ -94,40 +98,39 @@ profile:(req, res) => {
 updateProfile: (req, res) =>{
     let errores = validationResult(req);
     if(errores.isEmpty()){
-        const {nombre, apellido, pais, direccion, fecha, avatar, preferencias} = req.body
-        const {id} = getUsers.find(user => user.id === req.session.userLogin.id)
-        const usersModify = getUsers.map(user => {
-            if(user.id === +id){
-                let userModify = {
-                    ...user,
-                    nombre : nombre.trim(),
-                    apellido : apellido.trim(),
-                    pais,
-                    direccion : direccion.trim(),
-                    fecha,
-                    avatar,
-                    preferencias: getUsers.push(preferencias)
-                }
-                const {id, category} = userModify
-                req.session.userLogin = {
-                     id,
-                    nombre,
-                    category
-                }
-                res.locals.userLogin === req.session.userLogin;
-                return userModify;
+        const {first_name, last_name, country, address, date, image, preferences} = req.body;
+        db.User.update({
+            first_name : first_name.trim(),
+            last_name : last_name.trim(),
+            country: country.trim(),
+            address : address.trim(),
+            date,
+            image: req.file ? req.file.filename : image,
+            preferences,
+        },
+        {
+            where:{
+               id:req.session.userLogin.id
             }
-            return user;
-        })
-        writeUsers(usersModify)
-        return res.redirect('/')
-    }else{
-        console.log(errores);
-        return res.render('profile', {
-            user: req.body,
-            errors: errores.mapped(),
-            session: req.session
-        })
-    }
-    }
+       } )
+       .then(() => {
+               req.session.userLogin = {
+               id : req.session.userLogin.id,
+               fist_name: req.body.fist_name,
+               last_name: req.body.last_name,
+               image: req.file && req.file.filename||req.session.userLogin.image,
+               roles_id: req.session.userLogin.rol
+               }
+           res.redirect('/users/profile')
+       })  
+        .catch(error => console.log(error))
+
+    } else {
+       return res.render('profile', {
+           old: req.body,
+           errors: errors.mapped(),
+
+       });
+}
+}
 }
