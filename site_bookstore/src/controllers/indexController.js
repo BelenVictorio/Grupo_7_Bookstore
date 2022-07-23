@@ -34,9 +34,7 @@ module.exports = {
     .catch(error => console.log(error));
     
   },
-  admin: (req, res) => {
-    res.render('admin')
-  },
+
   contact: (req,res) =>{
   db.Product.findAll()
       .then(() => {

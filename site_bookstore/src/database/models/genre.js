@@ -21,7 +21,10 @@ module.exports=(sequelize, DataTypes) => {
     }
     const Genre = sequelize.define(alias, cols, config)
     Genre.associate = function(models){
-        
+            Genre.belongsTo(models.Product, {
+            as: "products",
+            foreignKey: "genres_id"
+        })
     }
     return Genre;
 

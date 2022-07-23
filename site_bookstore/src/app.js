@@ -17,6 +17,7 @@ const cookieSession = require('./middlewares/cookieSession');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+var adminRouter = require('./routes/admin');
 var app = express();
 
 /* ****view engine setup**** */
@@ -44,6 +45,7 @@ app.use(localsCheck);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use ('/admin',adminRouter);
 
 /* app.get("/products", (req,res) => res.sendFile(path.resolve(__dirname, "views", "products.html")));
 app.get("/product-detail", (req,res) => res.sendFile(path.resolve(__dirname, "views", "productDetail.html")));
