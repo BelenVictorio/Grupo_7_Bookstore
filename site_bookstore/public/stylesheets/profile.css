@@ -46,6 +46,7 @@
 
 /* Div del formulario*/
 .register-info{
+    border-radius: 6px;
     margin:10px;
     margin-bottom: 20px;
     text-align: center;
@@ -59,6 +60,7 @@
     padding: 15px;
     color: var(--black);
     background-color: var(--rosa);
+    border-radius: 6px;
     width: 100%;
     border: none;
     outline-color: rgba(49, 138, 172, 0);
