@@ -107,6 +107,7 @@
 /* Terminos y condiciones*/
 .register-condiciones{
     display: flex;
+    justify-content: center;
     flex-direction: row;
     font-size: 14px;
     margin-left: 10%;
