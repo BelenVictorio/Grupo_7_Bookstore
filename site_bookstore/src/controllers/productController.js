@@ -31,8 +31,8 @@ module.exports = {
         .catch(error => console.log(error))
     },
 
-    products: (req, res) => {
-        db.Product.findAll()
+    products: async (req, res) => {
+        await db.Product.findAll({include: ['images']})
 			.then(products => {
                 return res.render('productos/products', {
                     products

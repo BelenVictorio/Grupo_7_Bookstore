@@ -6,33 +6,33 @@
 }) %>
   <body>
     <%- include('../partials/header') %>
-  <main class="register">
-    <section class="register-box">
-      <h2>Perfil de <%= user.first_name %></h2>
-      <div class="register-box-img">
+  <main class="profile">
+    <section class="profile-box">
+      <h2>Perfil de <%= user.first_name%></h2>
+      <div class="profile-box-img">
       <% if (user.image === undefined) { %>
-        <div class="register-box-user-img">
+        <div class="profile-box-user-img">
             <img src="/images/userImg/default-user.jpg" alt="" id="image">
         </div>
     <% } else { %>
-        <div class="register-box-user-img">
+        <div class="profile-box-user-img">
             <img src="/images/userImg/<%= user.image%>" alt="" id="image">
         </div>
     <% } %>  
       </div>  
-      <article class="register-form">
-        <form method="POST" action="/users/updateprofile?_method=PUT" class="register-form-info" 
-        enctype="multipart/form-data" >
-          <div class="register-info">
+      <article class="profile-form">
+        <form method="POST" action="/users/updateprofile?_method=PUT" class="profile-form-info" 
+        enctype="multipart/form-data" id="form-profile" no validate >
+          <div class="profile-info">
             <input class="<%= locals.errors && errors.first_name ? 'Es invalid' : null %>" type="text" id="first_name" name="first_name" placeholder="Escribi tu nombre" value="<%= user.first_name%>">
-            <span><%= locals.errores && errores.first_name ? errores.first_name.msg : null%></span>
+            <span id="firstError"><%= locals.errores && errores.first_name ? errores.first_name.msg : null%></span>
           </div>
-          <div class="register-info">
+          <div class="profile-info">
             <input class="<%= locals.errors && errors.last_name ? 'Es invalid' : null %>" type="text" id="last_name" name="last_name" placeholder="Escribi tu apellido" value="<%= user.last_name %>">
             <label for="last_name"></label>
-            <span><%= locals.errors && errors.last_name? errors.last_name.msg : null%></span>
+            <span id="lastError"><%= locals.errors && errors.last_name? errors.last_name.msg : null%></span>
           </div>
-          <div class="register-info">
+          <div class="profile-info">
             <label for="country"></label>
             <select name="country" id="country">
               <option value="">-Seleccione su país</option>
@@ -46,23 +46,26 @@
               <option value="pe"<%= locals.user && user.country && user.country == 'pe' ? 'selected' : null %>>Perú</option>
               <option value="ve"<%= locals.user && user.country && user.country == 've' ? 'selected' : null %>>Venezuela</option>
               <option value="ur"<%= locals.user && user.country && user.country == 'ur' ? 'selected' : null %>>Uruguay</option>
+              <span id="countryError"><%= locals.errors && errors.country ? errors.country.msg : null%></span>
             </select>
 
           </div>
-          <div class="register-info">
+          <div class="profile-info">
             <input class="<%= locals.errors && errors.address ? 'Es invalid' : null %>" type="text" id="address" name="address" placeholder="address" value="<%= user.address%>">
             <label for="address"></label>
-            <span><%= locals.errors && errors.address ? errors.address.msg : null%></span>
+            <span id="addressError"><%= locals.errors && errors.address ? errors.address.msg : null%></span>
           </div>
-          <div class="register-info">
-            <input class="<%= locals.errors && errors.address ? 'Es invalid' : null %>" type="date" name="date" min="1930-01-01" max="2012-12-31" placeholder="Fecha de nacimiento" value="<%= user.date %>">
+          <div class="profile-info">
+            <input class="<%= locals.errors && errors.date ? 'Es invalid' : null %>" type="date" name="date" min="1930-01-01" max="2012-12-31" placeholder="Fecha de nacimiento" value="<%= user.date %>" id="date">
             <label for="date"></label>
+            <span id="dateError"><%= locals.errors && errors.date ? errors.date.msg : null%></span>
           </div>
-          <div class="register-info">
+          <div class="profile-info">
             <label for="image"></label>
             <input class=" form-control" type="file" id="image" name="image" accept=".jpg, .png" value="<%= user.image %>">
+            <span id="dateError"><%= locals.errors && errors.image ? errors.image.msg : null%></span>
           </div>       
-          <div class="register-eleccion">
+          <div class="profile-eleccion">
           <p>Elige tus preferencias:</p>
           <ul>
             <li>
@@ -104,19 +107,15 @@
 
           </ul>
         </div>
-          <div class="register-info">
-            <input class="<%= locals.errors && errors.email ? 'Is invalid' : null %>" type="email" id="email" name="email" placeholder="Email" value="<%= locals.old && old.email ? old.email : null%>" disabled>
-            <label for="email"></label>
-            <span><%= locals.errors && errors.email ? errors.email.msg : null%></span>
-          </div>
-          <div class="register-boton-box">
-            <button class="register-button" type="submit">Guardar</button>
-            <button class="register-button" type="reset"> <a href="/">Cancelar</a></button>
+          <div class="profile-boton-box">
+            <button class="profile-button" type="submit">Guardar</button>
+            <button class="profile-button" type="reset"> <a href="/">Cancelar</a></button>
           </div
         </form>
       </article>
     </section>
   </main>
+  <script src="/js/profile.js"></script>
   <%- include('../partials/footer') %>   
 </body>
 
