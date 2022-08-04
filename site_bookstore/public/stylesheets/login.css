@@ -163,6 +163,10 @@
 .login-direccion-azul a:hover{
     color: rgb(88, 119, 160);
 }
+.invalid {
+    color:firebrick;
+    border: 2px;
+}
 
 
 @media (min-width: 768px){

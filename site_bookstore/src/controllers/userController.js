@@ -2,6 +2,7 @@ const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const db = require('../database/models');
 const user = require('../database/models/user');
+let moment = require('moment');
 
 module.exports={
 register:(req,res) =>{
@@ -57,6 +58,7 @@ login: (req, res) => {
 processLogin: (req, res) => {
     let errors = validationResult(req);
     if(errors.isEmpty()){
+        const {id, first_name, last_name, image, roles_id} = req.body;
         db.User.findOne({
             where: {email: req.body.email}
         }).then(user => {
@@ -132,5 +134,39 @@ updateProfile: (req, res) =>{
 
        });
 }
+},
+check: async (req, res) => {
+    console.log(req.body)
+    try {
+      let login = await db.User.findOne({
+          where : {
+            email : req.body.email
+          }
+      })
+      let response ;
+            if(login){
+                response = {
+                    ok: true,
+                    data : true,
+                    msg: "El mail es valido"
+                  }
+                  return res.status(200).json(response)
+                }else{
+                    response ={
+                    ok: true,
+                    data: false,
+                    msg: "El mail no es valido"
+                    }
+                    return res.status(200).json(response)
+                }
+           
+    } catch (error) {
+      console.log(error)
+      return res.status(error.status || 500).json({
+        ok : false,
+        msg : error.message || 'Comuníquese con el administrador del sitio'
+      })
+    }
+  }
 }
-}
+

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const {register,processRegister ,processLogin,login, logout, profile, updateProfile} = require('../controllers/userController');
+const {register,processRegister ,processLogin,login, logout, profile, updateProfile, check} = require('../controllers/userController');
 
 /*  Middlewares */
 const registerValidator = require('../validations/registerValidator')
@@ -17,6 +17,9 @@ router.get('/login', sessionCheck ,login);
 router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
 router.get('/profile', userCheck, profile);
-router.put('/updateprofile',upload.single('image'), updateProfile)
+router.put('/updateprofile',upload.single('image'), updateProfile);
+/* API */
+router.post('/check',check);
+
 
 module.exports = router;
