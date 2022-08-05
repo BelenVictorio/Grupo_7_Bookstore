@@ -10,7 +10,14 @@ module.exports = {
         res.render('admin')
     },
     creation: (req, res) => {
-        res.render('admin/creation')
+        db.Product.findAll()
+        .then(products => {
+            return res.render('admin/creation',{
+                products
+            })
+        })
+        .catch(error => console.log(error))
+        
     },
     edit: (req, res) => {
         let product = db.Product.findByPk(req.params.id)
@@ -18,7 +25,7 @@ module.exports = {
 
         Promise.all([product, category])
             .then(([products, categories]) => {
-                return res.render('admin/edit/', {
+                return res.render('admin/edit', {
                     products,
                     categories
                 })

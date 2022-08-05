@@ -7,31 +7,31 @@
     <%- include('../partials/header') %>
     <main class="main-creaEdit">
         <section class="creaEdit-section">
-            <form action="/products/update/<%= product.id %>?_method=PUT" method="POST" class="creaEdit-form">
-                <h2>Editar producto: <%= product.name %></h2>
+            <form action="/admin/update/<%= products.id %>?_method=PUT" method="POST" class="creaEdit-form">
+                <h2>Editar producto: <%= products.name %></h2>
                 <div class="creaEdit-div">
-                    <input type="text" id="titulo" name="name" placeholder="Titulo" value="<%= product.name %>">
+                    <input type="text" id="titulo" name="name" placeholder="Titulo" value="<%= products.name %>">
                     <label for="titulo"></label>
                 </div>
                 <div class="creaEdit-div">
-                    <input type="text" id="autor" name="author" placeholder="Autor/a" value="<%= product.author %>">
+                    <input type="text" id="autor" name="author" placeholder="Autor/a" value="<%= products.author %>">
                     <label for="autor"></label>
                 </div>
                 <div class="creaEdit-div">
-                    <textarea id="descripcion" name="description" placeholder="Descripcion"><%= product.description %></textarea>
+                    <textarea id="descripcion" name="description" placeholder="Descripcion"><%= products.description %></textarea>
                     <label for="descripcion"></label>
                 </div>
                 <div class="creaEdit-div">
                     <label for="Categorias"></label>
                     <select name="category" id="Categorias">
                     <option value="">-Seleccione la categoria correspondiente</option>
-                    <option value="adultos" <%= product.category === "adultos" && 'selected' %>>adultos</option>
-                    <option value="jovenes" <%= product.category === "jovenes" && 'selected' %>>jovenes</option>
-                    <option value="infantil"<%= product.category === "Infantil" && 'selected' %>>infantil</option>
+                    <option value="adultos" <%= products.category === "adultos" && 'selected' %>>adultos</option>
+                    <option value="jovenes" <%= products.category === "jovenes" && 'selected' %>>jovenes</option>
+                    <option value="infantil"<%= products.category === "Infantil" && 'selected' %>>infantil</option>
             </select>
                 </div>
                 <div class="creaEdit-div">
-                    <input type="text" id="precio" name="price" placeholder="Precio" value="<%= product.price %>">
+                    <input type="text" id="precio" name="price" placeholder="Precio" value="<%= products.price %>">
                     <label for="precio"></label>
                 </div>
                 <div class="creaEdit-button">
