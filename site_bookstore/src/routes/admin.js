@@ -7,7 +7,7 @@ const upload = require('../middlewares/uploadImageUser');
 
 router
       .get('/',admincheck, admin)
-    .get('/creatiom', admincheck, creation)
+    .get('/creation', admincheck, creation)
     .post('/add',upload.array('image'), store) 
     .get('/edit/:id', admincheck, edit)
     .put('/update/:id',upload.array('image'),update)
