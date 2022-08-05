@@ -30,7 +30,7 @@
           <div class="profile-info">
             <input class="<%= locals.errors && errors.last_name ? 'Es invalid' : null %>" type="text" id="last_name" name="last_name" placeholder="Escribi tu apellido" value="<%= user.last_name %>">
             <label for="last_name"></label>
-            <span id="lastError"><%= locals.errors && errors.last_name? errors.last_name.msg : null%></span>
+            <span id="lastError"><%= locals.errores && errores.last_name? errores.last_name.msg : null%></span>
           </div>
           <div class="profile-info">
             <label for="country"></label>
@@ -46,69 +46,47 @@
               <option value="pe"<%= locals.user && user.country && user.country == 'pe' ? 'selected' : null %>>Perú</option>
               <option value="ve"<%= locals.user && user.country && user.country == 've' ? 'selected' : null %>>Venezuela</option>
               <option value="ur"<%= locals.user && user.country && user.country == 'ur' ? 'selected' : null %>>Uruguay</option>
-              <span id="countryError"><%= locals.errors && errors.country ? errors.country.msg : null%></span>
+              <span id="countryError"><%= locals.errores && errores.country ? errores.country.msg : null%></span>
             </select>
-
+            
           </div>
           <div class="profile-info">
             <input class="<%= locals.errors && errors.address ? 'Es invalid' : null %>" type="text" id="address" name="address" placeholder="address" value="<%= user.address%>">
             <label for="address"></label>
-            <span id="addressError"><%= locals.errors && errors.address ? errors.address.msg : null%></span>
+            <span id="addressError"><%= locals.errores && errores.address ? errores.address.msg : null%></span>
           </div>
           <div class="profile-info">
-            <input class="<%= locals.errors && errors.date ? 'Es invalid' : null %>" type="date" name="date" min="1930-01-01" max="2012-12-31" placeholder="Fecha de nacimiento" value="<%= user.date %>" id="date">
+            <input class="profile-date <%= locals.errors && errors.date ? 'Es invalid' : null %>" type="date" name="date" min="1930-01-01" max="2012-12-31" placeholder="Fecha de nacimiento" value="<%= user.date %>" id="date" >
             <label for="date"></label>
-            <span id="dateError"><%= locals.errors && errors.date ? errors.date.msg : null%></span>
+            <span id="dateError"><%= locals.errores && errores.date ? errores.date.msg : null%></span>
           </div>
           <div class="profile-info">
             <label for="image"></label>
-            <input class=" form-control" type="file" id="image" name="image" accept=".jpg, .png" value="<%= user.image %>">
-            <span id="dateError"><%= locals.errors && errors.image ? errors.image.msg : null%></span>
+            <input class=" form-control" type="file" id="image" name="image" accept=".jpg, .png, .gif, .jpeg" value="<%= user.image %>">
+            <span id="imgError"><%= locals.errores && errores.image ? errores.image.msg : null%></span>
           </div>       
-          <div class="profile-eleccion">
+          <div class="profile-info">
           <p>Elige tus preferencias:</p>
-          <ul>
-            <li>
-              <input type="checkbox" name="preferences" id="Ficcion" value="F">
-              <label for="Ficcion">Ficcion</label>
-            </li>
-            <li>
-              <input type="checkbox" name="preferences" id="Romance" value="R">
-              <label for="Romance">Romance</label>
-            </li>
-            <li>
-              <input type="checkbox" name="preferences" id="Comics-Mangas" value="C-M">
-              <label for="Comics-Mangas">Comics y Mangas</label>
-            </li>
-            <li>
-              <input type="checkbox" name="preferences" id="Literatura" value="L">
-              <label for="Literatura">Literatura</label>
-            </li>
-            <li> 
-              <input type="checkbox" name="preferences" id="no Ficcion" value="NF">
-              <label for="no Ficcion">No Ficcion </label>
-            </li>
-            <li>
-              <input type="checkbox" name="preferences" id="Infantiles" value="I">
-              <label for="Infantiles">Infantiles</label>
-            </li>
-            <li>
-              <input type="checkbox" name="preferences" id="Arte" value="A">
-              <label for="Arte">Arte</label>
-            </li>
-            <li>
-              <input type="checkbox" name="preferences" id="Filosofia" value="F">
-              <label for="Filosofia">Filosofia</label>
-            </li>
-            <li>
-              <input type="checkbox" name="preferences" id="Otros" value="O">
-              <label for="Otros">Otros</label>
-            </li>
-
-          </ul>
+          <label for="preferences"></label>
+          <select name="preferences" id="preferences">
+            <option value="">-Seleccione su país</option>
+            <option value="F"<%= locals.user && user.preferences && user.preferences == 'fi' ? 'selected' : null %>>Ficcion</option>
+            <option value="R"<%= locals.user && user.preferences && user.preferences == 'ro' ? 'selected' : null %>>Romance</option>
+            <option value="C-M"<%= locals.user && user.preferences && user.preferences == 'c-m' ? 'selected' : null %>>Comics-Mangas</option>
+            <option value="L"<%= locals.user && user.preferences && user.preferences == 'li' ? 'selected' : null %>>Literatura</option>
+            <option value="NF"<%= locals.user && user.preferences && user.preferences== 'nf' ? 'selected' : null %>>No Ficcion</option>
+            <option value="in"<%= locals.user && user.preferences && user.preferences== 'in' ? 'selected' : null %>>Infantiles</option>
+            <option value="f"<%= locals.user && user.preferences && user.preferences == 'f' ? 'selected' : null %>>Filosofia</option>
+            <option value="AR"<%= locals.user && user.preferences && user.preferences== 'ar' ? 'selected' : null %>>Arte</option>
+            <option value="hi"<%= locals.user && user.preferences && user.preferences == 'hi' ? 'selected' : null %>>Historia</option>
+            <option value="OT"<%= locals.user && user.preferences && user.preferences == 'ot' ? 'selected' : null %>>Otros</option>
+            <span id="countryError"><%= locals.errores && errores.preferences ? errores.country.msg : null%></span>
+          </select>
+          
         </div>
           <div class="profile-boton-box">
             <button class="profile-button" type="submit">Guardar</button>
+            <p class="invalid" id="submitError"></p>
             <button class="profile-button" type="reset"> <a href="/">Cancelar</a></button>
           </div
         </form>

@@ -6,6 +6,7 @@ const {register,processRegister ,processLogin,login, logout, profile, updateProf
 /*  Middlewares */
 const registerValidator = require('../validations/registerValidator')
 const loginValidator = require('../validations/loginValidator')
+const profileValidator = require('../validations/profileValidator')
 const upload = require('../middlewares/uploadImageUser');
 const userCheck = require('../middlewares/userInSessionCheck')
 const sessionCheck=require('../middlewares/sessionCheck');
