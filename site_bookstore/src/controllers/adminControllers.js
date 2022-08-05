@@ -10,7 +10,7 @@ module.exports = {
         res.render('admin')
     },
     creation: (req, res) => {
-        res.render('creation')
+        res.render('admin/creation')
     },
     edit: (req, res) => {
         let product = db.Product.findByPk(req.params.id)
@@ -18,7 +18,7 @@ module.exports = {
 
         Promise.all([product, category])
             .then(([products, categories]) => {
-                return res.render('admin/productEdit', {
+                return res.render('admin/edit/', {
                     products,
                     categories
                 })
