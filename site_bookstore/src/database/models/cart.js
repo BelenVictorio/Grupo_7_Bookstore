@@ -1,6 +1,6 @@
 
 module.exports=(sequelize, DataTypes) => {
-    let alias ="cart";
+    let alias ="Cart";
     
     let cols ={
        id:{
@@ -30,9 +30,14 @@ module.exports=(sequelize, DataTypes) => {
     }
     const Cart = sequelize.define(alias, cols, config)
     Cart.associate = function(models){
-        
+            Cart.hasMany(models.Product, {
+                as: "products",
+                foreignKey: "id"
+            }),
+            Cart.hasMany(models.User, {
+                as: "users",
+                foreignKey: "id"
+            })
     }
     return Cart;
-
-
 }

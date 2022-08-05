@@ -4,7 +4,6 @@ const $ =(selector) => document.querySelector(selector);
 window.addEventListener('blur', ()=>{
     let formprofile = $('#form-profile');
     let msgError= $('#submitError')
-    let body= $('body')
     let firstname= $('#first_name');
     let nameError= $('#firstError')
     let inputlast =$('#last_name');
@@ -18,13 +17,10 @@ window.addEventListener('blur', ()=>{
     let addressError= $('#addressError')
     let date = $('#country');
     let dateError = $('#dateError');
+    let preferences = $('#preferences');
+    let preError = $('#preferencesError')
 
     let validationsErrors = false
-    let perfil = confirm('¿Queres cambiar el estilo de tu perfil?');
-    if(perfil){
-        body.style.color('#')
-    }
-
 
     firstname.addEventListener('load', () => {
         switch (true) {
@@ -62,7 +58,7 @@ window.addEventListener('blur', ()=>{
         country.addEventListener('blur', () =>{
             switch (true) {
                 case !country.value.trim():
-                    countryError.innerHTML = 'Debes seleccionar un pais';
+                    countryError.innerHTML = 'Selecciona tu pais de residencia';
                     countryError.classList.add('invalid');
                     break;
                     default:
@@ -75,11 +71,11 @@ window.addEventListener('blur', ()=>{
         address.addEventListener('blur', () => {
             switch (true) {
                 case !address.value.trim():
-                    addressError.innerHTML = 'El campo direccion es obligatorio';
+                    addressError.innerHTML = 'Debes colocar una direccion';
                     addressError.classList.add('invalid');
                     break;
                 case !address.value.length > 3:
-                    addressError.innerHTML = 'Ingresa una direccion válida. Minimo mas de 3 caracteres';
+                    addressError.innerHTML = 'Ingresa una direccion válida. Minimo 3 caracteres';
                     lastError.classList.add('invalid');
                     break;
                 default:
@@ -92,7 +88,7 @@ window.addEventListener('blur', ()=>{
         date.addEventListener('blur', (e) => {
             switch (true) {
                 case !date.value:
-                    dateError.innerHTML = 'Debes poner tu fecha de nacimiento'
+                    dateError.innerHTML = 'Coloca tu fecha de nacimiento'
                     date.classList.add('invalid')
                     break;
                 default:
@@ -115,6 +111,20 @@ window.addEventListener('blur', ()=>{
                     break;
             }
         })
+        preferences.addEventListener('blur', () =>{
+            switch (true) {
+                case !preferences.value.trim():
+                    preError.innerHTML = 'Selecciona una categoria que te guste';
+                    preError.classList.add('invalid');
+                    break;
+                    default:
+                        preError.classList.remove('invalid');
+                        countryError.classList.add('invalid');
+                        preError.innerHTML = null;
+                        break;
+            }
+        })
+
         formprofile.addEventListener('submit', function (event) {
             event.preventDefault();
             let error = false;

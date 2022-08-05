@@ -80,7 +80,7 @@
             <option value="AR"<%= locals.user && user.preferences && user.preferences== 'ar' ? 'selected' : null %>>Arte</option>
             <option value="hi"<%= locals.user && user.preferences && user.preferences == 'hi' ? 'selected' : null %>>Historia</option>
             <option value="OT"<%= locals.user && user.preferences && user.preferences == 'ot' ? 'selected' : null %>>Otros</option>
-            <span id="countryError"><%= locals.errores && errores.preferences ? errores.country.msg : null%></span>
+            <span id="preferencesError"><%= locals.errores && errores.preferences ? errores.country.msg : null%></span>
           </select>
           
         </div>
