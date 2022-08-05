@@ -1,0 +1,231 @@
+.admin-body{
+background:rgba(196, 133, 97, 0.808);
+}
+.admin {
+    height: 100%;
+  }
+  
+ .admin {
+    background-color: #292929;
+    overflow: hidden;
+  }
+
+  
+  .nav-bar a {
+    position: relative;
+    width: 33.333%;
+    display: table-cell;
+    text-align: center;
+    color: #949494;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: 0.2s ease color;
+  }
+  
+  
+  .nav-bar a:before {
+    top: 0;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+  }
+  
+  .nav-bar a:after {
+    top: 5px;
+    left: 18px;
+    width: 4px;
+    height: 4px;
+  }
+  
+  #indicator {
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: 0.2s ease left;
+  }
+  
+  .nav-bar a:hover {
+    color: #fff;
+  }
+  
+  nav a:hover:before,
+  nav a:hover:after {
+    transform: scale(1);
+  }
+  
+  
+
+ .form {
+  --input-text-color: #fff;
+  --input-bg-color: #bbb678;
+  --focus-input-bg-color: transparent;
+  --text-color: #869fb8;
+  --active-color: #a1b6c4;
+  --width-of-input: 400px;
+  --inline-padding-of-input: 1.2em;
+  --gap: 0.9rem;
+}
+/* form style */
+.form {
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: var(--width-of-input);
+  position: relative;
+  isolation: isolate;
+}
+/* a fancy bg for showing background and border when focus. */
+.fancy-bg {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  background: var(--input-bg-color);
+  border-radius: 30px;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  box-shadow: rgba(156, 59, 59, 0.16) 0px 1px 4px;
+}
+/* label styling */
+label {
+  width: 100%;
+  padding: 0.8em;
+  height: 40px;
+  padding-inline: var(--inline-padding-of-input);
+  display: flex;
+  align-items: center;
+}
+
+.search,.close-btn {
+  position: absolute;
+}
+/* styling search-icon */
+.search {
+  fill: var(--text-color);
+  left: var(--inline-padding-of-input);
+}
+/* svg -- size */
+svg {
+  width: 17px;
+  display: block;
+}
+/* styling of close button */
+.close-btn {
+  border: none;
+  right: var(--inline-padding-of-input);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0.1em;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--active-color);
+  opacity: 0;
+  visibility: hidden;
+}
+/* styling of input */
+.input {
+  color: var(--input-text-color);
+  width: 100%;
+  margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
+  background: none;
+  border: none;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-color)
+}
+/* input background change in focus */
+.input:focus ~ .fancy-bg {
+  border: 1px solid var(--active-color);
+  background: var(--focus-input-bg-color);
+}
+/* search icon color change in focus */
+.input:focus ~ .search {
+  fill: var(--active-color);
+}
+/* showing close button when typing */
+.input:valid ~ .close-btn {
+  opacity: 1;
+  visibility: visible;
+}
+/* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+
+
+div.listaProductosAdmin {
+    height: auto;
+}
+
+div.listaProductosAdmin h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+div.listaProductosAdmin table {
+    width: 75%;
+    margin: 30px auto;
+    border: solid 2px var --naranja-Fuerte;
+    border-collapse: collapse;
+    padding: 20px;
+    max-width: 1050px;
+}
+
+div.listaProductosAdmin table thead {
+    border: solid 2px var(--black);
+}
+
+div.listaProductosAdmin table thead tr {
+    background-color: var(--black);
+    color: white;
+}
+
+div.listaProductosAdmin table thead tr th {
+    padding: 20px;
+}
+
+div.listaProductosAdmin table tbody tr th,
+div.listaProductosAdmin table tbody tr td {
+    text-align: center;
+    border: solid 2px var(--amarilloEstrellas);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+div.listaProductosAdmin table tbody tr td div {
+    height: auto;
+    width: auto;
+}
+
+div.listaProductosAdmin table tbody tr td div a i {
+    color: var(--negro);
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+div.listaProductosAdmin table tbody tr td form button{
+    border: none;
+    background-color: white;
+}
+
+div.listaProductosAdmin table tbody tr td form button i{
+    font-size: 25px;
+    color: var(--negro);
+    cursor: pointer;
+}
