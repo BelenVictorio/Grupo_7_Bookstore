@@ -10,8 +10,30 @@ module.exports = {
         res.render('admin')
     },
     creation: (req, res) => {
-        res.render('admin/creation')
+        db.Product.findAll()
+        .then(products => {
+            return res.render('admin/creation',{
+                products
+            })
+        })
+        .catch(error => console.log(error))
+        
     },
+    edit: (req, res) => {
+        let product = db.Product.findByPk(req.params.id)
+        let category = db.Category.findAll()
+
+        Promise.all([product, category])
+            .then(([products, categories]) => {
+                return res.render('admin/edit/', {
+                    products,
+                    categories
+                })
+            })
+            .catch(error => console.log(error))
+
+    },
+
     store: (req, res) => {
         const { name, author_id, description, price, category_id, image_id, genre_id } = req.body;
 
