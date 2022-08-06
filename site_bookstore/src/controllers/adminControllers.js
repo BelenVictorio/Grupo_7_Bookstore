@@ -35,15 +35,15 @@ module.exports = {
     },
 
     store: (req, res) => {
-        const { name, author_id, description, price, category_id, image_id, genre_id } = req.body;
+        const { name, author_id, description, price, category_id, images_id, genres_id } = req.body;
 
         db.Product.create({
             name: name,
             author_id: +author_id,
             description: description,
             price: +price,
-            genre_id: genre_id,
-            image_id,
+            genres_id: +genres_id,
+            images_id: +images_id,
             category_id: +category_id,
 
         })

@@ -12,15 +12,21 @@
                 <div class="creaEdit-div">
                     <input type="text" id="titulo" name="name" placeholder="Titulo" value="<%= products.name %>">
                     <label for="titulo"></label>
+                    <small class="text-danger" id="errorName" ><%= locals.errors && errors.name ? errors.name.msg: "" %></small>
                 </div>
+
                 <div class="creaEdit-div">
                     <input type="text" id="autor" name="author" placeholder="Autor/a" value="<%= products.author %>">
                     <label for="autor"></label>
+                    <small class="text-danger" id="errorAutor" ><%= locals.author && errors.author ? errors.author.msg: "" %></small>
                 </div>
+
                 <div class="creaEdit-div">
                     <textarea id="descripcion" name="description" placeholder="Descripcion"><%= products.description %></textarea>
                     <label for="descripcion"></label>
+                    <small class="text-danger" id="errorDescripcion" ><%= locals.errors && errors.description ? errors.description.msg: "" %></small>
                 </div>
+
                 <div class="creaEdit-div">
                     <label for="Categorias"></label>
                     <select name="category" id="Categorias">
@@ -29,22 +35,28 @@
                     <option value="jovenes" <%= products.category === "jovenes" && 'selected' %>>jovenes</option>
                     <option value="infantil"<%= products.category === "Infantil" && 'selected' %>>infantil</option>
             </select>
+            <small class="text-danger" id="errorCategoria" ><%= locals.errors && errors.categories ? errors.categories.msg: "" %></small>
                 </div>
+
                 <div class="creaEdit-div">
                     <input type="text" id="precio" name="price" placeholder="Precio" value="<%= products.price %>">
                     <label for="precio"></label>
+                    <small class="text-danger" id="errorPrecio" ><%= locals.errors && errors.price ? errors.price.msg: "" %></small>
                 </div>
+
                 <div class="creaEdit-button">
                     <button type="submit">
                         <a href="/">Cancelar</a>
                     </button>
                     <button type="submit" name="editar">Editar</button>
+                    <span class="alert-validation" id="errorForm"></span>
                     
                 </div>
             </form>
         </section>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/editValidator.js"></script>
   </body>
   
 </html>

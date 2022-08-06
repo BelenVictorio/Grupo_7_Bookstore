@@ -1,7 +1,7 @@
-let qs = (selector) => document.querySelector(selector);
+/* let qs = (selector) => document.querySelector(selector); */
 
 window.addEventListener('load', () => {
-    let createProduct = qs('#createValidator'),
+    let editProduct = qs('#editProduct'),
         name = qs('#name'),
         author = qs('#author'),
         description = qs('#description'),
@@ -43,7 +43,7 @@ window.addEventListener('load', () => {
                 errorDescripcion.innerHTML = "Ingrese Descripción";
                 errors = true; 
                 break;
-            case description.value.length >= 20:  
+            case description.value.length <= 20:  
                  description.classList.add('is-invalid'); 
                  errorDescripcion.innerHTML = "Debes ingresar por lo menos 20 caracteres";
                  errors = true; 
@@ -74,11 +74,11 @@ window.addEventListener('load', () => {
         }
       });
 
-      createProduct.addEventListener('submit', (e) => {
+      editProduct.addEventListener('submit', (e) => {
         let errors = true;
         e.preventDefault(); //evita que se ejecute directamente el boton del form.
     
-        let elementsForm = createProduct.elements; //agarra a todos los elementos nativos del formulario
+        let elementsForm = editProduct.elements; //agarra a todos los elementos nativos del formulario
         console.log(elementsForm);
     
         for (let i = 0; i < elementsForm.length - 2; i++) {
@@ -94,7 +94,7 @@ window.addEventListener('load', () => {
         if (errors == false) {
           errorForm.innerHTML = '';
           alert('Product added');
-          createProduct.submit();
+          editProduct.submit();
         }
       });  
 
