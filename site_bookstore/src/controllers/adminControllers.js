@@ -68,7 +68,7 @@ module.exports = {
 
         db.Product.update(
             {
-                name,
+                name: name,
                 author_id: +author_id,
                 description: description,
                 price: +price,
@@ -80,15 +80,26 @@ module.exports = {
                 }
             }
 
-        ).then(() => {
-            if (req.file) {
-                db.Image.update(
-                    {
-                        name: req.file.filename
-                    }
-                )
-            }
-        })
+        ).then(async () => {
+            if (req.files) {
+                try{
+                    await db.Image.update(
+                        {
+                            name: req.files.filename
+                        },
+                        {
+                            where: {
+                                product_id : req.params.id
+                            }
+                        }
+                    )
+                } catch(error){
+                    console.log(error)
+                }
+                }
+                return res.redirect('/products')
+                
+        }).catch(error => console.log(error))
 
         /* let productsModify = products.map(product => {
             if (product.id === +req.params.id) {
@@ -109,8 +120,15 @@ module.exports = {
     },
 
     erase: (req, res) => {
-        let productDelete = products.filter(product => product.id !== +req.params.id);
-        saveProducts(productDelete);
-        return res.redirect('/products');
+        db.Product.destroy({
+            where : {
+                id : req.params.id
+            }
+        })
+        .then(() => {
+            return res.redirect('/products')
+        })
+        .catch(error => console.log(error))
+        
     }
 }
