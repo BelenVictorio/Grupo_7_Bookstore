@@ -25,7 +25,7 @@ module.exports = {
 
         Promise.all([product, category])
             .then(([products, categories]) => {
-                return res.render('admin/edit', {
+                return res.render('admin/edit/', {
                     products,
                     categories
                 })
@@ -35,14 +35,15 @@ module.exports = {
     },
 
     store: (req, res) => {
-
-        const { name, author_id, description, price, category_id } = req.body;
+        const { name, author_id, description, price, category_id, image_id, genre_id } = req.body;
 
         db.Product.create({
             name: name,
             author_id: +author_id,
             description: description,
             price: +price,
+            genre_id: genre_id,
+            image_id,
             category_id: +category_id,
 
         })
@@ -59,10 +60,26 @@ module.exports = {
                     db.Image.bulkCreate(images, { validate: true })
                         .then((result) => console.log(result))
                 }
-                return res.redirect('productos/products')
+                return res.redirect('/admin/creation')
             })
             .catch(error => console.log(error))
     },
+    edit: (req, res) => {
+        let product = db.Product.findByPk(req.params.id)
+        let category = db.Category.findAll()
+
+        Promise.all([product, category])
+            .then(([products, categories]) => {
+                return res.render('admin/edit/', {
+                    products,
+                    categories
+                })
+            })
+            .catch(error => console.log(error))
+
+    },
+
+ 
     update: (req, res) => {
         const { name, author_id, description, price, category_id } = req.body;
 
