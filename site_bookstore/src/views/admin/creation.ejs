@@ -12,6 +12,7 @@
                 <div class="creaEdit-div">
                     <input type="text" id="name" name="name" placeholder="Nombre">
                     <label for="titulo"></label>
+                    <small class="text-danger" id="errorName" ><%= locals.errors && errors.name ? errors.name.msg: "" %></small>
                 </div>
                 <div class="creaEdit-div">
                     <input type="text" id="author" name="author" placeholder="Autor/a">
@@ -74,6 +75,7 @@
         </section>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/createValidator.js"></script>
   </body>
   
 </html>

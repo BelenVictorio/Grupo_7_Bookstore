@@ -8,6 +8,7 @@ const upload = require('../middlewares/uploadImageUser');
 router
       .get('/',admincheck, admin)
     .get('/creation', admincheck, creation)
+    .post('/creation',  creation)
     .post('/add',upload.array('image'), store) 
     .get('/edit/:id', admincheck, edit)
     .put('/update/:id',upload.array('image'),update)

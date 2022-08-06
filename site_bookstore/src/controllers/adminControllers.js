@@ -70,7 +70,7 @@ module.exports = {
 
         Promise.all([product, category])
             .then(([products, categories]) => {
-                return res.render('admin/edit/', {
+                return res.render('admin/edit', {
                     products,
                     categories
                 })
