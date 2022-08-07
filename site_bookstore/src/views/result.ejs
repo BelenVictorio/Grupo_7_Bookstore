@@ -10,12 +10,12 @@
         <main class="main-search">
             
 <% if (results.length > 0) { %>
-  <% results.forEach(({id, name, author, price, image})=> { %>
+  <% results.forEach(({id, name, author, price, images})=> { %>
     <h1 class="titulo-catalogo">Resultado de la busqueda:  "<%= name %>"</h1>
   <hr class="hr-separacion">
     <article class="home__best-sellers__producto1">
       <div class="home__best-sellers__producto1__circulo">
-        <a href="/products/detail/<%= id %>"><img src="/images/<%= image %>" alt="libro La Bestia"></a>
+        <a href="/products/detail/<%= id %>"><img src="/images/<%= images %>" alt="libro La Bestia"></a>
       </div>
       <article class="detalles-catalogo">
           <p><%= name %> </p>

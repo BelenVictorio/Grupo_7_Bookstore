@@ -8,7 +8,8 @@ const { Op } = require('sequelize')
 module.exports = {
 
   index: (req, res, ) => {
-     db.Product.findAll()
+     db.Product.findAll({
+    include:['images']})
       .then(products => {
         res.render('index', {
           products,

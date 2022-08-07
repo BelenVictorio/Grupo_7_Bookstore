@@ -47,20 +47,20 @@ window.addEventListener('load', ()=>{
             switch (true) {
                 case !$inputlast_name.value.trim():
                     $errorSurname.innerHTML = 'El campo apellido es obligatorio';
-                    $validationsErrors = true
+                    validationsErrors = true
                     break;
                 case !$regExAlpha.test($inputlast_name.value):
                     $errorSurname.innerHTML = 'Debes ingresar un apellido válido';
-                    $validationsErrors = true;
+                    validationsErrors = true;
                     break;
                 case !$inputlast_name.value.length > 4:
                     $errorSurname.innerHTML = 'Ingresa un apellido válido';
-                    $validationsErrors = true;
+                    $alidationsErrors = true;
                     break;
                 default:
                     $inputlast_name.style.borderColor = 'green';
                     $errorSurname.innerHTML = '';
-                    $validationsErrors = false
+                    validationsErrors = false
                     break;
             }
         })
@@ -144,7 +144,7 @@ window.addEventListener('load', ()=>{
             let elementsForm = this.elements;
             console.log(elementsForm)
     
-            for (let index = 0; index < elementsForm.length - 3; index++) {
+            for (let index = 0; index < elementsForm.length - 4; index++) {
                 if (elementsForm[index].value == ""
                     
                 ) {
@@ -160,7 +160,21 @@ window.addEventListener('load', ()=>{
             }
     
             if (!error && !validationsErrors) {
-                
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.addEventListener('mouseenter', Swal.stopTimer)
+                      toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                  })
+                  Toast.fire({
+                    icon: 'success',
+                    title: 'Iniciado sesión con éxito'
+                  })
                 $form.submit()
             }
         })

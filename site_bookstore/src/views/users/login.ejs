@@ -22,8 +22,8 @@
                 <a class="login-pregunta" href="">¿Haz olvidado la contraseña?</a>
               </div>
               <div  class="login-info">
-                <input type="checkbox" name="remember" id="remember">
-                <label for="remember">Recordarme</label>
+                
+                <label for="remember">Recordarme<input type="checkbox" name="remember" id="remember"></label>
                 <small class="text-danger" id="rememError"><%= locals.errors && errors.remember? errors.remember.msg: null %> </small>
                 </div>
               <div  class="login-info">

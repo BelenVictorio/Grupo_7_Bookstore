@@ -321,13 +321,13 @@ main section.segunda-section article.producto-rel div.text-detalle p{
   background-color: #252525;
 }
 /* Valoracion del libro */
-#form {
+.form-clasificacion {
   width: 250px;
   margin: 0 auto;
   height: 50px;
   }
   
-  #form label {
+  .form-clasificacion label {
   font-size: 20px;
   }
   

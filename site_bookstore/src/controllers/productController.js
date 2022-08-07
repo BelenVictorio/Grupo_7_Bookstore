@@ -6,7 +6,8 @@ const {Op} = require('sequelize');
 
 module.exports = {
     detail: (req, res) => {
-        db.Product.findByPk(req.params.id)
+        db.Product.findByPk(req.params.id,{
+        include:['images']})
         .then(products => {
              res.render('productos/productDetail', {
                 products
