@@ -12,18 +12,16 @@
           <form method="POST" class="login-form-info" id="form-login" novalidate >
               <div class="login-info">
                 <input type="email" id="email" name="email" placeholder="Email" class="<%= locals.errors && errors.email ? 'invalid': null%>">
-                <label for="email"></label>
                 <small id="emailError" ><%= locals.errors && errors.email ? errors.email.msg: null%></small>
               </div>
               <div class="login-info">
                 <input type="password" id="password" name="password" placeholder="Contraseña" class="<%= locals.errors && errors.password ? 'invalid': null%>">
-                <label for="password"></label>
                 <small class="text-danger" id="passError"><%= locals.errors && errors.password ? errors.password.msg: null%></small>
                 <a class="login-pregunta" href="">¿Haz olvidado la contraseña?</a>
               </div>
               <div  class="login-info">
-                <input type="checkbox" name="remember" id="remember">
-                <label for="remember">Recordarme</label>
+                <input type="checkbox" name="remember" id="remember" placeholder="Recordarme">
+               <p>Recordarme</p>
                 <small class="text-danger" id="rememError"><%= locals.errors && errors.remember? errors.remember.msg: null %> </small>
                 </div>
               <div  class="login-info">

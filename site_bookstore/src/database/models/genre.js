@@ -1,5 +1,5 @@
 module.exports=(sequelize, DataTypes) => {
-    let alias ="genre";
+    let alias ="Genre";
     
     let cols ={
        id:{
@@ -21,7 +21,7 @@ module.exports=(sequelize, DataTypes) => {
     }
     const Genre = sequelize.define(alias, cols, config)
     Genre.associate = function(models){
-            Genre.belongsTo(models.Product, {
+            Genre.hasMany(models.Product, {
             as: "products",
             foreignKey: "genres_id"
         })

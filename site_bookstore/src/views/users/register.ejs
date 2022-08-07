@@ -26,7 +26,6 @@
                 <input class="<%= locals.errors && errors.last_name ? 'Es invalid' : null %>" type="text" id="last_name"
                   name="last_name" placeholder="Escribi tu apellido"
                   value="<%= locals.old && old.last_name ? old.last_name : null%>">
-                <label for="last_name"></label>
                 <span id="errorSurname" style="color: red">
                   <%= locals.errors && errors.last_name ? errors.last_name.msg : null%>
                 </span>
@@ -34,7 +33,6 @@
               <div class="register-info">
                 <input class="<%= locals.errors && errors.email ? 'Is invalid' : null %>" type="email" id="email"
                   name="email" placeholder="Email" value="<%= locals.old && old.email ? old.email : null%>">
-                <label for="email"></label>
                 <span id="errorEmail" style="color: red">
                   <%= locals.errors && errors.email ? errors.email.msg : null%>
                 </span>
@@ -42,7 +40,6 @@
               <div class="register-info">
                 <input class="<%= locals.errors && errors.password ? 'Is invalid' : null %>" type="password"
                   id="password" name="password" placeholder="Contraseña">
-                <label for="password"></label>
                 <span id="errorPass1" style="color: red">
                   <%= locals.errors && errors.password ? errors.password.msg : null%>
                 </span>
@@ -50,7 +47,6 @@
               <div class="register-info">
                 <input class="<%= locals.errors && errors.password2 ? 'Is invalid' : null %>" type="password"
                   id="password2" name="password2" placeholder="Repeti la contraseña">
-                <label for="password"></label>
                 <span id="errorPass2" style="color: red">
                   <%= locals.errors && errors.password2 ? errors.password.msg : null%>
                 </span>

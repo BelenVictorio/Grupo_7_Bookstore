@@ -29,11 +29,9 @@
           </div>
           <div class="profile-info">
             <input class="<%= locals.errors && errors.last_name ? 'Es invalid' : null %>" type="text" id="last_name" name="last_name" placeholder="Escribi tu apellido" value="<%= user.last_name %>">
-            <label for="last_name"></label>
             <span id="lastError"><%= locals.errores && errores.last_name? errores.last_name.msg : null%></span>
           </div>
           <div class="profile-info">
-            <label for="country"></label>
             <select name="country" id="country">
               <option value="">-Seleccione su país</option>
               <option value="ar"<%= locals.user && user.country && user.country == 'ar' ? 'selected' : null %>>Argentina</option>
@@ -52,22 +50,18 @@
           </div>
           <div class="profile-info">
             <input class="<%= locals.errors && errors.address ? 'Es invalid' : null %>" type="text" id="address" name="address" placeholder="address" value="<%= user.address%>">
-            <label for="address"></label>
             <span id="addressError"><%= locals.errores && errores.address ? errores.address.msg : null%></span>
           </div>
           <div class="profile-info">
             <input class="profile-date <%= locals.errors && errors.date ? 'Es invalid' : null %>" type="date" name="date" min="1930-01-01" max="2012-12-31" placeholder="Fecha de nacimiento" value="<%= user.date %>" id="date" >
-            <label for="date"></label>
             <span id="dateError"><%= locals.errores && errores.date ? errores.date.msg : null%></span>
           </div>
           <div class="profile-info">
-            <label for="image"></label>
             <input class=" form-control" type="file" id="image" name="image" accept=".jpg, .png, .gif, .jpeg" value="<%= user.image %>">
             <span id="imgError"><%= locals.errores && errores.image ? errores.image.msg : null%></span>
           </div>       
           <div class="profile-info">
           <p>Elige tus preferencias:</p>
-          <label for="preferences"></label>
           <select name="preferences" id="preferences">
             <option value="">-Seleccione su país</option>
             <option value="F"<%= locals.user && user.preferences && user.preferences == 'fi' ? 'selected' : null %>>Ficcion</option>

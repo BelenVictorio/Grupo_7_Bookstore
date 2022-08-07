@@ -1,5 +1,5 @@
-console.log('profile.js success');
-const $ =(selector) => document.querySelector(selector);
+
+const $ = (selector) => document.querySelector(selector);
 
 window.addEventListener('blur', ()=>{
     let formprofile = $('#form-profile');
@@ -22,7 +22,7 @@ window.addEventListener('blur', ()=>{
 
     let validationsErrors = false
 
-    firstname.addEventListener('load', () => {
+    firstname.addEventListener('blur', () => {
         switch (true) {
             case !firstname.value.trim():
                 nameError.innerHTML = 'El campo nombre es obligatorio';
