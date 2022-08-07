@@ -108,7 +108,7 @@ updateProfile: (req, res) =>{
             address : address.trim(),
             date,
             image: req.file ? req.file.filename : image,
-            preferences,
+            preferences: preferences.trim(),
         },
         {
             where:{
@@ -128,9 +128,9 @@ updateProfile: (req, res) =>{
         .catch(error => console.log(error))
 
     } else {
-       return res.render('profile', {
+       return res.render('users/profile', {
            old: req.body,
-           errors: errors.mapped(),
+           errors: errores.mapped(),
 
        });
 }

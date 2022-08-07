@@ -25,7 +25,7 @@ module.exports = {
 
         Promise.all([product, category])
             .then(([products, categories]) => {
-                return res.render('admin/edit', {
+                return res.render('admin/edit/', {
                     products,
                     categories
                 })
@@ -35,14 +35,15 @@ module.exports = {
     },
 
     store: (req, res) => {
-
-        const { name, author_id, description, price, category_id } = req.body;
+        const { name, author_id, description, price, category_id, images_id, genres_id } = req.body;
 
         db.Product.create({
             name: name,
             author_id: +author_id,
             description: description,
             price: +price,
+            genres_id: +genres_id,
+            images_id: +images_id,
             category_id: +category_id,
 
         })
@@ -59,16 +60,32 @@ module.exports = {
                     db.Image.bulkCreate(images, { validate: true })
                         .then((result) => console.log(result))
                 }
-                return res.redirect('productos/products')
+                return res.redirect('/admin/creation')
             })
             .catch(error => console.log(error))
     },
+    edit: (req, res) => {
+        let product = db.Product.findByPk(req.params.id)
+        let category = db.Category.findAll()
+
+        Promise.all([product, category])
+            .then(([products, categories]) => {
+                return res.render('admin/edit', {
+                    products,
+                    categories
+                })
+            })
+            .catch(error => console.log(error))
+
+    },
+
+ 
     update: (req, res) => {
         const { name, author_id, description, price, category_id } = req.body;
 
         db.Product.update(
             {
-                name,
+                name: name,
                 author_id: +author_id,
                 description: description,
                 price: +price,
@@ -80,15 +97,26 @@ module.exports = {
                 }
             }
 
-        ).then(() => {
-            if (req.file) {
-                db.Image.update(
-                    {
-                        name: req.file.filename
-                    }
-                )
-            }
-        })
+        ).then(async () => {
+            if (req.files) {
+                try{
+                    await db.Image.update(
+                        {
+                            name: req.files.filename
+                        },
+                        {
+                            where: {
+                                product_id : req.params.id
+                            }
+                        }
+                    )
+                } catch(error){
+                    console.log(error)
+                }
+                }
+                return res.redirect('/products')
+                
+        }).catch(error => console.log(error))
 
         /* let productsModify = products.map(product => {
             if (product.id === +req.params.id) {
@@ -109,8 +137,15 @@ module.exports = {
     },
 
     erase: (req, res) => {
-        let productDelete = products.filter(product => product.id !== +req.params.id);
-        saveProducts(productDelete);
-        return res.redirect('/products');
+        db.Product.destroy({
+            where : {
+                id : req.params.id
+            }
+        })
+        .then(() => {
+            return res.redirect('/products')
+        })
+        .catch(error => console.log(error))
+        
     }
 }

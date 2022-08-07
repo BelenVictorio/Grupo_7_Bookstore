@@ -1,15 +1,14 @@
-
 console.log('login.js success')
-const qs = (selector) => document.querySelector(selector)
+const q = (selector) => document.querySelector(selector)
 
 window.addEventListener('load',() => {
 
-let $email = qs('#email');
-let $password = qs('#password');
-let $emailError = qs('#emailError');
-let $passError = qs('#passError');
-let $formlogin = qs('#form-login');
-let $msgError = qs('#submitError');
+let $email = q('#email');
+let $password = q('#password');
+let $emailError = q('#emailError');
+let $passError = q('#passError');
+let $formlogin = q('#form-login');
+let $msgError = q('#submitError');
 let $regExEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 let $regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 let validationsErrors = false;

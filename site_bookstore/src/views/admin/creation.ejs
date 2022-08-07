@@ -7,56 +7,87 @@
     <%- include('../partials/header') %>
     <main class="main-creaEdit">
         <section class="creaEdit-section">
-            <form method="POST" action="" class="creaEdit-form">
+            <form method="POST" action="/admin/add" class="creaEdit-form">
                 <h2>Nuevo producto</h2>
                 <div class="creaEdit-div">
                     <input type="text" id="name" name="name" placeholder="Nombre">
                     <label for="titulo"></label>
+                    <small class="text-danger" id="errorName" ><%= locals.errors && errors.name ? errors.name.msg: "" %></small> 
                 </div>
+                
+
                 <div class="creaEdit-div">
                     <input type="text" id="author" name="author" placeholder="Autor/a">
-                    <label for="autor"></label>
+                    <label for="autor"></label>   
+                    <small class="text-danger" id="errorAutor" ><%= locals.author && errors.author ? errors.author.msg: "" %></small>
                 </div>
+                
+
                 <div class="creaEdit-div">
                     <textarea id="description" name="description" placeholder="Descripcion"></textarea>
                     <label for="descripcion"></label>
+                    <small class="text-danger" id="errorDescripcion" ><%= locals.errors && errors.description ? errors.description.msg: "" %></small>
                 </div>
+                
+
                 <div class="creaEdit-div">
                     <label for="img"></label>
                     <input class=" form-control" type="file" id="img" name="img" accept=".jpg, .png" multiple>
+                    <small class="text-danger" id="errorImg" ><%= locals.errors && errors.img ? errors.img.msg: "" %></small>
                 </div>
+                
+
                 <div class="creaEdit-div">
                     <input type="text" id="formato" name="formato" placeholder="Formato">
                     <label for="formato"></label>
+                    <small class="text-danger" id="errorFormato" ><%= locals.formato && errors.formato ? errors.formato.msg: "" %></small>
                 </div>
+                
+
                 <div class="creaEdit-div">
                     <label for="Categorias"></label>
-                    <select name="Categorias" id="Categorias">
+                    <select name="Categories" id="Categories">
                     <option value="">-Seleccione la categoria correspondiente</option>
-                    <option value="fi">Ficcion</option>
-                    <option value="ro">Romance</option>
-                    <option value="po">Policial</option>
-                    <option value="te">Terror</option>
-                    <option value="ar">Arte</option>
-                    <option value="nof">No Ficcion</option>
-                    <option value="co">Comics-Mangas</option>
-                    <option value="filo">Filosofia</option>
-                    <option value="in">Infantil</option>
-                    <option value="li">Literatura</option>
-                    <option value="ot">Otros</option>
+                    <option value="1">Literatura</option>
+                    <option value="2">infatiles</option>
+                    <option value="3">Novela</option>
+                    <option value="4">Ficcion</option>
+                    <option value="5">No Ficcion</option>
+                    <option value="6">Juvenil</option>
+                    <option value="7">Romance</option>
+                    <option value="8">Terror</option>
+                    <option value="9">Suspenso</option>
+                    <option value="10">Comic</option>
+                    <option value="11">Mangas</option>
+                    <option value="12">Cuentos</option>
+                    <option value="13">Arte</option>
+                    <option value="14">Diseño</option>
+                    <option value="15">Historia</option>
+                    <option value="16">Filosofia</option>
+                    
             </select>
+            <small class="text-danger" id="errorCategoria" ><%= locals.errors && errors.categories ? errors.categories.msg: "" %></small>
                 </div>
+                
+
                 <div class="creaEdit-div">
                     <input type="text" id="price" name="price" placeholder="Precio">
                     <label for="precio"></label>
+                    <small class="text-danger" id="errorPrecio" ><%= locals.errors && errors.price ? errors.price.msg: "" %></small>
                 </div>
+                
+
                 <div class="creaEdit-div">
                     <input type="text" id="cuotas" name="cuotas" placeholder="cuotas">
                     <label for="cuotas"></label>
+                    <small class="text-danger" id="errorCuotas" ><%= locals.errors && errors.cuotas ? errors.cuotas.msg: "" %></small>
                 </div>
+                
+
                 <div class="creaEdit-button">
                     <button type="submit">Guardar</button>
                     <button type="reset">Limpiar</button>
+                    <span class="alert-validation" id="errorForm"></span>
                     <!-- <button type="reset"  class="">
                         <a href="/products/creation">Limpiar</a>
                     </button>
@@ -68,6 +99,7 @@
         </section>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/createValidator.js"></script>
   </body>
   
 </html>
