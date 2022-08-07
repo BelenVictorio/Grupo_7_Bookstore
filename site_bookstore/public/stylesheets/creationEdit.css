@@ -96,6 +96,11 @@
     color: var(--white);
 }
 
+.text-danger {
+    color: red;
+    font-size: 12px;
+}
+
 @media(min-width: 768px){
     .creaEdit-form{
         display: flex;

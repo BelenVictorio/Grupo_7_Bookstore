@@ -10,19 +10,19 @@
             <form action="/admin/update/<%= products.id %>?_method=PUT" method="POST" class="creaEdit-form">
                 <h2>Editar producto: <%= products.name %></h2>
                 <div class="creaEdit-div">
-                    <input type="text" id="titulo" name="name" placeholder="Titulo" value="<%= products.name %>">
+                    <input type="text" id="name" name="name" placeholder="Titulo" value="<%= products.name %>">
                     <label for="titulo"></label>
                     <small class="text-danger" id="errorName" ><%= locals.errors && errors.name ? errors.name.msg: "" %></small>
                 </div>
 
                 <div class="creaEdit-div">
-                    <input type="text" id="autor" name="author" placeholder="Autor/a" value="<%= products.author %>">
+                    <input type="text" id="author" name="author" placeholder="Autor/a" value="<%= products.author %>">
                     <label for="autor"></label>
                     <small class="text-danger" id="errorAutor" ><%= locals.author && errors.author ? errors.author.msg: "" %></small>
                 </div>
 
                 <div class="creaEdit-div">
-                    <textarea id="descripcion" name="description" placeholder="Descripcion"><%= products.description %></textarea>
+                    <textarea id="description" name="description" placeholder="Descripcion"><%= products.description %></textarea>
                     <label for="descripcion"></label>
                     <small class="text-danger" id="errorDescripcion" ><%= locals.errors && errors.description ? errors.description.msg: "" %></small>
                 </div>
