@@ -6,7 +6,7 @@ module.exports = {
     list: (req,res) =>{
         db.Product.findAll()
             .then((products) => {
-              return res.render("admin/list", { 
+              return res.render("list", { 
                 products 
             });
             })
