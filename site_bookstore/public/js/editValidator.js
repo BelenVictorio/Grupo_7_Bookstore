@@ -1,7 +1,7 @@
-/* let qs = (selector) => document.querySelector(selector); */
+let qs = (selector) => document.querySelector(selector);
 
 window.addEventListener('load', () => {
-    let editProduct = qs('#editProduct'),
+    let editProduct = qs('#editValidator'),
         name = qs('#name'),
         author = qs('#author'),
         description = qs('#description'),
@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
                 errorName.innerHTML = "Este campo es obligatorio";
                 errors = true; 
                 break;
-            case name.value.length >= 5:  
+            case name.value.length <= 5:  
                  name.classList.add('is-iinvalid'); 
                  errorName.innerHTML = "Debes ingresar por lo menos 5 caracteres";
                  errors = true; 
@@ -76,13 +76,11 @@ window.addEventListener('load', () => {
 
       editProduct.addEventListener('submit', (e) => {
         let errors = true;
-        e.preventDefault(); //evita que se ejecute directamente el boton del form.
-    
-        let elementsForm = editProduct.elements; //agarra a todos los elementos nativos del formulario
+        e.preventDefault();
+        let elementsForm = editProduct.elements;
         console.log(elementsForm);
     
         for (let i = 0; i < elementsForm.length - 2; i++) {
-          // -2 porque no tomo el boton submit y el reset
           if (elementsForm[i].value === '' || elementsForm[i].classList.contains('is-invalid')) {
             elementsForm[i].classList.add('is-invalid');
             errorForm.innerHTML = 'Complete los campos requeridos';
@@ -93,7 +91,7 @@ window.addEventListener('load', () => {
         }
         if (errors == false) {
           errorForm.innerHTML = '';
-          alert('Product added');
+          alert('Producto editado');
           editProduct.submit();
         }
       });  

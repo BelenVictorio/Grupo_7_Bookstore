@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
                 errorName.innerHTML = "Este campo es obligatorio";
                 errors = true; 
                 break;
-            case name.value.length >= 5:  
+            case name.value.length <= 5:  
                  name.classList.add('is-iinvalid'); 
                  errorName.innerHTML = "Debes ingresar por lo menos 5 caracteres";
                  errors = true; 
@@ -43,7 +43,7 @@ window.addEventListener('load', () => {
                 errorDescripcion.innerHTML = "Ingrese Descripción";
                 errors = true; 
                 break;
-            case description.value.length >= 20:  
+            case description.value.length <= 20:  
                  description.classList.add('is-invalid'); 
                  errorDescripcion.innerHTML = "Debes ingresar por lo menos 20 caracteres";
                  errors = true; 
@@ -76,13 +76,11 @@ window.addEventListener('load', () => {
 
       createProduct.addEventListener('submit', (e) => {
         let errors = true;
-        e.preventDefault(); //evita que se ejecute directamente el boton del form.
-    
-        let elementsForm = createProduct.elements; //agarra a todos los elementos nativos del formulario
+        e.preventDefault();
+        let elementsForm = createProduct.elements;
         console.log(elementsForm);
     
         for (let i = 0; i < elementsForm.length - 2; i++) {
-          // -2 porque no tomo el boton submit y el reset
           if (elementsForm[i].value === '' || elementsForm[i].classList.contains('is-invalid')) {
             elementsForm[i].classList.add('is-invalid');
             errorForm.innerHTML = 'Complete los campos requeridos';
@@ -93,7 +91,7 @@ window.addEventListener('load', () => {
         }
         if (errors == false) {
           errorForm.innerHTML = '';
-          alert('Product added');
+          alert('Producto agregado');
           createProduct.submit();
         }
       });  
