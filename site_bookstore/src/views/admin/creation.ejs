@@ -11,27 +11,23 @@
                 <h2>Nuevo producto</h2>
                 <div class="creaEdit-div">
                     <input type="text" id="name" name="name" placeholder="Nombre">
-                    <label for="titulo"></label>
                     <small class="text-danger" id="errorName" ><%= locals.errors && errors.name ? errors.name.msg: "" %></small> 
                 </div>
                 
 
                 <div class="creaEdit-div">
                     <input type="text" id="author" name="author" placeholder="Autor/a">
-                    <label for="autor"></label>   
                     <small class="text-danger" id="errorAutor" ><%= locals.author && errors.author ? errors.author.msg: "" %></small>
                 </div>
                 
 
                 <div class="creaEdit-div">
                     <textarea id="description" name="description" placeholder="Descripcion"></textarea>
-                    <label for="descripcion"></label>
                     <small class="text-danger" id="errorDescripcion" ><%= locals.errors && errors.description ? errors.description.msg: "" %></small>
                 </div>
                 
 
                 <div class="creaEdit-div">
-                    <label for="img"></label>
                     <input class=" form-control" type="file" id="img" name="img" accept=".jpg, .png" multiple>
                     <small class="text-danger" id="errorImg" ><%= locals.errors && errors.img ? errors.img.msg: "" %></small>
                 </div>
@@ -39,13 +35,11 @@
 
                 <div class="creaEdit-div">
                     <input type="text" id="formato" name="formato" placeholder="Formato">
-                    <label for="formato"></label>
                     <small class="text-danger" id="errorFormato" ><%= locals.formato && errors.formato ? errors.formato.msg: "" %></small>
                 </div>
                 
 
                 <div class="creaEdit-div">
-                    <label for="Categorias"></label>
                     <select name="Categories" id="Categories">
                     <option value="">-Seleccione la categoria correspondiente</option>
                     <option value="1">Literatura</option>
@@ -72,14 +66,12 @@
 
                 <div class="creaEdit-div">
                     <input type="text" id="price" name="price" placeholder="Precio">
-                    <label for="precio"></label>
                     <small class="text-danger" id="errorPrecio" ><%= locals.errors && errors.price ? errors.price.msg: "" %></small>
                 </div>
                 
 
                 <div class="creaEdit-div">
                     <input type="text" id="cuotas" name="cuotas" placeholder="cuotas">
-                    <label for="cuotas"></label>
                     <small class="text-danger" id="errorCuotas" ><%= locals.errors && errors.cuotas ? errors.cuotas.msg: "" %></small>
                 </div>
                 

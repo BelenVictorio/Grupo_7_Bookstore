@@ -55,7 +55,7 @@ window.addEventListener('blur', ()=>{
                 lastError.innerHTML = null;
                 break;
         }
-        country.addEventListener('blur', () =>{
+        country.addEventListener(('focus', 'change','blur'), () =>{
             switch (true) {
                 case !country.value.trim():
                     countryError.innerHTML = 'Selecciona tu pais de residencia';

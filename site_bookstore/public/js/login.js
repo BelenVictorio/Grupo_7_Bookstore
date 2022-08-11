@@ -37,7 +37,7 @@ let validationsErrors = false;
                 $passError.classList.add('invalid')
                 break;
             case !$regExPass.test($password.value):
-                    $erorrPass1.innerHTML = 'La contraseña debe tener al menos 1 letra mayúscula, 1 minúscula y/o un simbolo. Recuerde que no puede ser menor a 8';
+                    $passError.innerHTML = 'La contraseña debe tener al menos 1 letra mayúscula, 1 minúscula y/o un simbolo. Recuerde que no puede ser menor a 8';
                     validationsErrors = true;
                 break;
             default:
@@ -65,7 +65,7 @@ let validationsErrors = false;
 
         if (!error && !validationsErrors) {
             
-            $form.submit()
+            $formlogin.submit()
         }
     })
 })

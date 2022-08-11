@@ -44,12 +44,15 @@
               <option value="pe"<%= locals.user && user.country && user.country == 'pe' ? 'selected' : null %>>Perú</option>
               <option value="ve"<%= locals.user && user.country && user.country == 've' ? 'selected' : null %>>Venezuela</option>
               <option value="ur"<%= locals.user && user.country && user.country == 'ur' ? 'selected' : null %>>Uruguay</option>
-              <span id="countryError"><%= locals.errores && errores.country ? errores.country.msg : null%></span>
             </select>
+            <% if (locals.errores && errores.country) { %>
+                <span class="countryError"><%= errores.country.msg %></span>
+                <% } %>
+                <span class="editErrors" id="countryError"></i></span>
+        </div>
             
-          </div>
           <div class="profile-info">
-            <input class="<%= locals.errors && errors.address ? 'Es invalid' : null %>" type="text" id="address" name="address" placeholder="address" value="<%= user.address%>">
+            <input class="<%= locals.errors && errors.address ? 'Es invalid' : null %>" type="text" id="address" name="address" placeholder="coloca tu direccion" value="<%= user.address%>">
             <span id="addressError"><%= locals.errores && errores.address ? errores.address.msg : null%></span>
           </div>
           <div class="profile-info">
@@ -63,7 +66,7 @@
           <div class="profile-info">
           <p>Elige tus preferencias:</p>
           <select name="preferences" id="preferences">
-            <option value="">-Seleccione su país</option>
+            <option value="">-Seleccione su genero preferido</option>
             <option value="F"<%= locals.user && user.preferences && user.preferences == 'fi' ? 'selected' : null %>>Ficcion</option>
             <option value="R"<%= locals.user && user.preferences && user.preferences == 'ro' ? 'selected' : null %>>Romance</option>
             <option value="C-M"<%= locals.user && user.preferences && user.preferences == 'c-m' ? 'selected' : null %>>Comics-Mangas</option>
