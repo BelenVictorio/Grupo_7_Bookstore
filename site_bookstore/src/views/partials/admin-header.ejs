@@ -1,14 +1,15 @@
 <header class="admin">
   <div class="adminHeader">
-    <img id="logo" src="/images/logofinal.svg" alt="ADMIN">
+    <img id="logo" src="/images/logo-blanco.png" alt="ADMIN">
   </div>
   <nav class="nav-bar">
+    <a href="/admin/list">LISTAR</a>
     <a href="edit">EDITAR</a>
     <a href="#">ELIMINAR</a>
     <a href="/admin/creation">AGREGAR</a>
     <div id="indicator"></div>
   </nav>
-  <form action="/products/search" method="GET">
+  <form action="/products/search" method="GET" class="form-admin">
     <label for="search">
         <input class="input" type="text" required="" placeholder="Buscar" id="search">
         <div class="fancy-bg"></div>

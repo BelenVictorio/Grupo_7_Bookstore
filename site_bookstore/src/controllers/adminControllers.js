@@ -4,7 +4,14 @@ const db = require('../database/models');
 const toThousand = n => n.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 module.exports = {
     list: (req,res) =>{
-        res.render('list')
+        db.Product.findAll()
+            .then((products) => {
+              return res.render("list", { 
+                products 
+            });
+            })
+            .catch((error) => console.log(error));
+        
     },
     admin: (req, res) => {
         res.render('admin')
@@ -18,20 +25,6 @@ module.exports = {
         })
         .catch(error => console.log(error))
         
-    },
-    edit: (req, res) => {
-        let product = db.Product.findByPk(req.params.id)
-        let category = db.Category.findAll()
-
-        Promise.all([product, category])
-            .then(([products, categories]) => {
-                return res.render('admin/edit/', {
-                    products,
-                    categories
-                })
-            })
-            .catch(error => console.log(error))
-
     },
 
     store: (req, res) => {
@@ -60,7 +53,7 @@ module.exports = {
                     db.Image.bulkCreate(images, { validate: true })
                         .then((result) => console.log(result))
                 }
-                return res.redirect('/admin/creation')
+                return res.redirect('admin/creation')
             })
             .catch(error => console.log(error))
     },

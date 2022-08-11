@@ -1,6 +1,9 @@
 .admin-body{
 background:rgba(196, 133, 97, 0.808);
 }
+#logo{
+  width: 100px;
+}
 .admin {
     height: 100%;
   }
@@ -61,7 +64,7 @@ background:rgba(196, 133, 97, 0.808);
   
   
 
- .form {
+ .form-admin {
   --input-text-color: #fff;
   --input-bg-color: #bbb678;
   --focus-input-bg-color: transparent;
@@ -72,7 +75,7 @@ background:rgba(196, 133, 97, 0.808);
   --gap: 0.9rem;
 }
 /* form style */
-.form {
+.form-admin {
   font-size: 0.9rem;
   display: flex;
   gap: 0.5rem;
