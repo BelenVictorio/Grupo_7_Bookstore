@@ -65,14 +65,104 @@ li a {
 
 /* MENU HAMBURGUESA */
 
-.header .menu-button {
+.header .button-caja {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 15px;
-}
-
-.header .menu-button i {
-    font-size: 25px;
-    
-}
+  }
+  
+  .header .nav-burguer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70vh;
+    width: 60%;
+    margin-left: -100%;
+    transition: all 0.2s linear;
+    background-color: var(--grisOscuro);
+    z-index: 100;
+    border-bottom: 2px solid var(--rosa);
+    border-right: 2px solid var(--rosa);
+  }
+  
+  .header .nav-burguer.show {
+    margin-left: 0;
+  }
+  
+  .header .div-nav-burguer {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .header .link-burguer {
+    margin-top: 2rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    font-size: 18px;
+  }
+  
+  .header .link-burguer::after {
+    position: absolute;
+    content: "";
+    background-color: var(--rosa);
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+  }
+  
+  .header .link-burguer:hover::after {
+    width: 100%;
+  }
+  
+  .header .menu-button {
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    background: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  
+  .header .menu-button span {
+    width: 37px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: var(--black);
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    transition: all 0.2s linear;
+  }
+  
+  .header .menu-button.close span {
+    opacity: 1;
+    transform: rotate(45deg) translate(0px, 0px);
+    background: var(--black);
+  }
+  
+  .header .menu-button.close span:nth-child(2) {
+    transform: rotate(-45deg) translate(-8px, 5px);
+  }
+  
+  .header .menu-button.close span:nth-child(3) {
+    display: none;
+  }
+  
 
 /* ICONOS */
 
@@ -123,11 +213,6 @@ li a {
         
     }
 
-    .header .menu-button i {
-        font-size: 30px;
-        
-    }
-
 
 
 }
@@ -160,10 +245,10 @@ li a {
         
     }
 
-    .header .menu-button {
+    
+    .header .button-caja {
         display: none;
     }
-
     .header .icons {
         display: flex;
         
