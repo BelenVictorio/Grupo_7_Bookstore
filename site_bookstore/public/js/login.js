@@ -11,7 +11,7 @@ let $formlogin = q('#form-login');
 let $msgError = q('#submitError');
 let $regExEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 let $regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
-let validationsErrors = false;
+
     
     $email.addEventListener('blur', async function () {
         switch (true) {
@@ -38,7 +38,7 @@ let validationsErrors = false;
                 break;
             case !$regExPass.test($password.value):
                     $passError.innerHTML = 'La contraseña debe tener al menos 1 letra mayúscula, 1 minúscula y/o un simbolo. Recuerde que no puede ser menor a 8';
-                    validationsErrors = true;
+                    $passError.classList.add('invalid')
                 break;
             default:
                 $passError.classList.remove('invalid')
@@ -49,22 +49,20 @@ let validationsErrors = false;
 
     })
 
-    $formlogin.ddEventListener('submit', function (event) {
+    $formlogin.addEventListener('submit', function (event) {
         event.preventDefault();
         let error = false;
         let elementsForm = this.elements;
         console.log(elementsForm)
 
-        for (let index = 0; index < elementsForm.length - 3; index++) {
+        for (let index = 0; index < elementsForm.length - 4; index++) {
             if (elementsForm[index].value == "") {
                 elementsForm[index].classList.add('invalid');
-                $msgError.innerHTML = 'Los campos señalados son obligatorios';
+                $msgError.innerHTML = 'Los campos son obligatorios';
                 error = true;
             }
         }
-
-        if (!error && !validationsErrors) {
-            
+        if (!error) {           
             $formlogin.submit()
         }
     })

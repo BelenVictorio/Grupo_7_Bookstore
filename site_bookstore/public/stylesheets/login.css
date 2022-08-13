@@ -61,6 +61,10 @@
 .login-info p{
     font-size: 12px;
 }
+.login-info span{
+    display: block;
+    padding: 5px;
+}
 
 #recordarme{
     width: 10%;
@@ -103,13 +107,11 @@
 
 /*direcciones para poder entrar en con google o facebook*/
 .login-info-direcciones{
-    text-align: justify;
     padding: 5px;
     margin: 10px;
     font-size: 12px;
 }
 .login-direcciones-paginas{
-    display: flex;
     padding: 10px;
     text-align: center;
 }
@@ -121,6 +123,7 @@
     margin: 5px;
     transition: all 0.5s ease-out;
     color: var(--white);
+    height: 28px;
 }
 .login-direccion-rojo:hover{
     background-color: var(--rosa);
@@ -144,6 +147,7 @@
     border-radius: 5px;
     margin: 5px;
     transition: all 0.5s ease-in;
+    height: 28px;
 }
 .login-direccion-azul:hover{
     background-color: var(--rosa);
@@ -164,6 +168,7 @@
 .invalid {
     color:firebrick;
     border: 2px;
+    font-size: 12px;
 }
 
 
