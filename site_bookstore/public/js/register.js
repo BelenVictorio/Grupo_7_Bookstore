@@ -21,6 +21,68 @@ window.addEventListener('load', ()=>{
          $valiName = /^[a-zA-ZÀ-ÿ\s]{2,40}$/;
          
          let validationsErrors = false;
+         let numberRandom = () => {
+            let num = parseInt((Math.random()*1000000)-1);
+            return num;
+        }
+        const verifyUsername = async (username) => {
+            try {
+                let response = await fetch("/api/users/check-username", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        username: username,
+                    }),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+                let result = await response.json();
+                return result.data;
+            } catch (error) {
+                console.error;
+            }
+        };
+        
+        const email = async (email, num) => {
+           // create reusable transporter object using the default SMTP transport
+          try {
+            let response = await fetch("/api/users/send-mail", {
+                method: "POST",
+                body: JSON.stringify({
+                    email: email,
+                    num : num
+                }),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+          } catch (error) {
+            console.log(error)
+          }
+        }
+        
+        
+        
+        const verifyEmail = async (email) => {
+            try {
+                let response = await fetch("/api/users/check-email", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        email: email,
+                    }),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+                let result = await response.json();
+                return result.data;
+            } catch (error) {
+                console.error;
+            }
+        };
+        
+        /*  End API checks camps */
+        
          
          $inputName.addEventListener('blur', () => {
             switch (true) {
@@ -55,7 +117,7 @@ window.addEventListener('load', ()=>{
                     break;
                 case !$inputlast_name.value.length > 4:
                     $errorSurname.innerHTML = 'Ingresa un apellido válido';
-                    $alidationsErrors = true;
+                    validationsErrors = true;
                     break;
                 default:
                     $inputlast_name.style.borderColor = 'green';

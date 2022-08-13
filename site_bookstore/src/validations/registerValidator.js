@@ -6,12 +6,12 @@ const db = require('../database/models')
 module.exports = [
 
     check('first_name')
-        .notEmpty().withMessage('Debes colocar un nombre').bail()
+        .notEmpty().withMessage('El campo nombre es obligatorio').bail()
         .isLength({min:3}).withMessage('Debe tener como minimo 3 letras')
         .isAlpha().withMessage('Solo letras'),
     
     check('last_name')
-        .notEmpty().withMessage('Debes colocar un apellido').bail()
+        .notEmpty().withMessage('El campo apellido es obligatorio').bail()
         .isLength({min:3}).withMessage('Debe tener como minimo 3 letras')
         .isAlpha().withMessage('Solo letras'),
         
@@ -28,10 +28,14 @@ module.exports = [
                      }}).catch(() => Promise.reject('Este mail ya se encuentra registrado'))
         }),
         
-    check('password')
-    .notEmpty().withMessage('Debes colocar una contraseña').bail()
-    .isLength({min:8}).withMessage('Debe tener como minimo 8 caracteres'),
-
+        check('password')
+        .notEmpty()
+        .withMessage('Debes escribir una contraseña')
+        .isLength({
+            min: 8,
+            max: 12
+        })
+        .withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
     body('password2')
         .custom((value,{req}) => {
                 if(value !== req.body.password){
