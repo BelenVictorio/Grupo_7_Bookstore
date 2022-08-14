@@ -65,7 +65,7 @@ module.exports = {
             .then(([products, categories]) => {
                 return res.render('admin/edit', {
                     products,
-                    categories
+                    categories,
                 })
             })
             .catch(error => console.log(error))

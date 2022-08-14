@@ -26,6 +26,11 @@ module.exports=(sequelize, DataTypes) => {
             as: "products",
             foreignKey: "author_id"
         })
+        /* Author.hasOne(models.Product, {
+            as: "products",
+            foreignKey: "author_id"
+        }) */
+        
     }
     return Author;
 
