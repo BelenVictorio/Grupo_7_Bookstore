@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `paginasbellas_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `paginasbellas_db`;
--- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
 -- Host: localhost    Database: paginasbellas_db
 -- ------------------------------------------------------
--- Server version	8.0.30
+-- Server version	8.0.29
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -75,8 +75,9 @@ DROP TABLE IF EXISTS `images`;
 CREATE TABLE `images` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
+  `product_id` int unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,16 +94,13 @@ CREATE TABLE `products` (
   `description` text NOT NULL,
   `price` int NOT NULL,
   `category_id` int DEFAULT NULL,
-  `images_id` int NOT NULL,
   `genres_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `Fk_products_category_idx` (`category_id`),
-  KEY `Fk_products_image_idx` (`images_id`),
   KEY `Fk_products_genre_idx` (`genres_id`),
   CONSTRAINT `Fk_products_category` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
-  CONSTRAINT `Fk_products_genre` FOREIGN KEY (`genres_id`) REFERENCES `genres` (`id`),
-  CONSTRAINT `Fk_products_image` FOREIGN KEY (`images_id`) REFERENCES `images` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `Fk_products_genre` FOREIGN KEY (`genres_id`) REFERENCES `genres` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,4 +152,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-16  9:26:46
+-- Dump completed on 2022-08-16 15:53:59

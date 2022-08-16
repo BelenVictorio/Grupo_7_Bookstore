@@ -7,7 +7,7 @@
     <%- include('../partials/admin-header') %>
     <main class="main-creaEdit">
         <section class="creaEdit-section">
-            <form method="POST" action="/admin/add" class="creaEdit-form">
+            <form method="POST" action="/admin/add" class="creaEdit-form" enctype="multipart/form-data">
                 <h2>Nuevo producto</h2>
                 <div class="creaEdit-div">
                     <input type="text" id="name" name="name" placeholder="Nombre">
@@ -28,13 +28,13 @@
                 
 
                 <div class="creaEdit-div">
-                    <input class=" form-control" type="file" id="img" name="img" accept=".jpg, .png" multiple>
+                    <input class=" form-control" type="file" id="img" name="image" accept=".jpg, .png" multiple>
                     <small class="text-danger" id="errorImg" ><%= locals.errors && errors.img ? errors.img.msg: "" %></small>
                 </div>
                 
 
                 <div class="creaEdit-div">
-                    <input type="text" id="Categories" name="categories" placeholder="Coloca la categoria">
+                    <input type="text" id="Categories" name="category_id" placeholder="Coloca la categoria">
                     <small class="text-danger" id="errorCategoria" ><%= locals.errors && errors.categories ? errors.categories.msg: "" %></small>
                 </div>
                 

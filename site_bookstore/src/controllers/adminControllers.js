@@ -41,17 +41,22 @@ module.exports = {
 
         })
             .then(product => {
-                if (req.files.length > 0) {
-                    let images = req.files.map(({ filename }, i) => {
+                if (req.files) {
+                    let images = req.files.map(({ filename }) => {
                         let image = {
                             name: filename,
                             product_id: product.id,
-                            primary: i === 0 ? 1 : 0
                         }
                         return image
                     })
-                    db.Image.bulkCreate(images, { validate: true })
+                    db.Image.bulkCreate(images)
                         .then((result) => console.log(result))
+                        
+                } else {
+                    db.Image.create({
+                        name: 'not-found.jpg',
+                        product_id: product.id,
+                    })
                 }
                 return res.redirect('admin/creation')
             })

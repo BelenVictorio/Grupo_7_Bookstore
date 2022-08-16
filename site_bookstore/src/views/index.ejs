@@ -21,7 +21,7 @@
 				<div class="carousel__lista">
           <% products.forEach(({id,name,images}) => { %>
             <div class="carousel__elemento">
-              <img src="/images/<%= images.name %> " alt="Rock and Roll Hall of Fame">
+              <img src="/images/<%= images[0].name %> " alt="Rock and Roll Hall of Fame">
               <h2 class="carousel__contenedor__paragraph"><%= name %> </h2>
             </div>
           <% }) %>
@@ -76,7 +76,7 @@
       <% products.forEach(({id, name, author, price, images})=> { %>
       <article class="home__best-sellers__producto1">
         <div class="home__best-sellers__producto1__circulo">
-          <a href="/products/detail/<%= id %>"><img src="/images/<%= images.name %>" alt="libro La Bestia"></a>
+          <a href="/products/detail/<%= id %>"><img src="/images/<%= images[0].name %>" alt="libro La Bestia"></a>
         </div>
         <div class="home__best-sellers__producto1__transparente"></div>
         <div class="titulo">

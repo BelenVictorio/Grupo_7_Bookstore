@@ -11,7 +11,11 @@ module.exports=(sequelize, DataTypes) => {
        name:{
            type:DataTypes.STRING(100),
            allowNull:false
-       }
+       },
+       product_id:{
+        type:DataTypes.INTEGER,
+        allowNull:false,
+        },
     }
 
     let config ={
@@ -22,9 +26,9 @@ module.exports=(sequelize, DataTypes) => {
     const Image = sequelize.define(alias, cols, config)
 
     Image.associate = function(models){
-        Image.hasOne(models.Product, {
+        Image.belongsTo(models.Product, {
             as: "products",
-            foreignKey: "images_id"
+            foreignKey: "product_id"
         })
     }
     return  Image;

@@ -8,7 +8,7 @@ const userInSessionCheck = require('../middlewares/userInSessionCheck');
 
 /*Products*/
 router.get('/',products);
-router.get('/detail/:id',userInsessionCheck,detail);
+router.get('/detail/:id',/* userInsessionCheck, */detail);
 router.get("/search", search);
 router.get('/cart',userInSessionCheck,cart)
 module.exports = router;
