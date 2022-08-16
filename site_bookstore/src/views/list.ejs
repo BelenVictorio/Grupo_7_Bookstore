@@ -14,7 +14,7 @@
               <th scope="col">Nombre</th>
               <th scope="col">Precio</th>
               <th scope="col">Stock</th>
-              <th scope="col"></th>
+              <th scope="col">Proceso</th>
             </tr>
           </thead>
           <tbody>
@@ -23,40 +23,25 @@
             <% products.forEach(product => { %>
               <tr>
                 <th><product class="id"></product><%- product.id %> </th>
-                <td><%- product.name %>></td>
+                <td><%- product.name %></td>
                 <td><%- product.price %></td>
-                <td><%- product.stock %>></td>
+                <td><%- product.category %></td>
                 <td>
                   <div>
-                  <a href="./admin/edit">
+                  <a href="/admin/edit">
                     <i class="fa-solid fa-pen-to-square"></i>
                   </a>
                 </div>
-                  <form action="/admin/productos/eliminar/?_method=DELETE" method="post">
+                  <!-- <form action="/admin/productos/eliminar/?_method=DELETE" method="post">
                     <button type="submit">
                       <i class="fa-solid fa-trash-can"></i>
-                    </button>
+                    </button> -->
                   </form>
                 </td>
               </tr>
               <tr>
               <% }) %> 
             
-              <th>id </th>
-              <td>nombre del producto</td>
-              <td>precio del producto</td>
-              <td>stock del producto</td>
-              <td>
-                <div>
-                <a href="./admin/edit">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                </a>
-              </div>
-                <form action="/admin/productos/eliminar/?_method=DELETE" method="post">
-                  <button type="submit">
-                    <i class="fa-solid fa-trash-can"></i>
-                  </button>
-                </form>
               </td>
             </tr>
               
