@@ -517,6 +517,7 @@ div.listaProductosAdmin table thead {
 div.listaProductosAdmin table thead tr {
     background-color: var(--black);
     color: white;
+    font-size: 18px;
 }
 
 div.listaProductosAdmin table thead tr th {
@@ -525,6 +526,7 @@ div.listaProductosAdmin table thead tr th {
 
 div.listaProductosAdmin table tbody tr th,
 div.listaProductosAdmin table tbody tr td {
+    font-size: 18px;
     text-align: center;
     text-decoration: dotted;
     border: solid 2px var(--amarilloEstrellas);
