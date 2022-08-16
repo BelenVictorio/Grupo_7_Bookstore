@@ -89,8 +89,21 @@
             nisi quae facere cupiditate nemo distinctio explicabo sed reprehenderit. Delectus autem pariatur porro
             magnam,
             incidunt quidem.
-          </p>
+          </p><div class="verify_email">
+            <h4 style="margin-left:15%;">le enviamos un codigo al correo: </h4>
+            <div style="display: flex; flex-direction:column; align-items: center;">
+              <input style="width:50%; " class="register_form-input validation_input" type="Number" id="code_register" name="code"
+                placeholder="Ingrese el codigo">
+              <span class="register_alert" style="width: 140px;" id="code_invalid">
+              </span>
+            </div>
+          
+            <div class="register_button">
+              <button class="verify_button">Verificar</button>
+            </div>
+          </div>
         </section>
+        
       </main>
       <!-- <script src="/js/register.js"></script> -->
       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

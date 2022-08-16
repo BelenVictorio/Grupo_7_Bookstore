@@ -17,7 +17,8 @@ window.addEventListener('load', ()=>{
          $submitError =qs('#submitError'),
          $regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/,
          $regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/,
-         $regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
+         $regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
+         
          $valiName = /^[a-zA-ZÀ-ÿ\s]{2,40}$/;
          
          let validationsErrors = false;
@@ -25,63 +26,171 @@ window.addEventListener('load', ()=>{
             let num = parseInt((Math.random()*1000000)-1);
             return num;
         }
-        const verifyUsername = async (username) => {
-            try {
-                let response = await fetch("/api/users/check-username", {
-                    method: "POST",
-                    body: JSON.stringify({
-                        username: username,
-                    }),
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                });
-                let result = await response.json();
-                return result.data;
-            } catch (error) {
-                console.error;
+        /*  Start API checks camps */
+
+const verifyUsername = async (username) => {
+    try {
+        let response = await fetch("/api/users/check-username", {
+            method: "POST",
+            body: JSON.stringify({
+                username: username,
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        let result = await response.json();
+        return result.data;
+    } catch (error) {
+        console.error;
+    }
+};
+
+const email = async (email, num) => {
+   // create reusable transporter object using the default SMTP transport
+  try {
+    let response = await fetch("/api/users/send-mail", {
+        method: "POST",
+        body: JSON.stringify({
+            email: email,
+            num : num
+        }),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+
+const verifyEmail = async (email) => {
+    try {
+        let response = await fetch("/api/users/check-email", {
+            method: "POST",
+            body: JSON.stringify({
+                email: email,
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        let result = await response.json();
+        return result.data;
+    } catch (error) {
+        console.error;
+    }
+};
+
+/*  End API checks camps */
+
+/* Start FUNCTIONS verify camps */
+
+const verifyCamp = (exp, input, error, errorCross) => {
+    if (input.value == "") {
+        error.innerHTML = "Este campo no puede estar vacio.";
+        error.classList.add('active-error');
+        input.classList.add('register_error_input');
+    } else {
+        if (exp.test(input.value)) {
+            error.innerHTML = null;
+            errorCross.classList.remove("register_error_icon");
+            input.classList.remove('register_error_input');
+        } else {
+            switch (input.name) {
+                case "firstname":
+                    error.innerHTML =
+                        "Este campo solo puede tener letras y mínimo 2 caracteres.";
+                    errorCross.classList.add("register_error_icon")
+                    input.classList.add('register_error_input');
+                    break;
+                case "lastname":
+                    error.innerHTML =
+                        "Este campo solo puede tener letras y mínimo 2 caracteres.";
+                    errorCross.classList.add("register_error_icon");
+                    input.classList.add('register_error_input');
+                    break;
+                case "password":
+                    error.innerHTML =
+                        "Este campo tiene que tener entre 5 y 12 caracteres.";
+                    errorCross.classList.add("register_error_icon");
+                    input.classList.add('register_error_input');
+                    break;
+                case "username":
+                    error.innerHTML = "Este usuario debe tener entre 4 y 8 caracteres de letras o números.";
+                    errorCross.classList.add("register_error_icon");
+                    input.classList.add('register_error_input');
+                    break;
+                case "email":
+                    error.innerHTML = "Formato de Email invalido.";
+                    errorCross.classList.add("register_error_icon");
+                    input.classList.add('register_error_input');
+                    break;
             }
-        };
-        
-        const email = async (email, num) => {
-           // create reusable transporter object using the default SMTP transport
-          try {
-            let response = await fetch("/api/users/send-mail", {
-                method: "POST",
-                body: JSON.stringify({
-                    email: email,
-                    num : num
-                }),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-          } catch (error) {
-            console.log(error)
-          }
         }
-        
-        
-        
-        const verifyEmail = async (email) => {
-            try {
-                let response = await fetch("/api/users/check-email", {
-                    method: "POST",
-                    body: JSON.stringify({
-                        email: email,
-                    }),
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                });
-                let result = await response.json();
-                return result.data;
-            } catch (error) {
-                console.error;
+    }
+}
+
+const validarFormulario = async (e) => {
+    errorSubmitLogin.innerHTML = null;
+    switch (e.target.name) {
+        case "firstname":
+            verifyCamp(regExName, e.target, errorFirstname, errorFirstnameCross)
+            break;
+        case "lastname":
+            verifyCamp(regExName, e.target, errorLastname, errorLastnameCross)
+            break;
+        case "password":
+            if (password2.value !== password.value) {
+                password2.value = "";
             }
-        };
-        
-        /*  End API checks camps */
+            verifyCamp(regExPass, e.target, errorPassword, errorPasswordCross);
+            break;
+        case "password2":
+            if (e.target.value == "") {
+                errorPassword2.innerHTML = null;
+                errorPassword2Cross.classList.remove("register_error_icon");
+            } else {
+                if (password.value === e.target.value) {
+                    errorPassword2.innerHTML = null;
+                    errorPassword2Cross.classList.remove("register_error_icon");
+                } else {
+                    errorPassword2.innerHTML =
+                        "Las contraseñas no coinciden.";
+                    errorPassword2Cross.classList.add("register_error_icon");
+                }
+            }
+            break;
+        case "username":
+            let resultUser = await verifyUsername(e.target.value);
+            if (resultUser) {
+                errorUsername.innerHTML = "Este usuario ya se encuentra en uso.";
+                errorUsernameCross.classList.add("register_error_icon");
+                e.target.classList.add('register_error_input');
+            } else {
+                verifyCamp(regExLetter, e.target, errorUsername, errorUsernameCross);
+            }
+            break;
+        case "email":
+            let resultEmail = await verifyEmail(e.target.value);
+            if (resultEmail) {
+                errorEmail.innerHTML = "Este Email ya se encuentra en uso.";
+                errorEmailCross.classList.add("register_error_icon");
+                e.target.classList.add('register_error_input');
+            } else {
+                verifyCamp(regExEmail, e.target, errorEmail, errorEmailCross)
+            }
+            break;
+
+        default:
+            break;
+    }
+};
+
+/* End FUNCTIONS verify camps */
+
         
          
          $inputName.addEventListener('blur', () => {

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const {register,processRegister ,processLogin,login, logout, profile, updateProfile, check} = require('../controllers/userController');
+const {register,processRegister ,processLogin,login, logout, profile, updateProfile, check, sendMail} = require('../controllers/userController');
 
 /*  Middlewares */
 const registerValidator = require('../validations/registerValidator')
@@ -21,6 +21,7 @@ router.get('/profile', userCheck, profile);
 router.put('/updateprofile', upload.single('image'), updateProfile);
 /* API */
 router.post('/check',check);
+router.post('/sendMail',sendMail)
 
 
 module.exports = router;
