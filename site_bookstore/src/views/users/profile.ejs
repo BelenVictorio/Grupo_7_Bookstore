@@ -12,11 +12,11 @@
       <div class="profile-box-img">
       <% if (user.image === undefined) { %>
         <div class="profile-box-user-img">
-            <img src="/images/userImg/default-user.jpg" alt="" id="image">
+            <img src="/images/userImg/default-user.jpg" alt="" id="imagePerfil">
         </div>
     <% } else { %>
-        <div class="profile-box-user-img">
-            <img src="/images/userImg/<%= user.image%>" alt="" id="image">
+        <div class="profile-box-user-img" id="fileImage">
+            <img src="/images/userImg/<%= user.image%>" alt="" id="imagePerfil">
         </div>
     <% } %>  
       </div>  
@@ -60,7 +60,7 @@
             <span id="dateError"><%= locals.errores && errores.date ? errores.date.msg : null%></span>
           </div>
           <div class="profile-info">
-            <input class=" form-control" type="file" id="image" name="image" accept=".jpg, .png, .gif, .jpeg" value="<%= user.image %>">
+            <input class=" form-control" type="file" id="image" name="image" accept=".jpg, .png, .gif, .jpeg" value="<%= user.image %>" onchange= "fileValidation()">
             <span id="imgError"><%= locals.errores && errores.image ? errores.image.msg : null%></span>
           </div>       
           <div class="profile-info">

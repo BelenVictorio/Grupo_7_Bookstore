@@ -18,7 +18,7 @@ router.get('/login', sessionCheck ,login);
 router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
 router.get('/profile', userCheck, profile);
-router.put('/updateprofile', upload.single('image'), updateProfile);
+router.put('/updateprofile', upload.single('image'),profileValidator, updateProfile);
 /* API */
 router.post('/check',check);
 

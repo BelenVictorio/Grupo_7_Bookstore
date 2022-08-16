@@ -10,7 +10,7 @@ window.addEventListener('blur', ()=>{
     let lastError = $('#lastError')
     let image = $('#image');
     let imgError = $('#imgError')
-    let regExImage = /(.jpg|.jpeg|.png|.gif)$/i;
+    let fileImage = /(.jpg|.jpeg|.png|.gif)$/i;
     let country = $('#country');
     let countryError = $('#countryError')
     let address= $('#address');
@@ -100,7 +100,7 @@ window.addEventListener('blur', ()=>{
         })
         image.addEventListener('change', () => {
             switch(true){
-                case !regExExtensions.exec(image.value):
+                case !fileImage.exec(image.value):
                     imgError.innerHTML = 'El formato del archivo es invalido, ingrese alguno de estos: ".jpg", "png", ".gif", "jpeg"';
                     img.classList.add('invalid');
                 break;
@@ -131,10 +131,10 @@ window.addEventListener('blur', ()=>{
             let elementsForm = this.elements;
             console.log(elementsForm)
     
-            for (let index = 0; index < elementsForm.length - 2; index++) {
+            for (let index = 0; index < elementsForm.length - 4; index++) {
                 if (elementsForm[index].value == "") {
                     elementsForm[index].classList.add('invalid');
-                    msgError.innerHTML = 'Los campos señalados son obligatorios';
+                    msgError.innerHTML = 'Los campos son obligatorios';
                     error = true;
                 }
             }

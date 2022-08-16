@@ -28,16 +28,16 @@ module.exports = {
     },
 
     store: (req, res) => {
-        const { name, author_id, description, price, category_id, images_id, genres_id } = req.body;
+        const { name, author, description, price, category_id, images_id, genres_id } = req.body;
 
         db.Product.create({
             name: name,
-            author_id: +author_id,
+            author: author,
             description: description,
             price: +price,
             genres_id: +genres_id,
             images_id: +images_id,
-            category_id: +category_id,
+            category_id: category_id,
 
         })
             .then(product => {
@@ -74,12 +74,12 @@ module.exports = {
 
  
     update: (req, res) => {
-        const { name, author_id, description, price, category_id } = req.body;
+        const { name, author, description, price, category_id } = req.body;
 
         db.Product.update(
             {
                 name: name,
-                author_id: +author_id,
+                author: author,
                 description: description,
                 price: +price,
                 category_id: +category_id,

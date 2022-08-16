@@ -1,16 +1,14 @@
-//  seleccionamos los dos elementos que serán clickables
-
-const toggleButton = document.querySelector(".menu-button");
-const navWrapper = document.getElementById("nav");
+const button = document.querySelector(".menu-button");
+const nav = document.getElementById("nav");
 
 /* 
   cada ves que se haga click en el botón 
   agrega y quita las clases necesarias 
   para que el menú se muestre.
 */
-toggleButton.addEventListener("click", () => {
-  toggleButton.classList.toggle("close");
-  navWrapper.classList.toggle("show");
+button.addEventListener("click", () => {
+  button.classList.toggle("close");
+  nav.classList.toggle("show");
 });
 
 /* 
@@ -18,9 +16,9 @@ toggleButton.addEventListener("click", () => {
   el menú debe esconderse.
 */
 
-navWrapper.addEventListener("click", e => {
+nav.addEventListener("click", e => {
   if (e.target.id === "nav") {
-    navWrapper.classList.remove("show");
-    toggleButton.classList.remove("close");
+    nav.classList.remove("show");
+    button.classList.remove("close");
   }
 });

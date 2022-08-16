@@ -34,14 +34,14 @@
                 
 
                 <div class="creaEdit-div">
-                    <input type="text" id="formato" name="formato" placeholder="Formato">
-                    <small class="text-danger" id="errorFormato" ><%= locals.formato && errors.formato ? errors.formato.msg: "" %></small>
+                    <input type="text" id="Categories" name="categories" placeholder="Coloca la categoria">
+                    <small class="text-danger" id="errorCategoria" ><%= locals.errors && errors.categories ? errors.categories.msg: "" %></small>
                 </div>
                 
 
                 <div class="creaEdit-div">
-                    <select name="Categories" id="Categories">
-                    <option value="">-Seleccione la categoria correspondiente</option>
+                    <select name="genres" id="genres">
+                    <option value="">-Seleccione el genero correspondiente</option>
                     <option value="1">Literatura</option>
                     <option value="2">infatiles</option>
                     <option value="3">Novela</option>
@@ -60,7 +60,7 @@
                     <option value="16">Filosofia</option>
                     
             </select>
-            <small class="text-danger" id="errorCategoria" ><%= locals.errors && errors.categories ? errors.categories.msg: "" %></small>
+            <small class="text-danger" id="errorGenero" ><%= locals.errors && errors.genres ? errors.genres.msg: "" %></small>
                 </div>
                 
 

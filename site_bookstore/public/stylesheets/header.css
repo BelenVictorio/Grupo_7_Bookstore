@@ -109,7 +109,7 @@ li a {
     font-size: 18px;
   }
   
-  .header .link-burguer::after {
+  .header .link-burguer:hover::after {
     position: absolute;
     content: "";
     background-color: var(--rosa);
@@ -118,9 +118,6 @@ li a {
     width: 0%;
     height: 3px;
     transition: 0.3s ease all;
-  }
-  
-  .header .link-burguer:hover::after {
     width: 100%;
   }
   

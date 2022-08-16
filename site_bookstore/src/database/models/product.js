@@ -13,9 +13,9 @@ module.exports = (sequelize, DataTypes) => {
            allowNull:false,
 
        },
-       author_id:{
-           type:DataTypes.INTEGER,
-           allowNull:false
+       author:{
+           type:DataTypes.STRING(100),
+           allowNull: true
        },
        description:{
            type:DataTypes.TEXT,
@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
        },
        category_id:{
            type:DataTypes.INTEGER,
-           allowNull:false
+           allowNull:true
        },
        images_id:{
            type:DataTypes.INTEGER,
