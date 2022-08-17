@@ -29,11 +29,11 @@
 
                 <div class="creaEdit-div">
                     <label for="Categorias"></label>
-                    <select name="category" id="Categorias">
+                    <select name="category_id" id="Categorias">
                     <option value="">-Seleccione la categoria correspondiente</option>
-                    <option value="adultos" <%= products.category === "adultos" && 'selected' %>>adultos</option>
-                    <option value="jovenes" <%= products.category === "jovenes" && 'selected' %>>jovenes</option>
-                    <option value="infantil"<%= products.category === "Infantil" && 'selected' %>>infantil</option>
+                    <option value="1" <%= products.category === "adultos" && 'selected' %>>adultos</option>
+                    <option value="2" <%= products.category === "jovenes" && 'selected' %>>jovenes</option>
+                    <option value="3"<%= products.category === "Infantil" && 'selected' %>>infantil</option>
             </select>
             <small class="text-danger" id="errorCategoria" ><%= locals.errors && errors.categories ? errors.categories.msg: "" %></small>
                 </div>

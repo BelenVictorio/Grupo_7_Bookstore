@@ -58,7 +58,7 @@ module.exports = {
                         product_id: product.id,
                     })
                 }
-                return res.redirect('admin/creation')
+                return res.redirect('list')
             })
             .catch(error => console.log(error))
     },
@@ -112,7 +112,7 @@ module.exports = {
                     console.log(error)
                 }
                 }
-                return res.redirect('/products')
+                return res.redirect('/admin/list')
                 
         }).catch(error => console.log(error))
 

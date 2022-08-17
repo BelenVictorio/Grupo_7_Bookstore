@@ -37,7 +37,7 @@ let $regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
                 $passError.classList.add('invalid')
                 break;
             case !$regExPass.test($password.value):
-                    $passError.innerHTML = 'La contraseña debe tener al menos 1 letra mayúscula, 1 minúscula y/o un simbolo. Recuerde que no puede ser menor a 8';
+                    $passError.innerHTML = '';
                     $passError.classList.add('invalid')
                 break;
             default:
