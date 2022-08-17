@@ -22,6 +22,11 @@
     text-align: justify;
     text-transform: uppercase;
 }
+.register-info span{
+    display: block;
+    padding: 5px;
+    color:var(--validation-error)
+}
 
 .register-box p{
     font-size: 14px;

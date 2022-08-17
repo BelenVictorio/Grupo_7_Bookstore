@@ -18,7 +18,7 @@
                 <input class="<%= locals.errors && errors.first_name ? 'Es invalid' : null %>" type="text"
                   id="first_name" name="first_name" placeholder="Escribi tu nombre"
                   value="<%= locals.old && old.first_name ? old.first_name : null%>">
-                <span id="errorName" style="color: rgba(255, 145, 0, 0.925)">
+                <span id="errorName" class="register-error">
                   <%= locals.errors && errors.first_name ? errors.first_name.msg : null%>
                 </span>
               </div>
@@ -26,38 +26,39 @@
                 <input class="<%= locals.errors && errors.last_name ? 'Es invalid' : null %>" type="text" id="last_name"
                   name="last_name" placeholder="Escribi tu apellido"
                   value="<%= locals.old && old.last_name ? old.last_name : null%>">
-                <label for="last_name"></label>
-                <span id="errorSurname" style="color: rgba(255, 145, 0, 0.925)">
+                <label for="last_name"><span id="errorSurname" class="register-error">
                   <%= locals.errors && errors.last_name ? errors.last_name.msg : null%>
-                </span>
+                </span></label>
+                
               </div>
               <div class="register-info">
                 <input class="<%= locals.errors && errors.email ? 'Is invalid' : null %>" type="email" id="email"
                   name="email" placeholder="Email" value="<%= locals.old && old.email ? old.email : null%>">
-                <label for="email"></label>
-                <span id="errorEmail" style="color: rgba(255, 145, 0, 0.925)">
+                <label for="email"><span id="errorEmail" class="register-error">
                   <%= locals.errors && errors.email ? errors.email.msg : null%>
-                </span>
+                </span></label>
+                
               </div>
               <div class="register-info">
                 <input class="<%= locals.errors && errors.password ? 'Is invalid' : null %>" type="password"
                   id="password" name="password" placeholder="Contraseña">
-                <label for="password"></label>
-                <span id="errorPass1" style="color: rgba(255, 145, 0, 0.925)">
+                <label for="password"><span id="errorPass1" class="register-error" style="color: rgba(255, 145, 0, 0.925)">
                   <%= locals.errors && errors.password ? errors.password.msg : null%>
-                </span>
+                </span></label>
+                
               </div>
               <div class="register-info">
                 <input class="<%= locals.errors && errors.password2 ? 'Is invalid' : null %>" type="password"
                   id="password2" name="password2" placeholder="Repeti la contraseña">
-                <label for="password"></label>
-                <span id="errorPass2" style="color: rgba(255, 145, 0, 0.925)">
+                <label for="password"><span id="errorPass2" class="register-error" style="color: rgba(255, 145, 0, 0.925)">
                   <%= locals.errors && errors.password2 ? errors.password.msg : null%>
-                </span>
+                </span></label>
+                
               </div>
               <div class="register-condiciones" for="terms">
                 <input type="checkbox" name="terminos" id="terminos">
-                <label for="terminos">Aceptar <a href="">Terminos y Condiciones<span id="termsError" style="color: rgba(255, 145, 0, 0.925)" >
+                <label for="terminos">Aceptar <a href="">Terminos y Condiciones
+                  <span id="termsError" class="register-error" >
                   <%= locals.errors && errors.terminos ? errors.terminos.msg : null%>
                 </span></a></label>
                 
@@ -65,7 +66,7 @@
               <div class="register-boton-box">
                 <button id="" class="register-button" type="submit">Registrarme</button>
                 <button class="register-button" type="reset"> <a href="/">Cancelar</a></button>
-                <span id="submitError" style="color: rgba(255, 145, 0, 0.925)" ></span>
+                <span id="submitError" class="register-error"><i class="fa-solid fa-circle-xmark"></i></span>
               </div>
 
               <div class="register-info">
@@ -105,7 +106,7 @@
         </section>
         
       </main>
-      <!-- <script src="/js/register.js"></script> -->
+      <script src="/js/register.js"></script>
       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <%- include('../partials/footer') %>
   </body>
