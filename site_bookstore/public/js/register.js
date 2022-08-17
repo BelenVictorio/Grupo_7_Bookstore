@@ -22,29 +22,10 @@ window.addEventListener('load', ()=>{
          $valiName = /^[a-zA-ZÀ-ÿ\s]{2,40}$/;
          
          let validationsErrors = false;
-         let numberRandom = () => {
-            let num = parseInt((Math.random()*1000000)-1);
-            return num;
-        }
+         
         /*  Start API checks camps */
 
-const verifyUsername = async (username) => {
-    try {
-        let response = await fetch("/api/users/check-username", {
-            method: "POST",
-            body: JSON.stringify({
-                username: username,
-            }),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-        let result = await response.json();
-        return result.data;
-    } catch (error) {
-        console.error;
-    }
-};
+
 
 const email = async (email, num) => {
    // create reusable transporter object using the default SMTP transport
@@ -88,16 +69,13 @@ const verifyEmail = async (email) => {
 
 /* Start FUNCTIONS verify camps */
 
-const verifyCamp = (exp, input, error, errorCross) => {
+const verifyCamp = (exp, input, error,) => {
     if (input.value == "") {
         error.innerHTML = "Este campo no puede estar vacio.";
-        error.classList.add('active-error');
-        input.classList.add('register_error_input');
     } else {
         if (exp.test(input.value)) {
             error.innerHTML = null;
-            errorCross.classList.remove("register_error_icon");
-            input.classList.remove('register_error_input');
+            
         } else {
             switch (input.name) {
                 case "firstname":
@@ -109,14 +87,12 @@ const verifyCamp = (exp, input, error, errorCross) => {
                 case "lastname":
                     error.innerHTML =
                         "Este campo solo puede tener letras y mínimo 2 caracteres.";
-                    errorCross.classList.add("register_error_icon");
-                    input.classList.add('register_error_input');
+                    
                     break;
                 case "password":
                     error.innerHTML =
                         "Este campo tiene que tener entre 5 y 12 caracteres.";
-                    errorCross.classList.add("register_error_icon");
-                    input.classList.add('register_error_input');
+                    
                     break;
                 case "username":
                     error.innerHTML = "Este usuario debe tener entre 4 y 8 caracteres de letras o números.";
