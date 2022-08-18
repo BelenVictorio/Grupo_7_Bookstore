@@ -13,24 +13,26 @@
   <% results.forEach(({id, name, author, price, images})=> { %>
     <h1 class="titulo-catalogo">Resultado de la busqueda:  "<%= name %>"</h1>
   <hr class="hr-separacion">
-    <article class="home__best-sellers__producto1">
-      <div class="home__best-sellers__producto1__circulo">
-        <a href="/products/detail/<%= id %>"><img src="/images/<%= images %>" alt="libro La Bestia"></a>
-      </div>
-      <article class="detalles-catalogo">
-          <p><%= name %> </p>
-          <p class="precio-catalogo">$<%= price %></p>
-          <div class="reseña">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <button class="add-button">
-              <a href="/products/cart"><p class="add">Agregar al carrito</p></a>
-          </button>
+    <article class="caja-result">
+      <div class="results-caja-img">
+        <div class="results-caja-circulo">
+          <a class="result-img" href="/products/detail/<%= id %>"><img class="results-img" src="/images/<%= images[0].name%>" alt="imagen del producto"></a><!-- image a photo -->       
+        </div>
+        <article class="detalles-catalogo">
+          <a class="result-img" href="/products/detail/<%= id %>"><p><%= name %> </p></a>
+            <p class="precio-catalogo">$<%= price %></p>
+            <div class="reseña">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <button class="result-add-button">
+                <a class="result-add-a" href="/products/cart"><p>Agregar al carrito</p></a>
+            </button>
       </article> 
+      </div>
   </article>
   <% }) %>
   <% } else { %>
@@ -44,7 +46,7 @@
                 
                 
             </section>
-            <div class="carrusel">
+            <div class="carrusel-result">
                 <div class="carrusel-items">
                   <div class="carrusel-item">
                     <img src="/images/carrosuel/c1.png" alt="" />

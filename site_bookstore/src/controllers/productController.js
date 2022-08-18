@@ -54,8 +54,8 @@ module.exports = {
         const { keyword } = req.query;
 
         db.Product.findAll({
-            where: { [Op.or]: [{ name: { [Op.substring]: keyword } }, { description: { [Op.substring]: keyword } }] },
-
+            where: { [Op.or]: [{ name: { [Op.substring]: keyword } }, { description: { [Op.substring]: keyword } },{author: {[Op.substring]: keyword}} ] },
+            include: ['images']
         }).then(results => {
             return res.render('result', { results, keyword, })
         }).catch(error => console.log(error))
