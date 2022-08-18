@@ -23,9 +23,10 @@ module.exports = {
       where : {
         [Op.or] : [
           {name: {[Op.substring] : busqueda }},
-          {author: {[Op.substing] : busqueda }}
+          {author: {[Op.substring] : busqueda }}
         ]
-      }
+      },
+      include: ['images']
     })
     .then(products => {
       res.render('products', {
