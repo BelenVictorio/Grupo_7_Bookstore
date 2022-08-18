@@ -76,8 +76,15 @@ main.main-catalogo article.productos-catalogo div.foto-catalogo:hover {
 }
 
 article.detalles-catalogo{
-    margin-left: 12px;
-    margin-top: 8px;
+    margin-top: 20px;
+    text-align: center;
+    /* margin-left: 12px;
+    margin-top: 8px; */
+}
+
+article.detalles-catalogo .precio-catalogo {
+    color: white;
+    font-size: 18px;
 }
 
 section.section-producto article.detalles-catalogo p{
