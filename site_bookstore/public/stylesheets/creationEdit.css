@@ -97,7 +97,7 @@
 }
 
 .text-danger {
-    color: red;
+    color: var(--validation-error);
     font-size: 12px;
 }
 
