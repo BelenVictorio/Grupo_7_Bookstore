@@ -67,48 +67,34 @@
 
 
         </section>
-        <div class="carrusel">
-          <div class="carrusel-items">
-            <div class="carrusel-item">
-              <img src="/images/carrosuel/c1.png" alt="" />
-            </div>
-            <div class="carrusel-item">
-              <img src="/images/carrosuel/c2.png" alt="" />
-            </div>
-            <div class="carrusel-item">
-              <img src="/images/carrosuel/c3.jpg" alt="" />
-            </div>
-            <div class="carrusel-item">
-              <img src="/images/carrosuel/c4.webp" alt="" />
-            </div>
-            <div class="carrusel-item">
-              <img src="/images/carrosuel/c5.webp" alt="" />
-            </div>
-            <div class="carrusel-item">
-              <img src="/images/carrosuel/c6.png" alt="" />
-            </div>
-            <div class="carrusel-item">
-              <img src="/images/carrosuel/c13.png" alt="" />
-            </div>
-            <div class="carrusel-item">
-              <img src="/images/carrosuel/c14.png" alt="" />
-            </div>
-            <div class="carrusel-item">
-              <img src="/images/carrosuel/c15.png" alt="" />
-            </div>
-            <div class="carrusel-item">
-              <img src="/images/carrosuel/c16.png" alt="" />
-            </div>
-            <div class="carrusel-item">
-              <img src="/images/carrosuel/c17.png" alt="" />
-            </div>
-            <div class="carrusel-item">
-              <img src="/images/carrosuel/c12.webp" alt="" />
-            </div>
+        <div class="carousel">
+          <div class="carousel__contenedor">
+            <button aria-label="Anterior" class="carousel__anterior">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            
+             <h1 class="carousel__contenedor__titulo">Nuestro Productos</h1>
+            <div class="carousel__lista">
+              <% products.forEach(({id,name,images}) => { %>
+                <div class="carousel__elemento">
+                  <img src="/images/<%= images[0].name %> " alt="Rock and Roll Hall of Fame">
+                  <h2 class="carousel__contenedor__paragraph"><%= name %> </h2>
+                </div>
+              <% }) %>
+              
+            <button aria-label="Siguiente" class="carousel__siguiente">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
+          <div role="tablist" class="carousel__indicadores"></div>
+		</div>
+    
         </div>
       </main>
       <%- include('../partials/footer') %>
+      <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+  <script src="/js/glider.js"></script>
+
   </body>
 
 </html>
