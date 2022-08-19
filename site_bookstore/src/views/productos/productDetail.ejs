@@ -183,28 +183,39 @@
             </article>
         </section>
         <article class="caja__slider">
-            <div class="slider__banner" style="max-width: 700px;">
-                <img class="mySlides" src="/images/slider2.jpg" style="width:100%">
-                <img class="mySlides" src="/images/slider1.jpg" style="width:100%">
-                <img class="mySlides" src="/images/slider3.jpg" style="width:100%">
+            <div class="slider__banner" >
+                <div class="caja-img"> 
+                    <img class="mySlides" src="/images/carrosuel/banner0.jpeg" style="width:100%">
+                </div>
+                <div class="caja-img"> 
+                    <img class="mySlides" src="/images/carrosuel/banner1.jpeg" style="width:100%">
+                </div>
+                <div class="caja-img"> 
+                    <img class="mySlides" src="/images/carrosuel/banner2.jpeg" style="width:100%">
+                </div>
+                <div class="caja-img"> 
+                    <img class="mySlides" src="/images/carrosuel/banner3.jpeg" style="width:100%">
+                </div>
+                <div class="caja-img"> 
+                    <img class="mySlides" src="/images/carrosuel/banner4.jpeg" style="width:100%">
+                </div>
+                <div class="caja-img"> 
+                    <img class="mySlides" src="/images/carrosuel/banner5.jpeg" style="width:100%">
+                </div>
+                <div id="arrows">
+                    <button class="btn btn-next">></button>
+                    <button class="btn btn-prev"><</button>
+                  </div>
+                  <div id="dots-wrapper" class="center_x">
+                    <div class="dot-nav"></div>
+                    <div class="dot-nav"></div>
+                    <div class="dot-nav"></div>
+                    <div class="dot-nav"></div>
+                    <div class="dot-nav"></div>
+                    <div class="dot-nav"></div>
+                  </div>
             </div>
-
-            <script>
-                var myIndex = 0;
-                carousel();
-
-                function carousel() {
-                    var i;
-                    var x = document.getElementsByClassName("mySlides");
-                    for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";
-                    }
-                    myIndex++;
-                    if (myIndex > x.length) { myIndex = 1 }
-                    x[myIndex - 1].style.display = "block";
-                    setTimeout(carousel, 3000); // cambia la imagen cada 3 segundos
-                }
-            </script>
+           
         </article>
         <!-- CAJA DE COMENTARIOS -->
         <hr class="hr-separacion">
@@ -343,6 +354,7 @@
 
         </section>
     </main>
+    <script src="/js/glider.js"></script>
     <%- include('../partials/footer') %>
 </body>
 

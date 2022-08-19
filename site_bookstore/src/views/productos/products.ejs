@@ -67,29 +67,40 @@
 
 
         </section>
-        <div class="carousel">
-          <div class="carousel__contenedor">
-            <button aria-label="Anterior" class="carousel__anterior">
-              <i class="fa-solid fa-arrow-left"></i>
-            </button>
-            
-             <h1 class="carousel__contenedor__titulo">Nuestro Productos</h1>
-            <div class="carousel__lista">
-              <% products.forEach(({id,name,images}) => { %>
-                <div class="carousel__elemento">
-                  <img src="/images/<%= images[0].name %> " alt="Rock and Roll Hall of Fame">
-                  <h2 class="carousel__contenedor__paragraph"><%= name %> </h2>
+        <article class="caja__slider">
+          <div class="slider__banner" >
+              <div class="caja-img"> 
+                  <img class="mySlides" src="/images/carrosuel/banner0.jpeg" style="width:100%">
+              </div>
+              <div class="caja-img"> 
+                  <img class="mySlides" src="/images/carrosuel/banner1.jpeg" style="width:100%">
+              </div>
+              <div class="caja-img"> 
+                  <img class="mySlides" src="/images/carrosuel/banner2.jpeg" style="width:100%">
+              </div>
+              <div class="caja-img"> 
+                  <img class="mySlides" src="/images/carrosuel/banner3.jpeg" style="width:100%">
+              </div>
+              <div class="caja-img"> 
+                  <img class="mySlides" src="/images/carrosuel/banner4.jpeg" style="width:100%">
+              </div>
+              <div class="caja-img"> 
+                  <img class="mySlides" src="/images/carrosuel/banner5.jpeg" style="width:100%">
+              </div>
+              <div id="arrows">
+                  <button class="btn btn-next">></button>
+                  <button class="btn btn-prev"><</button>
                 </div>
-              <% }) %>
-              
-            <button aria-label="Siguiente" class="carousel__siguiente">
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
+                <div id="dots-wrapper" class="center_x">
+                  <div class="dot-nav"></div>
+                  <div class="dot-nav"></div>
+                  <div class="dot-nav"></div>
+                  <div class="dot-nav"></div>
+                  <div class="dot-nav"></div>
+                  <div class="dot-nav"></div>
+                </div>
           </div>
-          <div role="tablist" class="carousel__indicadores"></div>
-		</div>
-    
-        </div>
+      </article>
       </main>
       <%- include('../partials/footer') %>
       <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>

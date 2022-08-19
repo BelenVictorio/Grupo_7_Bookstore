@@ -78,18 +78,40 @@
             <p>Uruguay: +598 11 16151476</p>
         </div>
         </div>
-        <div>
-            <h4><i class="fa-solid fa-envelope"></i> EMAIL</h4>
-            <p class="article-p"> <a href="https://www.google.com/intl/es-419/gmail/about/">paginasbellas@gmail.com</a></p>
+        <div id="contact-form">
+            <h4><i class="fa-solid fa-envelope"></i>Dejanos tus consultas</h4>
+            <form class="form-consult" action="">
+                <div class="form-input">
+                <label for="name"></label>
+                <input type="text" name="name" placeholder="Nombre">
+                </div>
+                <div class="form-input">
+                <label for="email"></label>
+                <input type="email" name="email" placeholder="Email">
+                </div>
+                <div class="form-input">
+                <label for="msg"></label>
+                <textarea name="msg" cols="15" rows="5" placeholder="Comentario"></textarea>
+                </div>
+                <div class="form-input-button">
+                <button type="submit" value="Enviar" class="enviar">Enviar</button>
+                </div>
+                <input type="hidden" name="_next" value="http://localhost:3030/">
+                <input type="hidden" name="_captcha" value="false">
+            </form>
         </div>
         </article>
-        <div class="contact-image">
-            <img src="/images/contact.jpg" alt="" id="image">
+        <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.342948560547!2d-58.400158684900944!3d-34.59548846456943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca96f0529559%3A0xa5e4f2aec5e803eb!2sAv.%20Santa%20Fe%202200-2102%2C%20C1123AAQ%20CABA!5e0!3m2!1ses-419!2sar!4v1660848018664!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         
     </section>
     
   </main>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script src="/js/contact.js"></script>
   <%- include('partials/footer') %>
 </body>
 

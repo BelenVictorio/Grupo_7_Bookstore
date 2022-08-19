@@ -39,54 +39,46 @@
     <h2 class="product-not-found">NO TENEMOS EL LIBRO QUE SOLICITASTE. INTENTÁ CON OTRO</h2>
     <img src="/images/nofound.webp" alt="Libro No Encontrado" width="100%" height="350px">
 <% } %>
-            
-            <section class="section-producto">
-             <
-                
-                
-                
-            </section>
-            <div class="carrusel-result">
-                <div class="carrusel-items">
-                  <div class="carrusel-item">
-                    <img src="/images/carrosuel/c1.png" alt="" />
-                  </div>
-                  <div class="carrusel-item">
-                    <img src="/images/carrosuel/c2.png" alt="" />
-                  </div>
-                  <div class="carrusel-item">
-                    <img src="/images/carrosuel/c3.jpg" alt="" />
-                  </div>
-                  <div class="carrusel-item">
-                    <img src="/images/carrosuel/c4.webp" alt="" />
-                  </div>
-                  <div class="carrusel-item">
-                    <img src="/images/carrosuel/c5.webp" alt="" />
-                  </div>
-                  <div class="carrusel-item">
-                    <img src="/images/carrosuel/c6.png" alt="" />
-                  </div>
-                  <div class="carrusel-item">
-                    <img src="/images/carrosuel/c13.png" alt="" />
-                  </div>
-                  <div class="carrusel-item">
-                    <img src="/images/carrosuel/c14.png" alt="" />
-                  </div>
-                  <div class="carrusel-item">
-                    <img src="/images/carrosuel/c15.png" alt="" />
-                  </div>
-                  <div class="carrusel-item">
-                    <img src="/images/carrosuel/c16.png" alt="" />
-                  </div>
-                  <div class="carrusel-item">
-                    <img src="/images/carrosuel/c17.png" alt="" />
-                  </div>
-                  <div class="carrusel-item">
-                    <img src="/images/carrosuel/c12.webp" alt="" />
-                  </div>
-                </div>
-              </div>
+<section class="box-box-slider">
+  <article class="caja__slider">
+    <div class="slider__banner" >
+        <div class="caja-img"> 
+            <img class="mySlides" src="/images/carrosuel/banner0.jpeg" style="width:100%">
+        </div>
+        <div class="caja-img"> 
+            <img class="mySlides" src="/images/carrosuel/banner1.jpeg" style="width:100%">
+        </div>
+        <div class="caja-img"> 
+            <img class="mySlides" src="/images/carrosuel/banner2.jpeg" style="width:100%">
+        </div>
+        <div class="caja-img"> 
+            <img class="mySlides" src="/images/carrosuel/banner3.jpeg" style="width:100%">
+        </div>
+        <div class="caja-img"> 
+            <img class="mySlides" src="/images/carrosuel/banner4.jpeg" style="width:100%">
+        </div>
+        <div class="caja-img"> 
+            <img class="mySlides" src="/images/carrosuel/banner5.jpeg" style="width:100%">
+        </div>
+        <div id="arrows">
+            <button class="btn btn-next">></button>
+            <button class="btn btn-prev"><</button>
+          </div>
+          <div id="dots-wrapper" class="center_x">
+            <div class="dot-nav"></div>
+            <div class="dot-nav"></div>
+            <div class="dot-nav"></div>
+            <div class="dot-nav"></div>
+            <div class="dot-nav"></div>
+            <div class="dot-nav"></div>
+          </div>
+    </div>
+</article>
+</section>
+    
           </main>  
+      <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+      <script src="/js/glider.js"></script>
           <%- include('partials/footer') %>   
 </body>
 </html>

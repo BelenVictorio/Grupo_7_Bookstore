@@ -62,21 +62,74 @@
     color: var(--white);
     font-size: 16px;
 }
-.contact-image{
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+.form-input{
+    padding: 5px;
+    color: var(--white);
+    text-align: center;
+    display: block;
+}
+.form-input input{
+border-radius: 36px;
+border: none;
+width: 100%;
+padding: 15px;
+background-color: var(--rosa);
+color: var(--white);
+outline-color: rgba(49, 138, 172, 0);
+transition: all 0.5s ease-in;
+}
+.form-input input:hover{
+box-shadow: 0 4px 16px var(--rosa);
+}
+.form-input textarea{
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    background-color: var(--rosa);
+    color: var(--white);
+    outline-color: rgba(49, 138, 172, 0);
+    transition: all 0.5s ease-in;
+    }
+.form-input textarea:hover{
+    box-shadow: 0 4px 16px var(--rosa);
+    }
+    
+    .form-input-button button{
+        background-color: var(--rosa);
+        color: var(--grisOscuro);
+        border-radius: 9px;
+        border-style: none;
+        padding: 10px;
+        margin: 10px;
+        transition: all 0.5s ease-in;
+        font-size: 14px;
+    }
+    .form-input-button button:hover{
+        color: var(--white);
+        box-shadow: 0 4px 16px var(--rosa);
+        background-color:var(--grisOscuro);
+    }
+    
+
+.contact-map{
     display: flex;
     justify-content: center;
-    width: 100%;
 }
-.contact-image img{
+.contact-map iframe{
     padding: 10px;
-    margin: 0px 30px;
-    width: 90%;
-    padding: 10px;
+    margin: 30px 20px;
 }
 
-/* TABLET */
+/* Compu*/
 
-@media(min-width: 768px) {
+@media(min-width: 1024px) {
 
     .page-contact{
         display: flex;
@@ -87,13 +140,17 @@
     .contact-article {
         display: flex;
         flex-direction: column;
+        width: 100%;
         justify-content: center;
     }
  
-    .contact-image{
+    .contact-map{
         width: 100%;
+        flex-direction: column;
+        justify-content: start;
+        margin-right: 20px;
     }
-    .contact-image img{
+    .contact-map iframe{
       width: 100%;
     }
 }

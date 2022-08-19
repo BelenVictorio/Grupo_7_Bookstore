@@ -26,11 +26,28 @@
 <div class="button-caja">
   <nav id="nav" class="nav-burguer">
     <div class="div-nav-burguer">
+      <% if(locals.userLogin && userLogin.roles_id === 2){ %>
+      <a class="link-burguer" href="/">Inicio</a>
+      <a class="link-burguer" href="/products">Productos</a>
+      <a class="link-burguer" href="/contact">Contacto</a>
+      <a class="link-burguer" href="/products/cart">Carrito</a>
+      <a class="link-burguer" href="/users/profile">Mi perfil</a>
+      <a class="link-burguer" href="/users/logout">Cerrar Sesion</a>
+      <% } else if (locals.userLogin && userLogin.roles_id === 1){ %>
+        <a class="link-burguer" href="/">Inicio</a>
+        <a class="link-burguer" href="/products">Productos</a>
+        <a class="link-burguer" href="/contact">Contacto</a>
+        <a class="link-burguer" href="/admin">ADMIN</a>
+        <a class="link-burguer" href="/products/cart">Carrito</a>
+        <a class="link-burguer" href="/users/profile">Mi perfil</a>
+        <a class="link-burguer" href="/users/logout">Cerrar Sesion</a>
+      <% }else{ %> 
       <a class="link-burguer" href="/">Inicio</a>
       <a class="link-burguer" href="/products">Productos</a>
       <a class="link-burguer" href="/contact">Contacto</a>
       <a class="link-burguer" href="/users/register">Registro</a>
       <a class="link-burguer" href="/users/login">login</a>
+      <% } %>
     </div>
   </nav>
   <button class="menu-button">
