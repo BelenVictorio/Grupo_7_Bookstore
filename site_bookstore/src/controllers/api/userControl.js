@@ -3,8 +3,25 @@ const bcrypt = require("bcryptjs");
 const db = require('../../database/models');
 let moment = require('moment');
 const nodemailer = require("nodemailer");
+const {google}= require('googleapis');
 const { transporter } = require("../../helpers/transporter");
+/* Credenciales */
+const CLIENTD_ID ="613236988247-neqcmf25pga52s7trqj8mns3486nfv34.apps.googleusercontent.com";
+const CLIENT_SECRET="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";
+const CLIENT_URI ="https://developers.google.com/oauthplayground";
+const REFRESH_TOKEN="1//04tUpz9zcgex2CgYIARAAGAQSNwF-L9IrRUA8NeQ5g1QYVsvs5PuSNOzQ_33_iGtNajK4EdF4kVkK_Rp-hotsMgDnnR7lYhdTQjc";
+ 
+const oAuth2Client = new google.auth.OAuth2(
+  CLIENTD_ID,
+  CLIENT_SECRET,
+  CLIENT_URI
+);
+oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
+async function sendMail() {
+  
+}
+        
 
 
 module.exports={
@@ -43,54 +60,31 @@ check: async (req, res) => {
     }
   },
   sendMail: async (req, res) => {
-    // create reusable transporter object using the default SMTP transport
     try {
-      let { email, num } = req.body
-      // send mail with defined transport object
-       await transporter.sendMail({
-        from: '<damian.fernandez.dev@gmail.com>', // sender address
-        to: `${email}`, // list of receivers
-        subject: "Verificacion de mail", // Subject line
-        html: `<table style="max-width: 600px; padding: 10px; margin:0 auto; border-collapse: collapse;">
-         <tr>
-           <td>
-                   <h2>Bienvenido a Paginas Bellas</h2>
-                   <h5>Tu codigo de Validacion es:</h5>
-           </td>
-         </tr>
-         <tr style="width: 150px;
-         height: 60px;
-         background: green;
-         display: flex;
-         align-items: center;
-         margin: auto;
-         color: white;
-         border-radius: 10px;
-         border: 1px solid gray;">
-           <td style="margin:0 auto;">
-               <h1 >${num}</h1>
-           </td>
-         </tr>
-       </table>`, // html body
+      const accessToken = await oAuth2Client.getAccessToken()
+      const transporter = nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+              type: "OAuth2",
+              user: "damian.fernandez.dev@gmail.com",
+              clientId: CLIENTD_ID,
+              clientSecret: CLIENT_SECRET,
+              refreshToken: REFRESH_TOKEN,
+              accessToken: accessToken
+          },
       });
-      let response = {
-        ok:true,
-        meta : {
-          status : 500,
-        },
-        url : getUrl(req),
-        msg : `el mail se envio correctamente a ${email}`
-      }
-      return res.status(200).json(response);
-    } catch (error) {
-      let response = {
-        ok: false,
-        meta: {
-            status: 500,
-        },
-        url: getUrl(req),
-        msg: error.messaje ? error.messaje : "comuniquese con el administrador"
-    }
-    return res.status(500).json(response);    }
+      const mailOptions = {
+          from: "Bienvenidos A Paginas Bellas <damian.fernandez.dev@gmail.com>",
+          to:"",// poner el email  que vas a registrar 
+          subject: "Te Registraste con exito",
+          html: "contentHtml"
+      };
+
+      const result = await transporter.sendMail(mailOptions);
+      return result;
+  } catch (error) {
+      console.log(error)
   }
-}
+  sendMail()
+      .catch((error) => console.log(error.message));
+}}

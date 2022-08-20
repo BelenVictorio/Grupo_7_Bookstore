@@ -3,8 +3,8 @@
     "auth": {
       "type": "OAuth2",
       "user": "damian.fernandez.dev@gmail.com",
-      "clientId": "646409318451-vovbnp413hhvh71s827p8urfndp6ufns.apps.googleusercontent.com",
-      "clientSecret": "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",
-      "refreshToken": "1//04BHMYvVn_icYCgYIARAAGAQSNwF-L9Irt5g8Pgs836vbNWAPRIFH4NcQEPTy3XaDuSZ-J4p7p1uEmVUTqh93afxOADlHx-BfGSY"
+      "clientId": "613236988247-neqcmf25pga52s7trqj8mns3486nfv34.apps.googleusercontent.com",
+      "clientSecret": "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",
+      "refreshToken": "1//04tUpz9zcgex2CgYIARAAGAQSNwF-L9IrRUA8NeQ5g1QYVsvs5PuSNOzQ_33_iGtNajK4EdF4kVkK_Rp-hotsMgDnnR7lYhdTQjc"
     }
   }

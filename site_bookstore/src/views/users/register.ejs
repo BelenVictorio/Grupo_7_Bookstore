@@ -12,7 +12,7 @@
             fuga a nihil ut vel perspiciatis natus, distinctio architecto repudiandae porro voluptatibus neque optio qui
             tempore.
           </p>
-          <article class="register-form">
+          <article class="register-form" id="register-for">
             <form method="POST" action="" id="registro" class="register-form-info">
               <div class="register-info">
                 <input class="<%= locals.errors && errors.first_name ? 'Es invalid' : null %>" type="text"
@@ -66,7 +66,7 @@
               <div class="register-boton-box">
                 <button id="" class="register-button" type="submit">Registrarme</button>
                 <button class="register-button" type="reset"> <a href="/">Cancelar</a></button>
-                <span id="submitError" class="register-error"><i class="fa-solid fa-circle-xmark"></i></span>
+                <span id="submitError" class="register-error"></i></span>
               </div>
 
               <div class="register-info">
@@ -90,7 +90,8 @@
             nisi quae facere cupiditate nemo distinctio explicabo sed reprehenderit. Delectus autem pariatur porro
             magnam,
             incidunt quidem.
-          </p><div class="verify_email">
+          </p>
+         <!--  <div class="verify_email">
             <h4 style="margin-left:15%;">le enviamos un codigo al correo: </h4>
             <div style="display: flex; flex-direction:column; align-items: center;">
               <input style="width:50%; " class="register_form-input validation_input" type="Number" id="code_register" name="code"
@@ -102,11 +103,16 @@
             <div class="register_button">
               <button class="verify_button">Verificar</button>
             </div>
-          </div>
+          </div> -->
         </section>
         
       </main>
-      <script src="/js/register.js"></script>
+     
+     <script src="/js/register.js"></script>
+      <script src="/js/email.js"></script>
+      <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <%- include('../partials/footer') %>
   </body>

@@ -358,38 +358,32 @@ main section.segunda-section article.producto-rel div.text-detalle p{
   background-color: #252525;
 }
 /* Valoracion del libro */
-.form-clasificacion {
-  width: 250px;
-  margin: 0 auto;
-  height: 50px;
-  }
-  
-  .form-clasificacion label {
-  font-size: 20px;
-  }
-  
-  input[type="radio"] {
-  display: none;
-  }
-  
-  label {
-  color: grey;
-  }
-  
-  .clasificacion {
-  direction: rtl;
-  unicode-bidi: bidi-override;
-  }
-  
-  label:hover,
-  label:hover ~ label {
-  color: orange;
-  }
-  
-  input[type="radio"]:checked ~ label {
-  color: orange;
-  }
 
+  .ec-stars-wrapper {
+    
+    font-size: 0;
+    
+    display: inline-block;
+  }
+  .ec-stars-wrapper a {
+    text-decoration: none;
+    display: inline-block;
+    /* Volver a dar tamaño al texto */
+    font-size: 32px;
+    font-size: 2rem;
+    
+    color: #888;
+  }
+  
+  .ec-stars-wrapper:hover a {
+    color: rgb(230, 154, 13);
+  }
+  /*
+   * El selector de hijo, es necesario para aumentar la especifidad
+   */
+  .ec-stars-wrapper > a:hover ~ a {
+    color: #888;
+  }
 /* Media queries */
 /* Tablet */
 @media screen and (min-width:768px){

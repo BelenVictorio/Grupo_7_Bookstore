@@ -1,3 +1,5 @@
+console.log('Register success')
+
 const qs =(selector) => document.querySelector(selector);
 
 window.addEventListener('load', ()=>{
@@ -69,101 +71,7 @@ const verifyEmail = async (email) => {
 
 /* Start FUNCTIONS verify camps */
 
-const verifyCamp = (exp, input, error,) => {
-    if (input.value == "") {
-        error.innerHTML = "Este campo no puede estar vacio.";
-    } else {
-        if (exp.test(input.value)) {
-            error.innerHTML = null;
-            
-        } else {
-            switch (input.name) {
-                case "firstname":
-                    error.innerHTML =
-                        "Este campo solo puede tener letras y mínimo 2 caracteres.";
-                    errorCross.classList.add("register_error_icon")
-                    input.classList.add('register_error_input');
-                    break;
-                case "lastname":
-                    error.innerHTML =
-                        "Este campo solo puede tener letras y mínimo 2 caracteres.";
-                    
-                    break;
-                case "password":
-                    error.innerHTML =
-                        "Este campo tiene que tener entre 5 y 12 caracteres.";
-                    
-                    break;
-                case "username":
-                    error.innerHTML = "Este usuario debe tener entre 4 y 8 caracteres de letras o números.";
-                    errorCross.classList.add("register_error_icon");
-                    input.classList.add('register_error_input');
-                    break;
-                case "email":
-                    error.innerHTML = "Formato de Email invalido.";
-                    errorCross.classList.add("register_error_icon");
-                    input.classList.add('register_error_input');
-                    break;
-            }
-        }
-    }
-}
-
-const validarFormulario = async (e) => {
-    errorSubmitLogin.innerHTML = null;
-    switch (e.target.name) {
-        case "firstname":
-            verifyCamp(regExName, e.target, errorFirstname, errorFirstnameCross)
-            break;
-        case "lastname":
-            verifyCamp(regExName, e.target, errorLastname, errorLastnameCross)
-            break;
-        case "password":
-            if (password2.value !== password.value) {
-                password2.value = "";
-            }
-            verifyCamp(regExPass, e.target, errorPassword, errorPasswordCross);
-            break;
-        case "password2":
-            if (e.target.value == "") {
-                errorPassword2.innerHTML = null;
-                errorPassword2Cross.classList.remove("register_error_icon");
-            } else {
-                if (password.value === e.target.value) {
-                    errorPassword2.innerHTML = null;
-                    errorPassword2Cross.classList.remove("register_error_icon");
-                } else {
-                    errorPassword2.innerHTML =
-                        "Las contraseñas no coinciden.";
-                    errorPassword2Cross.classList.add("register_error_icon");
-                }
-            }
-            break;
-        case "username":
-            let resultUser = await verifyUsername(e.target.value);
-            if (resultUser) {
-                errorUsername.innerHTML = "Este usuario ya se encuentra en uso.";
-                errorUsernameCross.classList.add("register_error_icon");
-                e.target.classList.add('register_error_input');
-            } else {
-                verifyCamp(regExLetter, e.target, errorUsername, errorUsernameCross);
-            }
-            break;
-        case "email":
-            let resultEmail = await verifyEmail(e.target.value);
-            if (resultEmail) {
-                errorEmail.innerHTML = "Este Email ya se encuentra en uso.";
-                errorEmailCross.classList.add("register_error_icon");
-                e.target.classList.add('register_error_input');
-            } else {
-                verifyCamp(regExEmail, e.target, errorEmail, errorEmailCross)
-            }
-            break;
-
-        default:
-            break;
-    }
-};
+    
 
 /* End FUNCTIONS verify camps */
 
@@ -236,7 +144,7 @@ const validarFormulario = async (e) => {
                     break;
                 case !$regExPass.test($password.value):
                     $erorrPass1.innerHTML = 'La contraseña debe tener 1 letra mayúscula, 1 minúscula y/o simbolo';
-                    validationsErrors = true;
+                    $validationsErrors = true;
                     break;
                 case !$password.value.length > 8:
                     $erorrPass1.innerHTML = 'La contraseña debe tener entre 6 y 12 caracteres';
@@ -322,6 +230,7 @@ const validarFormulario = async (e) => {
                     icon: 'success',
                     title: 'Iniciado sesión con éxito'
                   })
+                  
                 $form.submit()
             }
         })
