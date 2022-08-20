@@ -2,6 +2,12 @@ body{
   background-color: var(--grisOscuro);
 }
 
+main {
+  width: 80%;
+  align-items: center;
+  margin: 0 auto;
+}
+
 main div.detalle-producto {
   display: flex;
   flex-direction: column;
@@ -9,6 +15,11 @@ main div.detalle-producto {
   margin: 00.5rem;
   padding: 0.5rem 0;
   font-size: var(--price);
+}
+
+main div.detalle-producto div.imagenes {
+
+  margin: 100px auto ;
 }
 
 main div.detalle-producto div.imagenes section.imagen-principal {
@@ -35,12 +46,13 @@ main div.detalle-producto div.contenido-text {
   width: 100%;
   padding: 0.4rem 1rem;
   box-shadow: 2px 2px 2px 2px var(--black);
+  text-align: center;
 }
 
-main div.detalle-producto div.contenido-text section.detalles h1{
+main div.detalle-producto div.contenido-text section.detalles div h1{
   text-align: center;
   font-size: var(--title);
-  color:var(--black);
+  color:var(--white);
   font-weight:bolder;
 }
 
@@ -53,8 +65,8 @@ main div.detalle-producto div.contenido-text section.detalles p.descripcion-libr
   text-align: initial;
   font-size: larger;
 }
-main div.detalle-producto div.contenido-text section.detalles div.price{
-  text-align: center;
+main div.detalle-producto div.contenido-text section.detalles div.price {
+  
   font-size: 24px;
   font-weight: bolder;
   color: rgb(221, 148, 148); text-shadow: black 0.1em 0.1em 0.2em
@@ -83,20 +95,20 @@ font-size: 0.9rem;
 main div.detalle-producto div.contenido-text{
   border: 2px solid var(--rosa);
 }
-main div.detalle-producto button.add-button2{
+main div.detalle-producto button.add-button2 {
   display: flex;
   background-color: var(--black);
   justify-content: center;
   border-radius: 9px;
   border-style: none;
-  padding: 6px;
+  padding: 10px 15px;
   transition: all 0.5s ease-in;
 }
 button.add-button {
   background-color: var(--black);
   border-radius: 9px;
   border-style: none;
-  padding: 6px;
+  padding: 10px 15px;
   transition: all 0.5s ease-in;
   margin-left: auto;
   margin-right: auto;
@@ -115,11 +127,32 @@ button.add-button p.add{
   margin-left: -4px;
 }
 
-main div.detalle-producto div.contenido-text section.detalles div.medio-pago{
+main div.detalle-producto div.contenido-text section.detalles div.precio-pago {
+
   display:flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 20px;
 
+}
+
+main div.detalle-producto div.contenido-text section.detalles div.precio-pago .medio-pago {
+
+  color: var(--rosa);
+  font-size: 18px;
+}
+
+main div.detalle-producto div.contenido-text section.detalles div.precio-pago p {
+
+  margin: 10px;
+  font-size: 18px;
+}
+
+main div.detalle-producto div.contenido-text section.detalles div.precio-pago .icon-card {
+
+  color: var(--rosa);
 }
 
 main div.detalle-producto div.contenido-text section.detalles div.medio-pago a.icon{
@@ -133,6 +166,7 @@ main div.detalle-producto div.contenido-text section.detalles div.medio-pago a.i
     top: -15px;
     right: 20px;
     font-size: var(--title);
+    color: var(--rosa);
 
 }
 main div.detalle-producto div.contenido-text section.detalles div.descripcion h3.autor{
@@ -581,7 +615,7 @@ main section.segunda-section article.producto-rel div.text-detalle p{
     text-align: initial;
   }
   main div.detalle-producto div.contenido-text section.detalles p{
-    text-align: left;
+    
     color: white; text-shadow: black 0.1em 0.1em 0.2em
   }
   main section.segunda-section{
