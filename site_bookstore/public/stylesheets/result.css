@@ -7,8 +7,13 @@ main.main-search {
     color: var(--white);
 }
 .caja-result{
+    display: flex;
     padding: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
 }
 
 .results-caja-img{

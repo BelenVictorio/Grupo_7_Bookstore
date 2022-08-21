@@ -31,7 +31,7 @@ div.container-catego{
 }
 
 main.main-catalogo article.productos-catalogo{
-    margin: 15px 15px;
+    margin: 40px;
 }
 main.main-catalogo div.orden-info{
     margin: 10px;
@@ -175,7 +175,7 @@ button.add-button p.add{
     main.main-catalogo section.section-producto article.productos-catalogo {
         max-width: 240px;
         width: 50%;
-        margin: 15px auto;
+        margin: 50px 10px;
     }
     button.add-button {
         margin-left: 50px;

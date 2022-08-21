@@ -341,6 +341,7 @@ a {
 .home__best-sellers__producto4 .autor p {
     display: flex;
     justify-content: center;
+    text-align: center;
     margin: 5px 0;
 } 
 
