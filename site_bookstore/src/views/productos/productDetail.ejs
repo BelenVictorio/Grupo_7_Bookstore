@@ -51,16 +51,12 @@
                         <form action="/admin/delete/<%=products.id%>?_method=DELETE" method="POST"> 
                             <button type="submit">Eliminar</button> -->
                         </form>
-                        <div class="medio-pago">
-                            <a class="icon"><i class="fas fa-truck"></i></a>
-                            <p>Modos De Envios</p>
+                        <h2 style="color: #fff;text-align: center;" >Modo de envios</h2>
+                        <div class="input-group">
+                            <input class="input-group__codigo" type="email" class="input" id="Email" name="Email" placeholder="Tu Codigo Postal" autocomplete="off">
+                            <input class="button--submit" value="Verificar" type="submit">
                         </div>
-                        <button class="add-button2">
-                            <input placeholder="Codigo Postal">
-                            <a href="product-Cart">
-                                <p class="add">Calcular</p>
-                            </a>
-                        </button>
+                        
                         <div class="descripcion">
                             <h3 class="autor">Autor : <%= products.author %></h3>
                             <p><%= products.description %></p>
