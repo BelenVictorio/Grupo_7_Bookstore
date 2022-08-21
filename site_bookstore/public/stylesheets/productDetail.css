@@ -241,9 +241,79 @@ main section.segunda-section article.producto-rel div.text-detalle p{
   color: rgb(218, 213, 213); text-shadow: black 0.1em 0.1em 0.2em
   }
 /* CAJA DEL SLIDER */
-.caja__slider{
-  display: none;
-}
+
+  /* CAJA DEL SLIDER */
+  .caja__slider{
+    display: flex;
+   justify-content: space-around;
+   margin-top: 10px;
+  }
+  .center_y{
+    position: relative;
+    top:50%;
+    transform: translateX(-50%);
+  }
+  
+  .center_x{
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+  }
+  
+  .slider__banner{
+    width: 100%;
+    padding: 30px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slider-arrow{
+    color: var(--black);
+    font-size: 40px;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  #arrows {
+    display: none;
+  }
+
+  /* .btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    z-index: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    font-size: 18px;
+  } */
+  
+  #dots-wrapper{
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+  }
+  .dot-nav{
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 2px solid var(--black);
+  }
+  
+  .dot-nav:hover{
+    background-color: var(--black);
+  }
+  
+  .active-dot{
+    background-color: var(--black);
+  }
+
+
 /* CAJA DE COMENTARIOS */
 .testimonios{
   display: flex;
@@ -662,4 +732,85 @@ main section.segunda-section article.producto-rel div.producto-favorito h5{
   box-shadow: 10px 10px 20px #b37373,
              -10px -10px 20px #070707;
 }
+
+.caja__slider{
+  display: flex;
+ justify-content: space-around;
+ margin-top: 10px;
+}
+.center_y{
+  position: relative;
+  top:50%;
+  transform: translateX(-50%);
+}
+
+.center_x{
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+.slider__banner{
+  width: 70%;
+  padding: 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-arrow{
+  color: var(--black);
+  font-size: 40px;
+  cursor: pointer;
+  position: absolute;
+}
+
+
+.btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  z-index: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 18px;
+}
+
+.btn:active {
+  transform: scale(1.1);
+}
+.btn-prev {
+  top: 45%;
+  left: 2%;
+}
+
+.btn-next {
+  top: 45%;
+  right: 2%;
+}
+
+#dots-wrapper{
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+}
+.dot-nav{
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  cursor: pointer;
+  margin: 0 5px;
+  border: 2px solid var(--black);
+}
+
+.dot-nav:hover{
+  background-color: var(--black);
+}
+
+.active-dot{
+  background-color: var(--black);
+}
+
 }
