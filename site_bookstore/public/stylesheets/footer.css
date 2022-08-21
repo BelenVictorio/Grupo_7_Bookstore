@@ -97,7 +97,7 @@ li {
 @media (min-width: 1024px) {
 
     .footer__section {
-        width: 80%;
+        width: 70%;
         display: flex;
         padding: 20px 0px 40px;
     }
@@ -120,7 +120,7 @@ li {
     .footer__final {
         display: flex;
         align-items: center;
-        width: 80%;
+        width: 70%;
         margin: 0px auto;
         text-align: center;
         justify-content: center;
