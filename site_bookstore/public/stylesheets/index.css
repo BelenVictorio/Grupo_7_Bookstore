@@ -2,12 +2,31 @@
 
 /* imagen banner */
 
+.home div.home__banner {
 
-.home__banner img {
-    width: 90%;
+    background-image: url("/images/fondoHome.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-     margin: 0px auto;
+    margin: 20px auto;
+    align-items: center;
+}
+
+.home div.home__banner h1 {
+    font-size: 35px;
+    color: var(--rosa);
+    text-shadow: 1px 1px 2px var(--grisOscuro);
+    margin: 0 auto;
+    backdrop-filter: blur(3px);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 150px 0;
 }
 
 /* categorías-box */
@@ -329,11 +348,18 @@ a {
 /* tablet */
 
 @media (min-width: 768px) {
-    .home__banner img {
-        width: 80%;
+    .home div.home__banner {
+        width: 90%;
         display: flex;
         justify-content: center;
-        margin: 0px auto;
+        margin: 20px auto;
+    }
+
+    .home div.home__banner h1 {
+
+        font-size: 50px;
+        padding: 130px 0;
+        backdrop-filter: blur(3px);
     }
 
     .home__categorias {
@@ -382,12 +408,18 @@ a {
         background-color: var(--rosa);
     }
 
-    .home__banner img {
-        width: 80%;
+    .home div.home__banner {
+        width: 70%;
         display: flex;
         justify-content: center;
-        margin: 0px auto;
+        margin: 20px auto;
     }
+
+    .home div.home__banner h1 {
+
+    font-size: 50px;
+    padding: 103px 0;
+}
 
     .home__categorias {
         padding: 50px 0px 80px;
