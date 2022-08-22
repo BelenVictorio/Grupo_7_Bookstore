@@ -123,7 +123,7 @@ updateProfile: (req, res) =>{
                fist_name: req.body.fist_name,
                last_name: req.body.last_name,
                image: req.file && req.file.filename||req.session.userLogin.image,
-               roles_id: req.session.userLogin.rol
+               roles_id: req.session.userLogin.roles_id
                }
            res.redirect('/users/profile')
        })  
