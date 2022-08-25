@@ -22,7 +22,7 @@
       </div>  
       <article class="profile-form">
         <form method="POST" action="/users/updateprofile?_method=PUT" class="profile-form-info" 
-        enctype="multipart/form-data" id="form-profile" no validate >
+        enctype="multipart/form-data" id="form-profile" novalidate >
           <div class="profile-info">
             <input class="<%= locals.errors && errors.first_name ? 'Es invalid' : null %>" type="text" id="first_name" name="first_name" placeholder="Escribi tu nombre" value="<%= user.first_name%>">
             <span id="firstError"><%= locals.errores && errores.first_name ? errores.first_name.msg : null%></span>
